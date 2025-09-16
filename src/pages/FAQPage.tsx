@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Search, HelpCircle, Phone, Mail, MessageCircle } from 'lucide-react';
+import { ChevronDown, ChevronUp, Search, HelpCircle, Phone, Mail, MessageCircle } from '../icons';
 
 const FAQPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('General');
@@ -157,7 +157,7 @@ const FAQPage: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <HelpCircle className="w-16 h-16 text-yellow-500 mx-auto mb-6" />
+          <HelpCircle className="w-16 h-16 text-brand-500 mx-auto mb-6" />
           <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">Frequently Asked Questions</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
             Find answers to common questions about our legal services and how we can help you.
@@ -175,7 +175,7 @@ const FAQPage: React.FC = () => {
               placeholder="Search frequently asked questions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent shadow-lg"
+              className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-transparent shadow-lg"
             />
           </div>
         </div>
@@ -198,8 +198,8 @@ const FAQPage: React.FC = () => {
                     }}
                     className={`w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                       activeCategory === category
-                        ? 'bg-yellow-600 text-white'
-                        : 'text-gray-700 hover:bg-gray-100 hover:text-yellow-600'
+                        ? 'bg-brand-600 text-white'
+                        : 'text-gray-700 hover:bg-gray-100 hover:text-brand-600'
                     }`}
                   >
                     {category}
@@ -227,7 +227,7 @@ const FAQPage: React.FC = () => {
                   <p className="text-gray-500 mb-6">Try adjusting your search or browse other categories.</p>
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                    className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
                   >
                     Clear Search
                   </button>
@@ -247,7 +247,7 @@ const FAQPage: React.FC = () => {
                           {faq.question}
                         </span>
                         {expandedQuestion === faq.id ? (
-                          <ChevronUp className="w-6 h-6 text-yellow-600 flex-shrink-0" />
+                          <ChevronUp className="w-6 h-6 text-brand-600 flex-shrink-0" />
                         ) : (
                           <ChevronDown className="w-6 h-6 text-gray-400 flex-shrink-0" />
                         )}
@@ -279,7 +279,7 @@ const FAQPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Call Us</h3>
@@ -293,7 +293,7 @@ const FAQPage: React.FC = () => {
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mail className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Email Us</h3>
@@ -307,7 +307,7 @@ const FAQPage: React.FC = () => {
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <MessageCircle className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Schedule Consultation</h3>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Award, Scale, Target, Heart, Lightbulb } from 'lucide-react';
+import { Users, Award, Scale, Target, Heart, Lightbulb } from '../icons';
 
 const AboutPage: React.FC = () => {
   const values = [
@@ -111,7 +111,7 @@ const AboutPage: React.FC = () => {
                 alt="Law firm office"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-8 -left-8 bg-yellow-600 text-white p-6 rounded-2xl shadow-xl">
+              <div className="absolute -bottom-8 -left-8 bg-brand-600 text-white p-6 rounded-2xl shadow-xl">
                 <div className="text-3xl font-bold">25+</div>
                 <div className="text-sm">Years of Excellence</div>
               </div>
@@ -136,7 +136,7 @@ const AboutPage: React.FC = () => {
                 key={index}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-brand-600 to-brand-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
@@ -164,13 +164,13 @@ const AboutPage: React.FC = () => {
                 className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-start space-x-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-2xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
+                  <div className="w-24 h-24 bg-gradient-to-br from-brand-600 to-brand-700 rounded-2xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
                     {member.image}
                   </div>
                   
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                    <div className="text-yellow-600 font-semibold mb-1">{member.position}</div>
+                    <div className="text-brand-600 font-semibold mb-1">{member.position}</div>
                     <div className="text-gray-600 text-sm mb-4">{member.specialization}</div>
                     
                     <p className="text-gray-600 mb-4 leading-relaxed">{member.bio}</p>
@@ -199,19 +199,19 @@ const AboutPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-8 bg-white/10 rounded-2xl">
-              <Award className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
+              <Award className="w-12 h-12 text-brand-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Best Law Firm 2023</h3>
               <p className="text-gray-300">Legal Excellence Awards</p>
             </div>
             
             <div className="text-center p-8 bg-white/10 rounded-2xl">
-              <Users className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
+              <Users className="w-12 h-12 text-brand-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Top 50 Law Firms</h3>
               <p className="text-gray-300">National Legal Directory</p>
             </div>
             
             <div className="text-center p-8 bg-white/10 rounded-2xl">
-              <Scale className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
+              <Scale className="w-12 h-12 text-brand-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Excellence in Corporate Law</h3>
               <p className="text-gray-300">Business Law Journal</p>
             </div>

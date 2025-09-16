@@ -1,0 +1,35 @@
+<svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main pillars structure -->
+  <g fill="#8c9b3b">
+    <!-- Left pillar -->
+    <rect x="10" y="15" width="3" height="25"/>
+    <rect x="8" y="12" width="7" height="3"/>
+    <rect x="8" y="40" width="7" height="3"/>
+    <circle cx="11.5" r="2" cy="10"/>
+    
+    <!-- Center pillar (taller) -->
+    <rect x="25" y="8" width="4" height="32"/>
+    <rect x="22" y="5" width="10" height="3"/>
+    <rect x="22" y="40" width="10" height="3"/>
+    <circle cx="27" r="2.5" cy="3"/>
+    
+    <!-- Right pillar -->
+    <rect x="42" y="15" width="3" height="25"/>
+    <rect x="40" y="12" width="7" height="3"/>
+    <rect x="40" y="40" width="7" height="3"/>
+    <circle cx="43.5" r="2" cy="10"/>
+    
+    <!-- Dollar sign integration -->
+    <path d="M15 20 Q20 18 25 20 Q30 22 35 20" stroke="#8c9b3b" stroke-width="2" fill="none"/>
+    <path d="M15 30 Q20 28 25 30 Q30 32 35 30" stroke="#8c9b3b" stroke-width="2" fill="none"/>
+    <rect x="26" y="15" width="2" height="30"/>
+    
+    <!-- Additional decorative elements -->
+    <circle cx="50" r="1.5" cy="18"/>
+    <circle cx="52" r="1.5" cy="25"/>
+    <circle cx="48" r="1.5" cy="32"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="10" y="58" font-family="serif" font-size="12" font-weight="bold" fill="#1f2937">SHEHAB LAW FIRM</text>
+</svg>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, BookOpen, FileText, Download, Calendar, Eye, Tag, Filter } from 'lucide-react';
+import { Search, BookOpen, FileText, Download, Calendar, Eye, Tag, Filter } from '../icons';
 
 const LibraryPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'blog' | 'publications'>('blog');
@@ -204,7 +204,7 @@ const LibraryPage: React.FC = () => {
                 placeholder="Search articles and publications..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
               />
             </div>
 
@@ -214,7 +214,7 @@ const LibraryPage: React.FC = () => {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
               >
                 {categories.map(category => (
                   <option key={category} value={category}>{category}</option>
@@ -233,8 +233,8 @@ const LibraryPage: React.FC = () => {
               onClick={() => setActiveTab('blog')}
               className={`flex items-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 activeTab === 'blog'
-                  ? 'bg-yellow-600 text-white'
-                  : 'text-gray-600 hover:text-yellow-600 hover:bg-gray-100'
+                  ? 'bg-brand-600 text-white'
+                  : 'text-gray-600 hover:text-brand-600 hover:bg-gray-100'
               }`}
             >
               <BookOpen className="w-5 h-5 mr-2" />
@@ -244,8 +244,8 @@ const LibraryPage: React.FC = () => {
               onClick={() => setActiveTab('publications')}
               className={`flex items-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 activeTab === 'publications'
-                  ? 'bg-yellow-600 text-white'
-                  : 'text-gray-600 hover:text-yellow-600 hover:bg-gray-100'
+                  ? 'bg-brand-600 text-white'
+                  : 'text-gray-600 hover:text-brand-600 hover:bg-gray-100'
               }`}
             >
               <FileText className="w-5 h-5 mr-2" />
@@ -278,13 +278,13 @@ const LibraryPage: React.FC = () => {
                         alt={post.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-4 left-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <div className="absolute top-4 left-4 bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                         {post.category}
                       </div>
                     </div>
 
                     <div className="p-6">
-                      <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors line-clamp-2">
+                      <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors line-clamp-2">
                         {post.title}
                       </h2>
                       
@@ -319,7 +319,7 @@ const LibraryPage: React.FC = () => {
 
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600">By {post.author}</span>
-                        <button className="text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:translate-x-2 transition-all duration-300">
+                        <button className="text-brand-600 hover:text-brand-700 font-medium text-sm group-hover:translate-x-2 transition-all duration-300">
                           Read More →
                         </button>
                       </div>
@@ -365,10 +365,10 @@ const LibraryPage: React.FC = () => {
                       {/* Content */}
                       <div className="lg:col-span-2">
                         <div className="flex items-start justify-between mb-3">
-                          <h2 className="text-2xl font-bold text-gray-900 hover:text-yellow-600 transition-colors">
+                          <h2 className="text-2xl font-bold text-gray-900 hover:text-brand-600 transition-colors">
                             {publication.title}
                           </h2>
-                          <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium ml-4 whitespace-nowrap">
+                          <span className="bg-brand-100 text-brand-800 px-3 py-1 rounded-full text-sm font-medium ml-4 whitespace-nowrap">
                             {publication.category}
                           </span>
                         </div>
@@ -433,9 +433,9 @@ const LibraryPage: React.FC = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500"
             />
-            <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
               Subscribe
             </button>
           </div>

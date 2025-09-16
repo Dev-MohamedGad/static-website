@@ -76,7 +76,7 @@ const ContactPage: React.FC = () => {
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
             Ready to discuss your legal needs? Our experienced team is here to help you navigate complex legal challenges.
           </p>
-          <div className="flex justify-center space-x-8 text-yellow-500">
+          <div className="flex justify-center space-x-8 text-brand-500">
             <div className="text-center">
               <div className="text-2xl font-bold">24/7</div>
               <div className="text-sm text-gray-300">Emergency Support</div>
@@ -101,7 +101,7 @@ const ContactPage: React.FC = () => {
               <div key={index} className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{link.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{link.description}</p>
-                <button className="text-yellow-600 hover:text-yellow-700 font-semibold text-sm">
+                <button className="text-brand-600 hover:text-brand-700 font-semibold text-sm">
                   {link.action} →
                 </button>
               </div>
@@ -153,7 +153,7 @@ const ContactPage: React.FC = () => {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                         placeholder="John Smith"
                       />
                     </div>
@@ -169,7 +169,7 @@ const ContactPage: React.FC = () => {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -186,7 +186,7 @@ const ContactPage: React.FC = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                         placeholder="+1 (234) 567-8900"
                       />
                     </div>
@@ -201,7 +201,7 @@ const ContactPage: React.FC = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                         placeholder="Company Name"
                       />
                     </div>
@@ -218,7 +218,7 @@ const ContactPage: React.FC = () => {
                       required
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                       placeholder="Brief description of your legal matter"
                     />
                   </div>
@@ -233,7 +233,7 @@ const ContactPage: React.FC = () => {
                         name="urgency"
                         value={formData.urgency}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                       >
                         <option value="Normal">Normal</option>
                         <option value="Urgent">Urgent (within 48 hours)</option>
@@ -250,7 +250,7 @@ const ContactPage: React.FC = () => {
                         name="preferredContact"
                         value={formData.preferredContact}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                       >
                         <option value="Email">Email</option>
                         <option value="Phone">Phone</option>
@@ -270,7 +270,7 @@ const ContactPage: React.FC = () => {
                       required
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200 resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 resize-none"
                       placeholder="Please describe your legal matter in detail, including any relevant dates, parties involved, and specific questions you have..."
                     ></textarea>
                   </div>
@@ -299,7 +299,7 @@ const ContactPage: React.FC = () => {
                   
                   <div className="space-y-6">
                     <div className="flex items-start">
-                      <MapPin className="w-6 h-6 text-yellow-600 mt-1 mr-4 flex-shrink-0" />
+                      <MapPin className="w-6 h-6 text-brand-600 mt-1 mr-4 flex-shrink-0" />
                       <div>
                         <div className="font-medium text-gray-900 mb-1">Address</div>
                         <div className="text-gray-600 text-sm whitespace-pre-line">{office.address}</div>
@@ -310,11 +310,11 @@ const ContactPage: React.FC = () => {
                     </div>
                     
                     <div className="flex items-start">
-                      <Phone className="w-6 h-6 text-yellow-600 mt-1 mr-4 flex-shrink-0" />
+                      <Phone className="w-6 h-6 text-brand-600 mt-1 mr-4 flex-shrink-0" />
                       <div>
                         <div className="font-medium text-gray-900 mb-1">Phone & Fax</div>
                         <div className="space-y-1">
-                          <a href={`tel:${office.phone}`} className="block text-gray-600 hover:text-yellow-600 transition-colors text-sm">
+                          <a href={`tel:${office.phone}`} className="block text-gray-600 hover:text-brand-600 transition-colors text-sm">
                             {office.phone} (Main)
                           </a>
                           <div className="text-gray-500 text-sm">{office.fax} (Fax)</div>
@@ -323,17 +323,17 @@ const ContactPage: React.FC = () => {
                     </div>
                     
                     <div className="flex items-start">
-                      <Mail className="w-6 h-6 text-yellow-600 mt-1 mr-4 flex-shrink-0" />
+                      <Mail className="w-6 h-6 text-brand-600 mt-1 mr-4 flex-shrink-0" />
                       <div>
                         <div className="font-medium text-gray-900 mb-1">Email</div>
-                        <a href={`mailto:${office.email}`} className="text-gray-600 hover:text-yellow-600 transition-colors text-sm">
+                        <a href={`mailto:${office.email}`} className="text-gray-600 hover:text-brand-600 transition-colors text-sm">
                           {office.email}
                         </a>
                       </div>
                     </div>
                     
                     <div className="flex items-start">
-                      <Clock className="w-6 h-6 text-yellow-600 mt-1 mr-4 flex-shrink-0" />
+                      <Clock className="w-6 h-6 text-brand-600 mt-1 mr-4 flex-shrink-0" />
                       <div>
                         <div className="font-medium text-gray-900 mb-1">Business Hours</div>
                         <div className="text-gray-600 text-sm whitespace-pre-line">Sunday - Thursday: 9:00 AM - 6:00 PM\nFriday: 9:00 AM - 2:00 PM\nSaturday: Closed</div>
@@ -385,10 +385,10 @@ const ContactPage: React.FC = () => {
                 Integrated Google Maps showing both office locations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                   Get Directions to Main Office
                 </button>
-                <button className="border border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                <button className="border border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                   Get Directions to Downtown Branch
                 </button>
               </div>
@@ -409,18 +409,18 @@ const ContactPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
-              <Calendar className="w-12 h-12 text-yellow-500 mx-auto mb-6" />
+              <Calendar className="w-12 h-12 text-brand-500 mx-auto mb-6" />
               <h3 className="text-xl font-bold mb-4">Online Scheduling</h3>
               <p className="text-gray-300 mb-6">
                 Use our online calendar to schedule consultations at your convenience.
               </p>
-              <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 Schedule Online
               </button>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
-              <Mail className="w-12 h-12 text-yellow-500 mx-auto mb-6" />
+              <Mail className="w-12 h-12 text-brand-500 mx-auto mb-6" />
               <h3 className="text-xl font-bold mb-4">Newsletter</h3>
               <p className="text-gray-300 mb-6">
                 Stay informed with legal updates and insights delivered to your inbox.
@@ -431,7 +431,7 @@ const ContactPage: React.FC = () => {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
-              <Globe className="w-12 h-12 text-yellow-500 mx-auto mb-6" />
+              <Globe className="w-12 h-12 text-brand-500 mx-auto mb-6" />
               <h3 className="text-xl font-bold mb-4">Client Portal</h3>
               <p className="text-gray-300 mb-6">
                 Access case updates, documents, and billing information securely online.

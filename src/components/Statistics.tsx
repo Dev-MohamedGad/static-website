@@ -104,7 +104,7 @@ const Statistics: React.FC = () => {
             >
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105">
                 {/* Number */}
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-500 mb-4">
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-500 mb-4">
                   <AnimatedCounter 
                     target={stat.number} 
                     duration={2000} 
@@ -137,7 +137,7 @@ const Statistics: React.FC = () => {
                 Let us help you achieve your legal objectives with our proven expertise.
               </p>
             </div>
-            <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
+            <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
               Start Your Case
             </button>
           </div>
@@ -145,8 +145,8 @@ const Statistics: React.FC = () => {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-yellow-600/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-yellow-600/5 rounded-full blur-2xl animate-pulse delay-700"></div>
+      <div className="absolute top-10 left-10 w-20 h-20 bg-brand-600/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-10 right-10 w-32 h-32 bg-brand-600/5 rounded-full blur-2xl animate-pulse delay-700"></div>
     </section>
   );
 };

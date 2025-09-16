@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from '../icons';
 import Logo from './Logo';
 
 interface FooterProps {
@@ -39,9 +39,9 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-brand-600 to-brand-700 rounded-lg flex items-center justify-center">
                 <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
-                  <div className="w-3 h-3 bg-yellow-600 rounded-full"></div>
+                  <div className="w-3 h-3 bg-brand-600 rounded-full"></div>
                 </div>
               </div>
               <div>
@@ -60,7 +60,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-yellow-600 transition-colors duration-300"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-600 transition-colors duration-300"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -77,7 +77,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <li key={link.href}>
                   <button
                     onClick={() => setCurrentPage(link.href)}
-                    className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm"
+                    className="text-gray-300 hover:text-brand-400 transition-colors duration-200 text-sm"
                   >
                     {link.label}
                   </button>
@@ -94,7 +94,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <li key={area}>
                   <button
                     onClick={() => setCurrentPage('expertise')}
-                    className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm"
+                    className="text-gray-300 hover:text-brand-400 transition-colors duration-200 text-sm"
                   >
                     {area}
                   </button>
@@ -108,7 +108,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
             <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-brand-600 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
                   123 Business District<br />
                   Legal Plaza, Suite 500<br />
@@ -117,15 +117,15 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
               </div>
               
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-yellow-600 flex-shrink-0" />
-                <a href="tel:+1234567890" className="text-sm text-gray-300 hover:text-yellow-400 transition-colors">
+                <Phone className="w-5 h-5 text-brand-600 flex-shrink-0" />
+                <a href="tel:+1234567890" className="text-sm text-gray-300 hover:text-brand-400 transition-colors">
                   +1 (234) 567-8900
                 </a>
               </div>
               
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-yellow-600 flex-shrink-0" />
-                <a href="mailto:info@shehablaw.com" className="text-sm text-gray-300 hover:text-yellow-400 transition-colors">
+                <Mail className="w-5 h-5 text-brand-600 flex-shrink-0" />
+                <a href="mailto:info@shehablaw.com" className="text-sm text-gray-300 hover:text-brand-400 transition-colors">
                   info@shehablaw.com
                 </a>
               </div>
@@ -140,9 +140,9 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
               © {new Date().getFullYear()} Shehab Law Firm. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-yellow-400 transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-yellow-400 transition-colors">Legal Notice</a>
+              <a href="#" className="hover:text-brand-400 transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-brand-400 transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-brand-400 transition-colors">Legal Notice</a>
             </div>
           </div>
         </div>

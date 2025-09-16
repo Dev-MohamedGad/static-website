@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const Contact: React.FC = () => {
@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                         placeholder="Your full name"
                       />
                     </div>
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                       placeholder="+1 (234) 567-8900"
                     />
                   </div>
@@ -133,7 +133,7 @@ const Contact: React.FC = () => {
                       required
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200 resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 resize-none"
                       placeholder="Tell us about your legal needs..."
                     ></textarea>
                   </div>
@@ -158,34 +158,34 @@ const Contact: React.FC = () => {
                 
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <MapPin className="w-5 h-5 text-yellow-600 mt-1 mr-3 flex-shrink-0" />
+                    <MapPin className="w-5 h-5 text-brand-600 mt-1 mr-3 flex-shrink-0" />
                     <div className="text-gray-600 text-sm whitespace-pre-line">
                       {office.address}
                     </div>
                   </div>
                   
                   <div className="flex items-center">
-                    <Phone className="w-5 h-5 text-yellow-600 mr-3 flex-shrink-0" />
+                    <Phone className="w-5 h-5 text-brand-600 mr-3 flex-shrink-0" />
                     <a 
                       href={`tel:${office.phone}`}
-                      className="text-gray-600 hover:text-yellow-600 transition-colors text-sm"
+                      className="text-gray-600 hover:text-brand-600 transition-colors text-sm"
                     >
                       {office.phone}
                     </a>
                   </div>
                   
                   <div className="flex items-center">
-                    <Mail className="w-5 h-5 text-yellow-600 mr-3 flex-shrink-0" />
+                    <Mail className="w-5 h-5 text-brand-600 mr-3 flex-shrink-0" />
                     <a 
                       href={`mailto:${office.email}`}
-                      className="text-gray-600 hover:text-yellow-600 transition-colors text-sm"
+                      className="text-gray-600 hover:text-brand-600 transition-colors text-sm"
                     >
                       {office.email}
                     </a>
                   </div>
                   
                   <div className="flex items-start">
-                    <Clock className="w-5 h-5 text-yellow-600 mt-1 mr-3 flex-shrink-0" />
+                    <Clock className="w-5 h-5 text-brand-600 mt-1 mr-3 flex-shrink-0" />
                     <div className="text-gray-600 text-sm whitespace-pre-line">
                       {office.hours}
                     </div>

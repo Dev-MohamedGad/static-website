@@ -9,7 +9,7 @@ import {
   TrendingUp, 
   Gavel,
   ArrowRight 
-} from 'lucide-react';
+} from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const Expertise: React.FC = () => {
@@ -18,51 +18,51 @@ const Expertise: React.FC = () => {
   const practiceAreas = [
     {
       icon: Gavel,
-      title: 'Dispute Resolution',
-      description: 'Comprehensive litigation services covering civil, commercial, and criminal cases with expertise in Egyptian courts.',
-      features: ['Civil & Commercial Litigation', 'Criminal Defense', 'Alternative Dispute Resolution']
+      title: t('expertise.dispute.title'),
+      description: t('expertise.dispute.desc'),
+      features: [t('expertise.dispute.f1'), t('expertise.dispute.f2'), t('expertise.dispute.f3')]
     },
     {
       icon: Building,
-      title: 'Corporate & Commercial Law',
-      description: 'Fast and customized incorporation services for all types of commercial companies in Egypt and abroad.',
-      features: ['Company Formation', 'Corporate Secretarial Services', 'Commercial Transactions']
+      title: t('expertise.corporate.title'),
+      description: t('expertise.corporate.desc'),
+      features: [t('expertise.corporate.f1'), t('expertise.corporate.f2'), t('expertise.corporate.f3')]
     },
     {
       icon: Users,
-      title: 'Employment Law',
-      description: 'Expert advice on employment laws, contract drafting, and regulatory compliance for Egyptian labor regulations.',
-      features: ['Employment Contracts', 'Labor Policy Development', 'Regulatory Compliance']
+      title: t('expertise.employment.title'),
+      description: t('expertise.employment.desc'),
+      features: [t('expertise.employment.f1'), t('expertise.employment.f2'), t('expertise.employment.f3')]
     },
     {
       icon: Home,
-      title: 'Real Estate',
-      description: 'Real estate registration, sale and purchase agreements, and legal advice for commercial, residential, and touristic projects.',
-      features: ['Property Registration', 'Sale & Purchase Agreements', 'Title Verification']
+      title: t('expertise.realestate.title'),
+      description: t('expertise.realestate.desc'),
+      features: [t('expertise.realestate.f1'), t('expertise.realestate.f2'), t('expertise.realestate.f3')]
     },
     {
       icon: Lightbulb,
-      title: 'Technology, Media & Telecommunications',
-      description: 'Specialized services in technology, media, and telecommunications with focus on licensing and regulatory compliance.',
-      features: ['TMT Licensing', 'Regulatory Compliance', 'E-commerce Law']
+      title: t('expertise.tmt.title'),
+      description: t('expertise.tmt.desc'),
+      features: [t('expertise.tmt.f1'), t('expertise.tmt.f2'), t('expertise.tmt.f3')]
     },
     {
       icon: Calculator,
-      title: 'Taxation',
-      description: 'Comprehensive tax services including dispute resolution, compliance, and financial reporting in accordance with Egyptian tax law.',
-      features: ['Tax Dispute Resolution', 'Tax Compliance', 'Financial Reporting']
+      title: t('expertise.tax.title'),
+      description: t('expertise.tax.desc'),
+      features: [t('expertise.tax.f1'), t('expertise.tax.f2'), t('expertise.tax.f3')]
     },
     {
       icon: TrendingUp,
-      title: 'Capital Market & M&A',
-      description: 'Expertise in public and private mergers, acquisitions, joint ventures, and restructuring with comprehensive due diligence.',
-      features: ['M&A Transactions', 'Due Diligence', 'Corporate Restructuring']
+      title: t('expertise.mna.title'),
+      description: t('expertise.mna.desc'),
+      features: [t('expertise.mna.f1'), t('expertise.mna.f2'), t('expertise.mna.f3')]
     },
     {
       icon: Scale,
-      title: 'Additional Services',
-      description: 'Certified translation services, due diligence investigations, and specialized business support services.',
-      features: ['Certified Translation', 'Due Diligence', 'Business Licensing']
+      title: t('expertise.additional.title'),
+      description: t('expertise.additional.desc'),
+      features: [t('expertise.additional.f1'), t('expertise.additional.f2'), t('expertise.additional.f3')]
     }
   ];
 
@@ -84,16 +84,16 @@ const Expertise: React.FC = () => {
           {practiceAreas.map((area, index) => (
             <div
               key={index}
-              className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-yellow-600/30 transition-all duration-300 hover:-translate-y-2"
+              className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-brand-600/30 transition-all duration-300 hover:-translate-y-2"
             >
               {/* Icon */}
-              <div className="w-16 h-16 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-brand-600 to-brand-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <area.icon className="w-8 h-8 text-white" />
               </div>
 
               {/* Content */}
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors">
+                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-brand-600 transition-colors">
                   {area.title}
                 </h3>
                 
@@ -105,15 +105,15 @@ const Expertise: React.FC = () => {
                 <ul className="space-y-2">
                   {area.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mr-3 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
 
                 {/* Learn More Link */}
-                <button className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:translate-x-2 transition-all duration-300">
-                  Learn More
+                <button className="inline-flex items-center text-brand-600 hover:text-brand-700 font-medium text-sm group-hover:translate-x-2 transition-all duration-300">
+                  {t('expertise.learnMore')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
               </div>
@@ -125,18 +125,17 @@ const Expertise: React.FC = () => {
         <div className="mt-16 text-center">
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif">
-              Need Legal Assistance?
+              {t('expertise.cta.title')}
             </h3>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Our experienced legal team is ready to help you navigate complex legal challenges 
-              and achieve the best possible outcomes.
+              {t('expertise.cta.text')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                Schedule Consultation
+                {t('expertise.cta.schedule')}
               </button>
               <button className="border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                Contact Our Team
+                {t('expertise.cta.contact')}
               </button>
             </div>
           </div>

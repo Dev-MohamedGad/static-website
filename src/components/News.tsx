@@ -1,7 +1,9 @@
 import React from 'react';
-import { Calendar, Clock, ArrowRight, Eye } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Eye } from '../icons';
+import { useLanguage } from '../context/LanguageContext';
 
 const News: React.FC = () => {
+  const { t } = useLanguage();
   const newsArticles = [
     {
       id: 1,
@@ -60,11 +62,10 @@ const News: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">
-            Latest News & Insights
+            {t('news.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay informed with the latest legal developments, industry insights, 
-            and expert analysis from our legal team.
+            {t('news.subtitle')}
           </p>
         </div>
 
@@ -72,8 +73,8 @@ const News: React.FC = () => {
         <div className="mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-gray-50 rounded-2xl p-8 lg:p-12">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-3 py-1 bg-yellow-600 text-white text-sm font-medium rounded-full">
-                Featured Article
+              <div className="inline-flex items-center px-3 py-1 bg-brand-600 text-white text-sm font-medium rounded-full">
+                {t('news.featured')}
               </div>
               
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 font-serif">
@@ -100,7 +101,7 @@ const News: React.FC = () => {
               </div>
               
               <button className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                Read Full Article
+                {t('news.readFull')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
             </div>
@@ -111,7 +112,7 @@ const News: React.FC = () => {
                 alt={newsArticles[0].title}
                 className="w-full h-80 object-cover rounded-xl shadow-lg"
               />
-              <div className="absolute top-4 left-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+              <div className="absolute top-4 left-4 bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                 {newsArticles[0].category}
               </div>
             </div>
@@ -132,14 +133,14 @@ const News: React.FC = () => {
                   alt={article.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute top-4 left-4 bg-yellow-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                <div className="absolute top-4 left-4 bg-brand-600 text-white px-2 py-1 rounded-full text-xs font-medium">
                   {article.category}
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6 space-y-4">
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors line-clamp-2">
+                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2">
                   {article.title}
                 </h3>
                 
@@ -164,8 +165,8 @@ const News: React.FC = () => {
                   </div>
                 </div>
                 
-                <button className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:translate-x-2 transition-all duration-300">
-                  Read More
+                <button className="inline-flex items-center text-brand-600 hover:text-brand-700 font-medium text-sm group-hover:translate-x-2 transition-all duration-300">
+                  {t('news.readMore')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
               </div>
@@ -176,21 +177,20 @@ const News: React.FC = () => {
         {/* Newsletter Signup */}
         <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white">
           <h3 className="text-3xl font-bold mb-4 font-serif">
-            Stay Updated with Legal Insights
+            {t('news.title')}
           </h3>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter and receive the latest legal updates, 
-            industry insights, and expert analysis directly in your inbox.
+            {t('news.subtitle')}
           </p>
           
           <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500"
             />
-            <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              Subscribe
+            <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              {t('news.readMore')}
             </button>
           </div>
           

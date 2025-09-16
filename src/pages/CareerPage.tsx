@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Clock, DollarSign, Users, Award, BookOpen, Coffee, Heart } from 'lucide-react';
+import { MapPin, Clock, DollarSign, Users, Award, BookOpen, Coffee, Heart } from '../icons';
 
 const CareerPage: React.FC = () => {
   const [selectedJob, setSelectedJob] = useState<number | null>(null);
@@ -158,7 +158,7 @@ const CareerPage: React.FC = () => {
             <ul className="space-y-2">
               {job.requirements.map((req, index) => (
                 <li key={index} className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-600">{req}</span>
                 </li>
               ))}
@@ -170,7 +170,7 @@ const CareerPage: React.FC = () => {
             <ul className="space-y-2">
               {job.responsibilities.map((resp, index) => (
                 <li key={index} className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-brand-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-gray-600">{resp}</span>
                 </li>
               ))}
@@ -199,7 +199,7 @@ const CareerPage: React.FC = () => {
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
             Build your legal career with a firm that values excellence, integrity, and professional growth.
           </p>
-          <div className="flex justify-center space-x-8 text-yellow-500">
+          <div className="flex justify-center space-x-8 text-brand-500">
             <div className="text-center">
               <div className="text-2xl font-bold">50+</div>
               <div className="text-sm text-gray-300">Legal Professionals</div>
@@ -232,7 +232,7 @@ const CareerPage: React.FC = () => {
                 key={index}
                 className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-xl flex items-center justify-center mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-brand-600 to-brand-700 rounded-xl flex items-center justify-center mb-6">
                   <benefit.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
@@ -263,7 +263,7 @@ const CareerPage: React.FC = () => {
                   <div className="flex-1 mb-4 lg:mb-0">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{job.title}</h3>
                     <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
-                      <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">{job.department}</span>
+                      <span className="bg-brand-100 text-brand-800 px-3 py-1 rounded-full">{job.department}</span>
                       <span className="flex items-center"><MapPin className="w-4 h-4 mr-1" />{job.location}</span>
                       <span className="flex items-center"><Clock className="w-4 h-4 mr-1" />{job.type}</span>
                       <span className="flex items-center"><DollarSign className="w-4 h-4 mr-1" />{job.salary}</span>
@@ -301,25 +301,25 @@ const CareerPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">1</div>
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">1</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Apply Online</h3>
               <p className="text-gray-600">Submit your application and resume through our career portal</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">2</div>
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">2</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Initial Review</h3>
               <p className="text-gray-600">Our HR team reviews your qualifications and experience</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">3</div>
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">3</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Interview</h3>
               <p className="text-gray-600">Interview with department leaders and team members</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">4</div>
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">4</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Welcome</h3>
               <p className="text-gray-600">Join our team and begin your career journey with us</p>
             </div>
@@ -335,7 +335,7 @@ const CareerPage: React.FC = () => {
             Don't see the perfect position? We're always interested in hearing from talented legal professionals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
               Send Resume
             </button>
             <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300">

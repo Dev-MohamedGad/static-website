@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Eye, Play, Image as ImageIcon, Video, FileText, Award } from 'lucide-react';
+import { Calendar, Eye, Play, ImageIcon, Video, FileText, Award } from '../icons';
 
 const MediaPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'news' | 'photos' | 'videos'>('news');
@@ -198,8 +198,8 @@ const MediaPage: React.FC = () => {
               onClick={() => setActiveTab('news')}
               className={`flex items-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 activeTab === 'news'
-                  ? 'bg-yellow-600 text-white'
-                  : 'text-gray-600 hover:text-yellow-600 hover:bg-gray-50'
+                  ? 'bg-brand-600 text-white'
+                  : 'text-gray-600 hover:text-brand-600 hover:bg-gray-50'
               }`}
             >
               <FileText className="w-5 h-5 mr-2" />
@@ -209,8 +209,8 @@ const MediaPage: React.FC = () => {
               onClick={() => setActiveTab('photos')}
               className={`flex items-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 activeTab === 'photos'
-                  ? 'bg-yellow-600 text-white'
-                  : 'text-gray-600 hover:text-yellow-600 hover:bg-gray-50'
+                  ? 'bg-brand-600 text-white'
+                  : 'text-gray-600 hover:text-brand-600 hover:bg-gray-50'
               }`}
             >
               <ImageIcon className="w-5 h-5 mr-2" />
@@ -220,8 +220,8 @@ const MediaPage: React.FC = () => {
               onClick={() => setActiveTab('videos')}
               className={`flex items-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 activeTab === 'videos'
-                  ? 'bg-yellow-600 text-white'
-                  : 'text-gray-600 hover:text-yellow-600 hover:bg-gray-50'
+                  ? 'bg-brand-600 text-white'
+                  : 'text-gray-600 hover:text-brand-600 hover:bg-gray-50'
               }`}
             >
               <Video className="w-5 h-5 mr-2" />
@@ -252,7 +252,7 @@ const MediaPage: React.FC = () => {
                   </div>
                   <div className="p-8 lg:p-12 flex flex-col justify-center">
                     <div className="mb-4">
-                      <span className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="inline-block bg-brand-100 text-brand-800 px-3 py-1 rounded-full text-sm font-medium">
                         {newsHighlights[0].category}
                       </span>
                     </div>
@@ -295,7 +295,7 @@ const MediaPage: React.FC = () => {
                         alt={news.title}
                         className="w-full h-48 object-cover"
                       />
-                      <div className="absolute top-4 left-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <div className="absolute top-4 left-4 bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                         {news.category}
                       </div>
                     </div>
@@ -316,7 +316,7 @@ const MediaPage: React.FC = () => {
                           {news.views} views
                         </div>
                       </div>
-                      <button className="text-yellow-600 hover:text-yellow-700 font-medium text-sm">
+                      <button className="text-brand-600 hover:text-brand-700 font-medium text-sm">
                         Read More →
                       </button>
                     </div>
@@ -358,7 +358,7 @@ const MediaPage: React.FC = () => {
                         </button>
                       </div>
                     </div>
-                    <div className="absolute top-4 left-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="absolute top-4 left-4 bg-brand-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {photo.category}
                     </div>
                   </div>
@@ -401,7 +401,7 @@ const MediaPage: React.FC = () => {
                       className="w-full h-48 object-cover"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-50 transition-all duration-300">
-                      <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 cursor-pointer">
+                      <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 cursor-pointer">
                         <Play className="w-8 h-8 text-white ml-1" />
                       </div>
                     </div>
@@ -438,7 +438,7 @@ const MediaPage: React.FC = () => {
             For press inquiries, interview requests, or media partnerships, please contact our communications team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
               Contact Media Team
             </button>
             <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300">

@@ -56,9 +56,9 @@ const Clients: React.FC = () => {
           {clients.map((client, index) => (
             <div
               key={index}
-              className="group flex items-center justify-center p-6 bg-white rounded-xl border border-gray-200 hover:border-yellow-600/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+              className="group flex items-center justify-center p-6 bg-white rounded-xl border border-gray-200 hover:border-brand-600/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center group-hover:from-yellow-600 group-hover:to-yellow-700 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center group-hover:from-brand-600 group-hover:to-brand-700 transition-all duration-300">
                 <span className="text-white font-bold text-lg">{client.logo}</span>
               </div>
             </div>
@@ -80,11 +80,11 @@ const Clients: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-yellow-600/20"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-brand-600/20"
               >
                 {/* Quote */}
                 <div className="mb-6">
-                  <svg className="w-8 h-8 text-yellow-600 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-brand-600 mb-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                   </svg>
                   <p className="text-gray-700 text-lg leading-relaxed italic">
@@ -94,7 +94,7 @@ const Clients: React.FC = () => {
 
                 {/* Author */}
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
                     {testimonial.avatar}
                   </div>
                   <div>
@@ -118,7 +118,7 @@ const Clients: React.FC = () => {
               for your business or personal legal matters.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Become a Client
               </button>
               <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
