@@ -1,29 +1,14 @@
 import React from 'react';
-import { Users, Award, Scale, Target, Heart, Lightbulb } from '../icons';
+import { Users, Award, Scale } from '../icons';
+import CompanyProfile from '../components/CompanyProfile';
+import MissionVision from '../components/MissionVision';
+import ServicesOverview from '../components/ServicesOverview';
+import PracticeAreas from '../components/PracticeAreas';
+import { useLanguage } from '../context/LanguageContext';
+import TranslationServices from '../components/TranslationServices';
 
 const AboutPage: React.FC = () => {
-  const values = [
-    {
-      icon: Scale,
-      title: 'Integrity',
-      description: 'We prioritize integrity, efficiency, and responsiveness in all our dealings, maintaining the highest ethical standards.'
-    },
-    {
-      icon: Target,
-      title: 'Excellence',
-      description: 'We are committed to exceeding client expectations by providing transparent, determined, and credible legal services.'
-    },
-    {
-      icon: Heart,
-      title: 'Client-Focused',
-      description: 'We are deeply committed to our clients, driven by a thorough understanding of both local and international laws.'
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovation',
-      description: 'We employ innovative methods to keep pace with the evolving governmental and legal landscape.'
-    }
-  ];
+  const { t } = useLanguage();
 
   const team = [
     {
@@ -66,92 +51,49 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">About Shehab & El Awamy</h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            An Egyptian law firm delivering innovative legal solutions with integrity and professional excellence.
+      {/* Modern Hero Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 text-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-600/10 via-transparent to-accent-600/10"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 font-serif">
+              <span className="bg-gradient-to-r from-brand-300 to-accent-300 bg-clip-text text-transparent">
+                {t('about.profile.title')}
+              </span>
+            </h1>
+            <div className="w-32 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full"></div>
+          </div>
+          <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
+            {t('about.description')}
           </p>
         </div>
       </section>
 
-      {/* Who We Are */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Who We Are</h2>
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Shehab & El Awamy is an Egyptian law firm that brings together highly qualified legal 
-                  professionals with diverse local and international backgrounds. Founded to provide both 
-                  legal services and consultancy, we employ innovative methods to keep pace with the evolving 
-                  governmental and legal landscape.
-                </p>
-                <p>
-                  We serve clients across multiple sectors, including Sports, Construction, Energy, Banking, 
-                  Oil and Gas, Heavy Industries, Hospitals, Information Technology, Communications, 
-                  Pharmaceuticals, Media, and Transportation. Our firm operates through specialized teams 
-                  covering various areas of legal practice, allowing us to deliver high-quality, reliable, 
-                  and efficient legal services.
-                </p>
-                <p>
-                  The success of Shehab & El Awamy is driven by the experience, dedication, and strong 
-                  relationships of our team members with key judicial, administrative, and organizational 
-                  authorities in Egypt. We are committed to delivering swift, strategic business solutions 
-                  while building lasting relationships with our clients.
-                </p>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Law firm office"
-                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-              />
-              <div className="absolute -bottom-8 -left-8 bg-brand-600 text-white p-6 rounded-2xl shadow-xl">
-                <div className="text-3xl font-bold">25+</div>
-                <div className="text-sm">Years of Excellence</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Company Profile (long content) */}
+      <CompanyProfile />
 
-      {/* Our Values */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Our Values</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide every decision we make and every service we provide.
-            </p>
-          </div>
+      {/* Mission & Vision */}
+      <MissionVision />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-brand-600 to-brand-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Services Overview */}
+      <ServicesOverview />
+
+      {/* Practice Areas */}
+      <PracticeAreas />
+
+      {/* Transpedia - Certified Translation Services */}
+      <TranslationServices />
 
       {/* Our Team */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Our Team</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('page.ourTeam')}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Meet our experienced attorneys who bring decades of combined expertise to serve our clients.
             </p>
@@ -191,7 +133,7 @@ const AboutPage: React.FC = () => {
       <section className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 font-serif">Awards & Recognition</h2>
+            <h2 className="text-4xl font-bold mb-6 font-serif">{t('page.awardsRecognition')}</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Our commitment to excellence has been recognized by leading legal organizations.
             </p>
@@ -200,20 +142,20 @@ const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-8 bg-white/10 rounded-2xl">
               <Award className="w-12 h-12 text-brand-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Best Law Firm 2023</h3>
-              <p className="text-gray-300">Legal Excellence Awards</p>
+              <h3 className="text-xl font-bold mb-2">{t('page.bestLawFirm2023')}</h3>
+              <p className="text-gray-300">{t('page.legalExcellenceAwards')}</p>
             </div>
             
             <div className="text-center p-8 bg-white/10 rounded-2xl">
               <Users className="w-12 h-12 text-brand-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Top 50 Law Firms</h3>
-              <p className="text-gray-300">National Legal Directory</p>
+              <h3 className="text-xl font-bold mb-2">{t('page.top50LawFirms')}</h3>
+              <p className="text-gray-300">{t('page.nationalLegalDirectory')}</p>
             </div>
             
             <div className="text-center p-8 bg-white/10 rounded-2xl">
               <Scale className="w-12 h-12 text-brand-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Excellence in Corporate Law</h3>
-              <p className="text-gray-300">Business Law Journal</p>
+              <h3 className="text-xl font-bold mb-2">{t('page.excellenceCorporateLaw')}</h3>
+              <p className="text-gray-300">{t('page.businessLawJournal')}</p>
             </div>
           </div>
         </div>

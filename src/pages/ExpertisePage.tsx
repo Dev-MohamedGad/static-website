@@ -11,8 +11,10 @@ import {
   ArrowRight,
   CheckCircle
 } from '../icons';
+import { useLanguage } from '../context/LanguageContext';
 
 const ExpertisePage: React.FC = () => {
+  const { t } = useLanguage();
   const practiceAreas = [
     {
       icon: Gavel,
@@ -289,7 +291,7 @@ const ExpertisePage: React.FC = () => {
                 <span className="text-white font-bold text-xl">1</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Consultation</h3>
-              <p className="text-gray-600">Schedule a free initial consultation to discuss your legal needs</p>
+              <p className="text-gray-600">{t('common.consultationDesc')}</p>
             </div>
             
             <div className="text-center">
@@ -311,7 +313,7 @@ const ExpertisePage: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              Schedule Consultation
+              {t('common.scheduleConsultation')}
             </button>
             <button className="border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
               Contact Our Team

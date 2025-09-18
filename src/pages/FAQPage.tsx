@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Search, HelpCircle, Phone, Mail, MessageCircle } from '../icons';
+import { useLanguage } from '../context/LanguageContext';
 
 const FAQPage: React.FC = () => {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('General');
   const [expandedQuestion, setExpandedQuestion] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -172,7 +174,7 @@ const FAQPage: React.FC = () => {
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
             <input
               type="text"
-              placeholder="Search frequently asked questions..."
+              placeholder={t('form.searchFAQ')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-transparent shadow-lg"
@@ -310,7 +312,7 @@ const FAQPage: React.FC = () => {
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <MessageCircle className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Schedule Consultation</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('common.scheduleConsultation')}</h3>
               <p className="text-gray-600 mb-6">Book a personalized meeting</p>
               <button className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Book Meeting

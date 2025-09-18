@@ -1,6 +1,8 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Clients: React.FC = () => {
+  const { t } = useLanguage();
   const clients = [
     { name: 'Global Corp', logo: 'GC' },
     { name: 'Tech Solutions', logo: 'TS' },
@@ -18,61 +20,37 @@ const Clients: React.FC = () => {
 
   const testimonials = [
     {
-      quote: "Shehab Law Firm provided exceptional legal guidance during our merger. Their expertise and dedication were instrumental in achieving a successful outcome.",
-      author: "Sarah Johnson",
-      position: "CEO, Global Corp",
+      quote: t('testimonials.quote1'),
+      author: t('testimonials.author1'),
+      position: t('testimonials.position1'),
+      avatar: "DR"
+    },
+    {
+      quote: t('testimonials.quote2'),
+      author: t('testimonials.author2'),
+      position: t('testimonials.position2'),
       avatar: "SJ"
     },
     {
-      quote: "The team's deep understanding of corporate law and their strategic approach helped us navigate complex regulatory challenges with confidence.",
-      author: "Michael Chen",
-      position: "General Counsel, Tech Solutions",
+      quote: t('testimonials.quote3'),
+      author: t('testimonials.author3'),
+      position: t('testimonials.position3'),
       avatar: "MC"
-    },
-    {
-      quote: "Outstanding service and results. They truly understand our business needs and provide practical, effective legal solutions.",
-      author: "David Rodriguez",
-      position: "CFO, Financial Partners",
-      avatar: "DR"
     }
   ];
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">
-            Trusted by Leading Companies
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're proud to serve a diverse portfolio of clients across industries, 
-            from startups to Fortune 500 companies.
-          </p>
-        </div>
-
-        {/* Client Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8 mb-20">
-          {clients.map((client, index) => (
-            <div
-              key={index}
-              className="group flex items-center justify-center p-6 bg-white rounded-xl border border-gray-200 hover:border-brand-600/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center group-hover:from-brand-600 group-hover:to-brand-700 transition-all duration-300">
-                <span className="text-white font-bold text-lg">{client.logo}</span>
-              </div>
-            </div>
-          ))}
-        </div>
 
         {/* Testimonials */}
         <div className="space-y-8">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif">
-              What Our Clients Say
+              {t('testimonials.title')}
             </h3>
             <p className="text-lg text-gray-600">
-              Don't just take our word for it - hear from our satisfied clients
+              {t('testimonials.subtitle')}
             </p>
           </div>
 
@@ -111,18 +89,17 @@ const Clients: React.FC = () => {
         <div className="mt-16 text-center">
           <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-white">
             <h3 className="text-3xl font-bold mb-4 font-serif">
-              Join Our Satisfied Clients
+              {t('cta.joinClients')}
             </h3>
             <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-              Experience the difference that professional legal representation can make 
-              for your business or personal legal matters.
+              {t('cta.joinClientsDesc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                Become a Client
+                {t('clients.cta.become')}
               </button>
               <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                View Case Studies
+                {t('clients.cta.studies')}
               </button>
             </div>
           </div>

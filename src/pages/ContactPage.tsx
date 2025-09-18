@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Globe, Calendar } from '../icons';
+import { useLanguage } from '../context/LanguageContext';
 
 const ContactPage: React.FC = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,7 +41,7 @@ const ContactPage: React.FC = () => {
 
   const offices = [
     {
-      name: 'Main Office',
+      name: t('office.main'),
       address: '123 Business District\nLegal Plaza, Suite 500\nNew York, NY 10005',
       phone: '+1 (234) 567-8900',
       fax: '+1 (234) 567-8901',
@@ -49,7 +51,7 @@ const ContactPage: React.FC = () => {
       publicTransit: 'Subway: 4, 5, 6 to Wall St'
     },
     {
-      name: 'Downtown Branch',
+      name: t('office.downtown'),
       address: '456 Corporate Center\nTower B, Floor 15\nNew York, NY 10006',
       phone: '+1 (234) 567-8901',
       fax: '+1 (234) 567-8902',
@@ -61,9 +63,9 @@ const ContactPage: React.FC = () => {
   ];
 
   const quickLinks = [
-    { title: 'Schedule Consultation', description: 'Book a meeting with our legal experts', action: 'Schedule Now' },
-    { title: 'Emergency Legal Help', description: '24/7 urgent legal assistance', action: 'Call Emergency Line' },
-    { title: 'Client Portal', description: 'Access your case information and documents', action: 'Login to Portal' },
+    { title: t('common.scheduleConsultation'), description: t('common.bookMeeting'), action: t('common.scheduleNow') },
+    { title: t('common.emergencyHelp'), description: t('common.emergencyDesc'), action: t('common.callEmergency') },
+    { title: t('common.clientPortal'), description: t('common.clientPortalDesc'), action: t('common.loginPortal') },
     { title: 'Payment Options', description: 'View billing and make payments online', action: 'Manage Billing' }
   ];
 
@@ -72,22 +74,22 @@ const ContactPage: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">Contact Us</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">{t('contact.contactUs')}</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
             Ready to discuss your legal needs? Our experienced team is here to help you navigate complex legal challenges.
           </p>
           <div className="flex justify-center space-x-8 text-brand-500">
             <div className="text-center">
               <div className="text-2xl font-bold">24/7</div>
-              <div className="text-sm text-gray-300">Emergency Support</div>
+              <div className="text-sm text-gray-300">{t('contact.emergencySupport')}</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">Free</div>
-              <div className="text-sm text-gray-300">Initial Consultation</div>
+              <div className="text-2xl font-bold">{t('contact.free')}</div>
+              <div className="text-sm text-gray-300">{t('contact.initialConsultation')}</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">Same Day</div>
-              <div className="text-sm text-gray-300">Response Guarantee</div>
+              <div className="text-2xl font-bold">{t('contact.sameDay')}</div>
+              <div className="text-sm text-gray-300">{t('contact.responseGuarantee')}</div>
             </div>
           </div>
         </div>
@@ -154,7 +156,7 @@ const ContactPage: React.FC = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
-                        placeholder="John Smith"
+                        placeholder={t('form.placeholder.johnSmith')}
                       />
                     </div>
                     
@@ -170,7 +172,7 @@ const ContactPage: React.FC = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
-                        placeholder="john@example.com"
+                        placeholder={t('form.placeholder.johnExample')}
                       />
                     </div>
                   </div>
@@ -187,7 +189,7 @@ const ContactPage: React.FC = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
-                        placeholder="+1 (234) 567-8900"
+                        placeholder={t('form.placeholder.phoneNumber')}
                       />
                     </div>
                     
@@ -202,7 +204,7 @@ const ContactPage: React.FC = () => {
                         value={formData.company}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
-                        placeholder="Company Name"
+                        placeholder={t('form.placeholder.companyName')}
                       />
                     </div>
                   </div>
@@ -219,7 +221,7 @@ const ContactPage: React.FC = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Brief description of your legal matter"
+                      placeholder={t('form.placeholder.briefDescription')}
                     />
                   </div>
 
@@ -235,9 +237,9 @@ const ContactPage: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                       >
-                        <option value="Normal">Normal</option>
-                        <option value="Urgent">Urgent (within 48 hours)</option>
-                        <option value="Emergency">Emergency (same day)</option>
+                        <option value="Normal">{t('form.priority.normal')}</option>
+                        <option value="Urgent">{t('form.priority.urgent')}</option>
+                        <option value="Emergency">{t('form.priority.emergency')}</option>
                       </select>
                     </div>
                     
@@ -252,9 +254,9 @@ const ContactPage: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
                       >
-                        <option value="Email">Email</option>
-                        <option value="Phone">Phone</option>
-                        <option value="Text">Text Message</option>
+                        <option value="Email">{t('form.contact.email')}</option>
+                        <option value="Phone">{t('form.contact.phone')}</option>
+                        <option value="Text">{t('form.contact.text')}</option>
                       </select>
                     </div>
                   </div>
@@ -271,7 +273,7 @@ const ContactPage: React.FC = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 resize-none"
-                      placeholder="Please describe your legal matter in detail, including any relevant dates, parties involved, and specific questions you have..."
+                      placeholder={t('form.placeholder.detailedDescription')}
                     ></textarea>
                   </div>
 
@@ -386,10 +388,10 @@ const ContactPage: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                  Get Directions to Main Office
+                  {t('office.directions.main')}
                 </button>
                 <button className="border border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                  Get Directions to Downtown Branch
+                  {t('office.directions.downtown')}
                 </button>
               </div>
             </div>
@@ -415,7 +417,7 @@ const ContactPage: React.FC = () => {
                 Use our online calendar to schedule consultations at your convenience.
               </p>
               <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                Schedule Online
+                {t('common.scheduleOnline')}
               </button>
             </div>
 

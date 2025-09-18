@@ -7,42 +7,42 @@ const News: React.FC = () => {
   const newsArticles = [
     {
       id: 1,
-      title: 'New Corporate Governance Regulations: What Businesses Need to Know',
-      excerpt: 'Recent changes in corporate governance laws require immediate attention from business leaders. Our analysis of the key implications and compliance requirements.',
+      title: t('news.article1.title'),
+      excerpt: t('news.article1.desc'),
       image: 'https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&w=600',
       date: '2024-01-15',
-      readTime: '5 min read',
-      category: 'Corporate Law',
+      readTime: `5 ${t('news.readTime')}`,
+      category: t('news.categories.corporate'),
       views: '1.2k'
     },
     {
       id: 2,
-      title: 'Intellectual Property Protection in the Digital Age',
-      excerpt: 'As technology evolves, so do the challenges of protecting intellectual property. Learn about the latest strategies and legal frameworks.',
+      title: t('news.article4.title'),
+      excerpt: t('news.article4.desc'),
       image: 'https://images.pexels.com/photos/5669602/pexels-photo-5669602.jpeg?auto=compress&cs=tinysrgb&w=600',
       date: '2024-01-10',
-      readTime: '7 min read',
-      category: 'IP Law',
+      readTime: `7 ${t('news.readTime')}`,
+      category: t('news.categories.ip'),
       views: '890'
     },
     {
       id: 3,
-      title: 'Employment Law Updates: Remote Work Policies and Compliance',
-      excerpt: 'The shift to remote work has created new legal considerations for employers. Our comprehensive guide to updating your employment policies.',
+      title: t('news.article3.title'),
+      excerpt: t('news.article3.desc'),
       image: 'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=600',
       date: '2024-01-05',
-      readTime: '6 min read',
-      category: 'Employment Law',
+      readTime: `6 ${t('news.readTime')}`,
+      category: t('news.categories.employment'),
       views: '2.1k'
     },
     {
       id: 4,
-      title: 'Real Estate Market Trends and Legal Implications',
-      excerpt: 'Current market dynamics are creating new opportunities and challenges in real estate law. Expert insights on navigating these changes.',
+      title: t('news.article2.title'),
+      excerpt: t('news.article2.desc'),
       image: 'https://images.pexels.com/photos/5669619/pexels-photo-5669619.jpeg?auto=compress&cs=tinysrgb&w=600',
       date: '2024-01-02',
-      readTime: '4 min read',
-      category: 'Real Estate',
+      readTime: `4 ${t('news.readTime')}`,
+      category: t('news.categories.realestate'),
       views: '750'
     }
   ];
@@ -96,7 +96,7 @@ const News: React.FC = () => {
                 </div>
                 <div className="flex items-center">
                   <Eye className="w-4 h-4 mr-2" />
-                  {newsArticles[0].views} views
+                  {newsArticles[0].views} {t('news.views')}
                 </div>
               </div>
               
@@ -186,16 +186,16 @@ const News: React.FC = () => {
           <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder={t('news.newsletter.placeholder')}
               className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500"
             />
             <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              {t('news.readMore')}
+              {t('news.newsletter.subscribe')}
             </button>
           </div>
           
           <p className="text-sm text-gray-400 mt-4">
-            No spam, unsubscribe at any time. Privacy policy applies.
+            {t('news.newsletter.disclaimer')}
           </p>
         </div>
       </div>

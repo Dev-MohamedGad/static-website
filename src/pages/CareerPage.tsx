@@ -1,51 +1,53 @@
 import React, { useState } from 'react';
 import { MapPin, Clock, DollarSign, Users, Award, BookOpen, Coffee, Heart } from '../icons';
+import { useLanguage } from '../context/LanguageContext';
 
 const CareerPage: React.FC = () => {
+  const { t } = useLanguage();
   const [selectedJob, setSelectedJob] = useState<number | null>(null);
 
   const benefits = [
     {
       icon: DollarSign,
-      title: 'Competitive Compensation',
-      description: 'Market-leading salaries with performance-based bonuses and comprehensive benefits package.'
+      title: t('career.benefits.compensation.title'),
+      description: t('career.benefits.compensation.desc')
     },
     {
       icon: BookOpen,
-      title: 'Professional Development',
-      description: 'Continuous learning opportunities, CLE credits, conference attendance, and career advancement programs.'
+      title: t('career.benefits.development.title'),
+      description: t('career.benefits.development.desc')
     },
     {
       icon: Users,
-      title: 'Collaborative Environment',
-      description: 'Work alongside experienced attorneys in a supportive, team-oriented culture that values diverse perspectives.'
+      title: t('career.benefits.collaborative.title'),
+      description: t('career.benefits.collaborative.desc')
     },
     {
       icon: Coffee,
-      title: 'Work-Life Balance',
-      description: 'Flexible work arrangements, generous PTO, and wellness programs to support your personal and professional well-being.'
+      title: t('career.benefits.balance.title'),
+      description: t('career.benefits.balance.desc')
     },
     {
       icon: Award,
-      title: 'Recognition & Growth',
-      description: 'Clear partnership track, merit-based promotions, and recognition programs that reward excellence and innovation.'
+      title: t('career.benefits.recognition.title'),
+      description: t('career.benefits.recognition.desc')
     },
     {
       icon: Heart,
-      title: 'Health & Wellness',
-      description: 'Comprehensive health insurance, dental, vision, 401(k) matching, and wellness stipends.'
+      title: t('career.benefits.health.title'),
+      description: t('career.benefits.health.desc')
     }
   ];
 
   const openPositions = [
     {
-      title: 'Senior Associate - Corporate Law',
-      department: 'Corporate & Commercial',
-      location: 'New York, NY',
-      type: 'Full-time',
+      title: t('career.job1.title'),
+      department: t('career.job1.department'),
+      location: t('career.job1.location'),
+      type: t('career.job1.type'),
       experience: '5-8 years',
-      salary: '$180,000 - $250,000',
-      description: 'We are seeking a senior associate to join our growing corporate practice. The ideal candidate will have extensive experience in M&A transactions, corporate governance, and securities law.',
+      salary: t('career.job1.salary'),
+      description: t('career.job1.desc'),
       requirements: [
         'J.D. from top-tier law school',
         '5-8 years of corporate law experience at a major law firm',
@@ -62,13 +64,13 @@ const CareerPage: React.FC = () => {
       ]
     },
     {
-      title: 'Associate - Litigation',
-      department: 'Dispute Resolution',
-      location: 'New York, NY',
-      type: 'Full-time',
+      title: t('career.job2.title'),
+      department: t('career.job2.department'),
+      location: t('career.job2.location'),
+      type: t('career.job2.type'),
       experience: '3-5 years',
-      salary: '$160,000 - $200,000',
-      description: 'Join our award-winning litigation team representing clients in complex commercial disputes, white-collar matters, and regulatory investigations.',
+      salary: t('career.job2.salary'),
+      description: t('career.job2.desc'),
       requirements: [
         'J.D. from accredited law school with excellent academic credentials',
         '3-5 years of litigation experience at a reputable law firm',
@@ -85,13 +87,13 @@ const CareerPage: React.FC = () => {
       ]
     },
     {
-      title: 'Junior Associate - Real Estate',
-      department: 'Real Estate',
-      location: 'New York, NY',
-      type: 'Full-time',
+      title: t('career.job3.title'),
+      department: t('career.job3.department'),
+      location: t('career.job3.location'),
+      type: t('career.job3.type'),
       experience: '1-3 years',
-      salary: '$140,000 - $170,000',
-      description: 'Excellent opportunity for a junior associate to join our dynamic real estate practice representing developers, investors, and financial institutions.',
+      salary: t('career.job3.salary'),
+      description: t('career.job3.desc'),
       requirements: [
         'J.D. from accredited law school',
         '1-3 years of real estate or corporate law experience',
@@ -108,13 +110,13 @@ const CareerPage: React.FC = () => {
       ]
     },
     {
-      title: 'Paralegal - Corporate Department',
-      department: 'Corporate & Commercial',
-      location: 'New York, NY',
-      type: 'Full-time',
+      title: t('career.job4.title'),
+      department: t('career.job4.department'),
+      location: t('career.job4.location'),
+      type: t('career.job4.type'),
       experience: '2-4 years',
-      salary: '$70,000 - $85,000',
-      description: 'We are looking for an experienced paralegal to support our corporate practice with entity formations, corporate governance, and transactional matters.',
+      salary: t('career.job4.salary'),
+      description: t('career.job4.desc'),
       requirements: [
         'Paralegal certificate or equivalent experience',
         '2-4 years of corporate law paralegal experience',
@@ -195,22 +197,22 @@ const CareerPage: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">Join Our Team</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">{t('career.title')}</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Build your legal career with a firm that values excellence, integrity, and professional growth.
+            {t('career.subtitle')}
           </p>
           <div className="flex justify-center space-x-8 text-brand-500">
             <div className="text-center">
               <div className="text-2xl font-bold">50+</div>
-              <div className="text-sm text-gray-300">Legal Professionals</div>
+              <div className="text-sm text-gray-300">{t('career.stats.professionals')}</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold">25</div>
-              <div className="text-sm text-gray-300">Years in Business</div>
+              <div className="text-sm text-gray-300">{t('career.stats.years')}</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold">95%</div>
-              <div className="text-sm text-gray-300">Employee Satisfaction</div>
+              <div className="text-sm text-gray-300">{t('career.stats.satisfaction')}</div>
             </div>
           </div>
         </div>
@@ -220,9 +222,9 @@ const CareerPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Why Choose Shehab Law Firm</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('career.whyChoose.title')}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're committed to creating an environment where legal professionals can thrive, grow, and make a meaningful impact.
+              {t('career.whyChoose.desc')}
             </p>
           </div>
 
@@ -247,9 +249,9 @@ const CareerPage: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Current Opportunities</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('career.opportunities.title')}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our current openings and find the perfect opportunity to advance your legal career.
+              {t('career.opportunities.desc')}
             </p>
           </div>
 
@@ -276,10 +278,10 @@ const CareerPage: React.FC = () => {
                       onClick={() => setSelectedJob(index)}
                       className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
                     >
-                      View Details
+                      {t('career.viewDetails')}
                     </button>
                     <button className="border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                      Quick Apply
+                      {t('career.quickApply')}
                     </button>
                   </div>
                 </div>
@@ -293,35 +295,35 @@ const CareerPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Application Process</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('career.process.title')}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our streamlined application process is designed to identify the best candidates while respecting your time.
+              {t('career.process.desc')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">1</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Apply Online</h3>
-              <p className="text-gray-600">Submit your application and resume through our career portal</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('career.process.step1.title')}</h3>
+              <p className="text-gray-600">{t('career.process.step1.desc')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">2</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Initial Review</h3>
-              <p className="text-gray-600">Our HR team reviews your qualifications and experience</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('career.process.step2.title')}</h3>
+              <p className="text-gray-600">{t('career.process.step2.desc')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">3</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Interview</h3>
-              <p className="text-gray-600">Interview with department leaders and team members</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('career.process.step3.title')}</h3>
+              <p className="text-gray-600">{t('career.process.step3.desc')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">4</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Welcome</h3>
-              <p className="text-gray-600">Join our team and begin your career journey with us</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('career.process.step4.title')}</h3>
+              <p className="text-gray-600">{t('career.process.step4.desc')}</p>
             </div>
           </div>
         </div>
@@ -330,16 +332,16 @@ const CareerPage: React.FC = () => {
       {/* CTA Section */}
       <section className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6 font-serif">Ready to Start Your Career with Us?</h2>
+          <h2 className="text-4xl font-bold mb-6 font-serif">{t('career.cta.title')}</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Don't see the perfect position? We're always interested in hearing from talented legal professionals.
+            {t('career.cta.desc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              Send Resume
+              {t('career.cta.sendResume')}
             </button>
             <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-              Contact HR
+              {t('career.cta.contactHR')}
             </button>
           </div>
         </div>

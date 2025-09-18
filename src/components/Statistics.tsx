@@ -56,25 +56,25 @@ const Statistics: React.FC = () => {
       number: 25,
       suffix: '+',
       label: t('stats.years'),
-      description: 'Providing exceptional legal services'
+      description: t('track.services')
     },
     {
       number: 1500,
       suffix: '+',
       label: t('stats.contracts'),
-      description: 'Successfully negotiated and executed'
+      description: t('track.negotiations')
     },
     {
       number: 500,
       suffix: '+',
       label: t('stats.cases'),
-      description: 'Favorable outcomes for our clients'
+      description: t('track.outcomes')
     },
     {
       number: 1200,
       suffix: '+',
       label: t('stats.clients'),
-      description: 'Satisfied clients across industries'
+      description: t('track.clients')
     }
   ];
 
@@ -88,10 +88,10 @@ const Statistics: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
-            Our Track Record
+            {t('track.title')}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Numbers that reflect our commitment to excellence and client success
+            {t('track.subtitle')}
           </p>
         </div>
 
@@ -126,22 +126,6 @@ const Statistics: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Ready to Join Our Success Stories?
-              </h3>
-              <p className="text-gray-300">
-                Let us help you achieve your legal objectives with our proven expertise.
-              </p>
-            </div>
-            <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
-              Start Your Case
-            </button>
-          </div>
-        </div>
       </div>
 
       {/* Decorative Elements */}

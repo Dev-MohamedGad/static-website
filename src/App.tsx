@@ -1,30 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ExpertisePage from './pages/ExpertisePage';
-import ClientsPage from './pages/ClientsPage';
-import CareerPage from './pages/CareerPage';
-import MediaPage from './pages/MediaPage';
-import LibraryPage from './pages/LibraryPage';
-import FAQPage from './pages/FAQPage';
-import ContactPage from './pages/ContactPage';
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
+
+// Lazy load pages for better performance
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ExpertisePage = lazy(() => import('./pages/ExpertisePage'));
+const ClientsPage = lazy(() => import('./pages/ClientsPage'));
+const CareerPage = lazy(() => import('./pages/CareerPage'));
+const MediaPage = lazy(() => import('./pages/MediaPage'));
+const LibraryPage = lazy(() => import('./pages/LibraryPage'));
+const FAQPage = lazy(() => import('./pages/FAQPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+
+// Loading spinner component (without translations for initial load)
+const LoadingSpinner = () => (
+  <div className="min-h-screen bg-gradient-to-br from-brand-50 to-white flex items-center justify-center">
+    <div className="text-center">
+      <div className="relative">
+        <div className="w-16 h-16 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto mb-6"></div>
+        <div className="w-12 h-12 border-4 border-accent-200 border-t-accent-500 rounded-full animate-spin absolute top-2 left-1/2 transform -translate-x-1/2"></div>
+      </div>
+      <div className="space-y-2">
+        <p className="text-brand-800 text-lg font-medium">Loading...</p>
+        <p className="text-brand-600 text-sm">Preparing your experience</p>
+      </div>
+    </div>
+  </div>
+);
+
+// Page transition loading
+const PageLoading = () => {
+  const { t } = useLanguage();
+  return (
+    <div className="min-h-[400px] flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-8 h-8 border-2 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-brand-600 text-sm">{t('common.loadingPage')}</p>
+      </div>
+    </div>
+  );
+};
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
+  const [isPageTransitioning, setIsPageTransitioning] = useState(false);
 
   useEffect(() => {
-    // Simulate initial loading
-    const timer = setTimeout(() => setIsLoading(false), 1000);
+    // Initial app loading
+    const timer = setTimeout(() => setIsInitialLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
-    // Smooth scroll to top when page changes
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Page transition handling
+    setIsPageTransitioning(true);
+    const timer = setTimeout(() => {
+      setIsPageTransitioning(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 200);
+    return () => clearTimeout(timer);
   }, [currentPage]);
 
   const renderPage = () => {
@@ -52,23 +89,20 @@ function App() {
     }
   };
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-brand-600 mx-auto mb-4"></div>
-          <p className="text-white text-lg">Loading...</p>
-        </div>
-      </div>
-    );
+  if (isInitialLoading) {
+    return <LoadingSpinner />;
   }
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gradient-to-br from-brand-50 via-white to-brand-50">
         <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
         <main className="pt-20">
-          {renderPage()}
+          <Suspense fallback={<PageLoading />}>
+            <div className={`transition-opacity duration-300 ${isPageTransitioning ? 'opacity-50' : 'opacity-100'}`}>
+              {renderPage()}
+            </div>
+          </Suspense>
         </main>
         <Footer setCurrentPage={setCurrentPage} />
       </div>

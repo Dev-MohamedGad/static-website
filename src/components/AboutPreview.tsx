@@ -8,18 +8,18 @@ const AboutPreview: React.FC = () => {
   const features = [
     {
       icon: Scale,
-      title: 'Legal Excellence',
-      description: 'Committed to delivering the highest standard of legal services with integrity and professionalism.'
+      title: t('about.feature1.title'),
+      description: t('about.feature1.desc')
     },
     {
       icon: Users,
-      title: 'Client-Centered Approach',
-      description: 'We put our clients first, understanding their unique needs and providing tailored solutions.'
+      title: t('about.feature2.title'),
+      description: t('about.feature2.desc')
     },
     {
       icon: Award,
-      title: 'Proven Track Record',
-      description: 'Decades of successful cases and satisfied clients across various legal practice areas.'
+      title: t('about.feature3.title'),
+      description: t('about.feature3.desc')
     }
   ];
 

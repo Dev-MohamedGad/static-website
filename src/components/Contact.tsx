@@ -29,14 +29,14 @@ const Contact: React.FC = () => {
 
   const officeLocations = [
     {
-      name: 'Main Office',
+      name: t('office.main'),
       address: '123 Business District\nLegal Plaza, Suite 500\nCity, State 12345',
       phone: '+1 (234) 567-8900',
       email: 'info@shehablaw.com',
       hours: 'Mon-Fri: 9:00 AM - 6:00 PM\nSat: 10:00 AM - 4:00 PM'
     },
     {
-      name: 'Downtown Branch',
+      name: t('office.downtown'),
       address: '456 Corporate Center\nTower B, Floor 15\nCity, State 12346',
       phone: '+1 (234) 567-8901',
       email: 'downtown@shehablaw.com',
@@ -68,8 +68,8 @@ const Contact: React.FC = () => {
               {isSubmitted ? (
                 <div className="text-center py-12">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h4>
-                  <p className="text-gray-600">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">{t('page.messageSent')}</h4>
+                  <p className="text-gray-600">{t('page.messageSentThankYou')}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
-                        placeholder="Your full name"
+                        placeholder={t('form.placeholder.fullName')}
                       />
                     </div>
                     
@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
-                        placeholder="your@email.com"
+                        placeholder={t('form.placeholder.johnExample')}
                       />
                     </div>
                   </div>
@@ -118,7 +118,7 @@ const Contact: React.FC = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200"
-                      placeholder="+1 (234) 567-8900"
+                      placeholder={t('form.placeholder.phoneNumber')}
                     />
                   </div>
 
@@ -134,7 +134,7 @@ const Contact: React.FC = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 resize-none"
-                      placeholder="Tell us about your legal needs..."
+                      placeholder={t('form.placeholder.legalNeeds')}
                     ></textarea>
                   </div>
 
@@ -196,7 +196,7 @@ const Contact: React.FC = () => {
 
             {/* Emergency Contact */}
             <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-red-800 mb-4">Emergency Contact</h3>
+              <h3 className="text-xl font-bold text-red-800 mb-4">{t('page.emergencyContact')}</h3>
               <p className="text-red-700 text-sm mb-4">
                 For urgent legal matters outside business hours, please call our emergency line.
               </p>
@@ -222,7 +222,7 @@ const Contact: React.FC = () => {
             <div className="bg-gray-200 rounded-xl h-80 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-gray-500 mx-auto mb-4" />
-                <p className="text-gray-600">Interactive map would be integrated here</p>
+                <p className="text-gray-600">{t('page.interactiveMapNote')}</p>
                 <p className="text-sm text-gray-500 mt-2">
                   Google Maps or similar mapping service
                 </p>

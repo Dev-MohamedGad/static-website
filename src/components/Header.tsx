@@ -95,9 +95,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
       label: t('nav.about'),
       href: 'about',
       dropdown: [
-        { label: 'Who We Are', href: 'about' },
-        { label: 'Our Values', href: 'about' },
-        { label: 'Our Team', href: 'about' }
+        { label: t('nav.dropdown.about.whoWeAre'), href: 'about' },
+        { label: t('nav.dropdown.about.ourValues'), href: 'about' },
+        { label: t('nav.dropdown.about.ourTeam'), href: 'about' }
       ]
     },
     {
@@ -105,14 +105,14 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
       label: t('nav.expertise'),
       href: 'expertise',
       dropdown: [
-        { label: 'Dispute Resolution', href: 'expertise' },
-        { label: 'Corporate & Commercial Law', href: 'expertise' },
-        { label: 'Labor & Employment', href: 'expertise' },
-        { label: 'Real Estate', href: 'expertise' },
-        { label: 'Intellectual Property', href: 'expertise' },
-        { label: 'Taxation', href: 'expertise' },
-        { label: 'Capital Market & M&A', href: 'expertise' },
-        { label: 'Arbitration', href: 'expertise' }
+        { label: t('nav.dropdown.expertise.disputeResolution'), href: 'expertise' },
+        { label: t('nav.dropdown.expertise.corporateCommercial'), href: 'expertise' },
+        { label: t('nav.dropdown.expertise.laborEmployment'), href: 'expertise' },
+        { label: t('nav.dropdown.expertise.realEstate'), href: 'expertise' },
+        { label: t('nav.dropdown.expertise.intellectualProperty'), href: 'expertise' },
+        { label: t('nav.dropdown.expertise.taxation'), href: 'expertise' },
+        { label: t('nav.dropdown.expertise.capitalMarket'), href: 'expertise' },
+        { label: t('nav.dropdown.expertise.arbitration'), href: 'expertise' }
       ]
     },
     { key: 'clients', label: t('nav.clients'), href: 'clients' },
@@ -122,8 +122,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
       label: t('nav.media'),
       href: 'media',
       dropdown: [
-        { label: 'News & Highlights', href: 'media' },
-        { label: 'Photos & Videos', href: 'media' }
+        { label: t('nav.dropdown.media.newsHighlights'), href: 'media' },
+        { label: t('nav.dropdown.media.photosVideos'), href: 'media' }
       ]
     },
     {
@@ -131,8 +131,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
       label: t('nav.library'),
       href: 'library',
       dropdown: [
-        { label: 'Blog', href: 'library' },
-        { label: 'Publications', href: 'library' }
+        { label: t('nav.dropdown.library.blog'), href: 'library' },
+        { label: t('nav.dropdown.library.publications'), href: 'library' }
       ]
     },
     { key: 'faq', label: t('nav.faq'), href: 'faq' },
@@ -145,7 +145,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-brand-100' : 'bg-white/90 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -173,10 +173,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                       setCurrentPage(item.href);
                     }
                   }}
-                  className={`flex items-center px-3 py-2 text-sm font-medium transition-all duration-200 rounded-lg ${
+                  className={`flex items-center px-4 py-2 text-sm font-medium transition-all duration-200 rounded-xl ${
                     currentPage === item.href
-                      ? 'text-brand-600 bg-brand-50'
-                      : 'text-gray-700 hover:text-brand-600 hover:bg-brand-50'
+                      ? 'text-brand-600 bg-gradient-to-r from-brand-50 to-accent-50 shadow-sm'
+                      : 'text-gray-700 hover:text-brand-600 hover:bg-gradient-to-r hover:from-brand-50 hover:to-accent-50'
                   }`}
                 >
                   {item.label}
@@ -234,10 +234,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
             {/* Language Switcher */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-600 transition-colors duration-200"
+              className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-brand-600 transition-all duration-200 rounded-xl hover:bg-gradient-to-r hover:from-brand-50 hover:to-accent-50"
             >
-              <Globe className="h-4 w-4 mr-1" />
-              {language === 'en' ? 'العربية' : 'English'}
+              <Globe className="h-4 w-4 mr-2" />
+              <span className="font-medium">{language === 'en' ? 'العربية' : 'English'}</span>
             </button>
           </nav>
 

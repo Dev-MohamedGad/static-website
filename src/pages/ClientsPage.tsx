@@ -1,82 +1,84 @@
 import React from 'react';
 import { Star, Quote, Building, Users, TrendingUp } from '../icons';
+import { useLanguage } from '../context/LanguageContext';
 
 const ClientsPage: React.FC = () => {
+  const { t } = useLanguage();
   const clientCategories = [
     {
       icon: Building,
-      title: 'Fortune 500 Companies',
-      description: 'Leading multinational corporations trust us with their most complex legal matters.',
+      title: t('clients.fortune500.title'),
+      description: t('clients.fortune500.desc'),
       count: '50+'
     },
     {
       icon: Users,
-      title: 'Small & Medium Businesses',
-      description: 'Growing companies rely on our expertise to navigate legal challenges and opportunities.',
+      title: t('clients.smb.title'),
+      description: t('clients.smb.desc'),
       count: '500+'
     },
     {
       icon: TrendingUp,
-      title: 'Startups & Entrepreneurs',
-      description: 'Innovation-driven companies choose us for strategic legal guidance and support.',
+      title: t('clients.startups.title'),
+      description: t('clients.startups.desc'),
       count: '200+'
     }
   ];
 
   const testimonials = [
     {
-      quote: "Shehab Law Firm has been our trusted legal partner for over a decade. Their deep understanding of corporate law and strategic thinking have been invaluable to our success.",
-      author: "Sarah Johnson",
-      position: "CEO",
-      company: "Global Manufacturing Corp",
+      quote: t('clients.testimonial1.quote'),
+      author: t('clients.testimonial1.author'),
+      position: t('clients.testimonial1.position'),
+      company: t('clients.testimonial1.company'),
       avatar: "SJ",
       rating: 5,
-      industry: "Manufacturing"
+      industry: t('clients.testimonial1.industry')
     },
     {
-      quote: "The expertise and dedication of the Shehab team helped us navigate a complex merger that transformed our business. Their attention to detail and strategic guidance were exceptional.",
-      author: "Michael Chen",
-      position: "General Counsel",
-      company: "Tech Innovations Inc",
+      quote: t('clients.testimonial2.quote'),
+      author: t('clients.testimonial2.author'),
+      position: t('clients.testimonial2.position'),
+      company: t('clients.testimonial2.company'),
       avatar: "MC",
       rating: 5,
-      industry: "Technology"
+      industry: t('clients.testimonial2.industry')
     },
     {
-      quote: "As a startup, we needed legal counsel who understood our vision and could help us scale efficiently. Shehab Law Firm delivered beyond our expectations.",
-      author: "Emily Rodriguez",
-      position: "Founder & CEO",
-      company: "GreenTech Solutions",
+      quote: t('clients.testimonial3.quote'),
+      author: t('clients.testimonial3.author'),
+      position: t('clients.testimonial3.position'),
+      company: t('clients.testimonial3.company'),
       avatar: "ER",
       rating: 5,
-      industry: "Clean Energy"
+      industry: t('clients.testimonial3.industry')
     },
     {
-      quote: "Their employment law expertise saved us significant costs and helped us build a compliant, productive workplace. Highly recommended for any business.",
-      author: "David Thompson",
-      position: "HR Director",
-      company: "Financial Services Group",
+      quote: t('clients.testimonial4.quote'),
+      author: t('clients.testimonial4.author'),
+      position: t('clients.testimonial4.position'),
+      company: t('clients.testimonial4.company'),
       avatar: "DT",
       rating: 5,
-      industry: "Financial Services"
+      industry: t('clients.testimonial4.industry')
     },
     {
-      quote: "The real estate transaction seemed impossible until Shehab Law Firm got involved. They turned a potential disaster into a successful deal.",
-      author: "Lisa Wang",
-      position: "Development Manager",
-      company: "Premium Properties",
+      quote: t('clients.testimonial5.quote'),
+      author: t('clients.testimonial5.author'),
+      position: t('clients.testimonial5.position'),
+      company: t('clients.testimonial5.company'),
       avatar: "LW",
       rating: 5,
-      industry: "Real Estate"
+      industry: t('clients.testimonial5.industry')
     },
     {
-      quote: "Outstanding intellectual property services. They protected our innovations and helped us build a strong IP portfolio that drives our competitive advantage.",
-      author: "James Martinez",
-      position: "CTO",
-      company: "Biotech Innovations",
+      quote: t('clients.testimonial6.quote'),
+      author: t('clients.testimonial6.author'),
+      position: t('clients.testimonial6.position'),
+      company: t('clients.testimonial6.company'),
       avatar: "JM",
       rating: 5,
-      industry: "Biotechnology"
+      industry: t('clients.testimonial6.industry')
     }
   ];
 
@@ -96,10 +98,10 @@ const ClientsPage: React.FC = () => {
   ];
 
   const industries = [
-    'Technology', 'Healthcare', 'Financial Services', 'Manufacturing',
-    'Real Estate', 'Energy', 'Retail', 'Construction', 'Media & Entertainment',
-    'Transportation', 'Education', 'Pharmaceuticals', 'Biotechnology',
-    'Aerospace', 'Automotive', 'Telecommunications'
+    t('partners.industry.technology'), t('partners.industry.healthcare'), t('partners.industry.financial'), t('partners.industry.manufacturing'),
+    t('partners.industry.realestate'), t('partners.industry.energy'), t('partners.industry.retail'), t('partners.industry.construction'), t('partners.industry.media'),
+    t('partners.industry.transportation'), t('partners.industry.education'), t('partners.industry.pharmaceuticals'), t('partners.industry.biotechnology'),
+    t('partners.industry.aerospace'), t('partners.industry.automotive'), t('partners.industry.telecommunications')
   ];
 
   return (
@@ -107,22 +109,22 @@ const ClientsPage: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">Our Clients</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">{t('clients.title')}</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Trusted by leading organizations across industries for exceptional legal services and strategic guidance.
+            {t('clients.subtitle')}
           </p>
           <div className="flex justify-center space-x-8 text-brand-500">
             <div className="text-center">
               <div className="text-3xl font-bold">750+</div>
-              <div className="text-sm text-gray-300">Active Clients</div>
+              <div className="text-sm text-gray-300">{t('clients.stats.activeClients')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold">16</div>
-              <div className="text-sm text-gray-300">Industries Served</div>
+              <div className="text-sm text-gray-300">{t('clients.stats.industriesServed')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold">98%</div>
-              <div className="text-sm text-gray-300">Client Satisfaction</div>
+              <div className="text-sm text-gray-300">{t('clients.stats.satisfaction')}</div>
             </div>
           </div>
         </div>
@@ -132,9 +134,9 @@ const ClientsPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Who We Serve</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('clients.whoWeServe.title')}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From global corporations to emerging startups, we provide tailored legal solutions for organizations of all sizes.
+              {t('clients.whoWeServe.desc')}
             </p>
           </div>
 
@@ -160,9 +162,9 @@ const ClientsPage: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Client Testimonials</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('clients.testimonials.title')}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Hear directly from our clients about their experiences working with Shehab Law Firm.
+              {t('clients.testimonials.desc')}
             </p>
           </div>
 
@@ -213,9 +215,9 @@ const ClientsPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Trusted Partners</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('clients.trustedPartners.title')}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A selection of the organizations that trust us with their legal needs.
+              {t('clients.trustedPartners.desc')}
             </p>
           </div>
 
@@ -239,9 +241,9 @@ const ClientsPage: React.FC = () => {
       <section className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 font-serif">Industries We Serve</h2>
+            <h2 className="text-4xl font-bold mb-6 font-serif">{t('clients.industries.title')}</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our diverse expertise spans across multiple industries, allowing us to provide specialized legal solutions.
+              {t('clients.industries.desc')}
             </p>
           </div>
 
@@ -258,16 +260,16 @@ const ClientsPage: React.FC = () => {
 
           {/* CTA */}
           <div className="mt-16 text-center">
-            <h3 className="text-3xl font-bold mb-6 font-serif">Ready to Join Our Client Family?</h3>
+            <h3 className="text-3xl font-bold mb-6 font-serif">{t('clients.cta.title')}</h3>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Experience the difference that professional, dedicated legal representation can make for your organization.
+              {t('clients.cta.desc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                Schedule Consultation
+                {t('common.scheduleConsultation')}
               </button>
               <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                Learn About Our Services
+                {t('clients.cta.learnMore')}
               </button>
             </div>
           </div>
