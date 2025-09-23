@@ -91,16 +91,6 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
   const navigation = [
     { key: 'home', label: t('nav.home'), href: 'home' },
     {
-      key: 'about',
-      label: t('nav.about'),
-      href: 'about',
-      dropdown: [
-        { label: t('nav.dropdown.about.whoWeAre'), href: 'about' },
-        { label: t('nav.dropdown.about.ourValues'), href: 'about' },
-        { label: t('nav.dropdown.about.ourTeam'), href: 'about' }
-      ]
-    },
-    {
       key: 'expertise',
       label: t('nav.expertise'),
       href: 'expertise',
@@ -145,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-brand-100' : 'bg-white/90 backdrop-blur-sm'
+      isScrolled ? 'bg-gradient-to-r from-white/95 via-gray-50/95 to-white/95 backdrop-blur-md shadow-lg border-b border-brand-200/50' : 'bg-gradient-to-r from-white/90 via-gray-50/90 to-white/90 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -173,10 +163,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                       setCurrentPage(item.href);
                     }
                   }}
-                  className={`flex items-center px-4 py-2 text-sm font-medium transition-all duration-200 rounded-xl ${
+                  className={`flex items-center px-4 py-2 text-sm font-medium transition-all duration-200 rounded-xl backdrop-blur-sm ${
                     currentPage === item.href
-                      ? 'text-brand-600 bg-gradient-to-r from-brand-50 to-accent-50 shadow-sm'
-                      : 'text-gray-700 hover:text-brand-600 hover:bg-gradient-to-r hover:from-brand-50 hover:to-accent-50'
+                      ? 'text-brand-700 bg-gradient-to-r from-brand-100/80 via-brand-50/80 to-accent-100/80 shadow-md border border-brand-200/50'
+                      : 'text-gray-700 hover:text-brand-600 hover:bg-gradient-to-r hover:from-brand-50/60 hover:to-accent-50/60 hover:shadow-sm hover:border hover:border-brand-200/30'
                   }`}
                 >
                   {item.label}
@@ -234,7 +224,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
             {/* Language Switcher */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-brand-600 transition-all duration-200 rounded-xl hover:bg-gradient-to-r hover:from-brand-50 hover:to-accent-50"
+              className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-brand-600 transition-all duration-200 rounded-xl backdrop-blur-sm hover:bg-gradient-to-r hover:from-brand-50/60 hover:to-accent-50/60 hover:shadow-sm hover:border hover:border-brand-200/30"
             >
               <Globe className="h-4 w-4 mr-2" />
               <span className="font-medium">{language === 'en' ? 'العربية' : 'English'}</span>
@@ -254,7 +244,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
 
         {/* Enhanced Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 bg-white shadow-xl">
+          <div className="lg:hidden border-t border-brand-200/50 bg-gradient-to-r from-white/95 via-gray-50/95 to-white/95 backdrop-blur-md shadow-xl">
             <div className="px-4 py-6 space-y-2">
               {navigation.map((item) => (
                 <div key={item.key} className="space-y-1">

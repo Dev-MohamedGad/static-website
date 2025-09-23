@@ -5,7 +5,6 @@ import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
 // Lazy load pages for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
-const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ExpertisePage = lazy(() => import('./pages/ExpertisePage'));
 const ClientsPage = lazy(() => import('./pages/ClientsPage'));
 const CareerPage = lazy(() => import('./pages/CareerPage'));
@@ -68,8 +67,6 @@ function App() {
     switch (currentPage) {
       case 'home':
         return <HomePage />;
-      case 'about':
-        return <AboutPage />;
       case 'expertise':
         return <ExpertisePage />;
       case 'clients':

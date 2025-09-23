@@ -22,18 +22,18 @@ const FAQPage: React.FC = () => {
     'General': [
       {
         id: 1,
-        question: 'What types of legal services does Shehab Law Firm provide?',
-        answer: 'We offer comprehensive legal services including corporate and commercial law, dispute resolution, employment law, real estate law, intellectual property protection, taxation, capital markets and M&A, and arbitration services. Our experienced team handles both complex business matters and individual legal needs.'
+        question: t('faq.general.q1'),
+        answer: t('faq.general.a1')
       },
       {
         id: 2,
-        question: 'How do I schedule an initial consultation?',
-        answer: 'You can schedule a consultation by calling our office at (234) 567-8900, using our online contact form, or sending an email to info@shehablaw.com. We typically offer a 30-minute initial consultation to discuss your legal needs and determine how we can best assist you.'
+        question: t('faq.general.q2'),
+        answer: t('faq.general.a2')
       },
       {
         id: 3,
-        question: 'Do you offer free consultations?',
-        answer: 'Yes, we provide free initial consultations for most practice areas. This allows us to understand your situation and explain how we can help. Some specialized matters may require a paid consultation, which will be discussed upfront.'
+        question: t('faq.general.q3'),
+        answer: t('faq.general.a3')
       },
       {
         id: 4,

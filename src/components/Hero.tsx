@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, ChevronDown } from '../icons';
+import { DirectionalArrow, ChevronDown } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const Hero: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -64,7 +64,10 @@ const Hero: React.FC = () => {
               className="group relative overflow-hidden bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-700 hover:to-accent-700 text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-brand-500/25 flex items-center"
             >
               <span className="relative z-10">{t('hero.cta')}</span>
-              <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
+              <DirectionalArrow 
+                isRTL={isRTL} 
+                className={`${isRTL ? 'mr-3' : 'ml-3'} h-5 w-5 group-hover:${isRTL ? '-translate-x-1' : 'translate-x-1'} transition-transform relative z-10`} 
+              />
               
               {/* Animated background */}
               <div className="absolute inset-0 bg-gradient-to-r from-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

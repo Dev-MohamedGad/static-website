@@ -18,8 +18,8 @@ const ExpertisePage: React.FC = () => {
   const practiceAreas = [
     {
       icon: Gavel,
-      title: 'Dispute Resolution',
-      description: 'Comprehensive litigation and alternative dispute resolution services for complex commercial and civil matters.',
+      title: t('expertise.dispute.title'),
+      description: t('expertise.dispute.desc'),
       services: [
         'Commercial Litigation',
         'Civil Litigation',
@@ -36,8 +36,8 @@ const ExpertisePage: React.FC = () => {
     },
     {
       icon: Building,
-      title: 'Corporate & Commercial Law',
-      description: 'Full-service corporate legal support from entity formation to complex business transactions.',
+      title: t('expertise.corporate.title'),
+      description: t('expertise.corporate.desc'),
       services: [
         'Business Formation',
         'Corporate Governance',

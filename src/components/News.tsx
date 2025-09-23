@@ -1,9 +1,9 @@
 import React from 'react';
-import { Calendar, Clock, ArrowRight, Eye } from '../icons';
+import { Calendar, Clock, DirectionalArrow, Eye } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const News: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
   const newsArticles = [
     {
       id: 1,
@@ -102,7 +102,7 @@ const News: React.FC = () => {
               
               <button className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 {t('news.readFull')}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <DirectionalArrow isRTL={isRTL} className={`${isRTL ? 'mr-2' : 'ml-2'} h-4 w-4`} />
               </button>
             </div>
             
@@ -167,7 +167,7 @@ const News: React.FC = () => {
                 
                 <button className="inline-flex items-center text-brand-600 hover:text-brand-700 font-medium text-sm group-hover:translate-x-2 transition-all duration-300">
                   {t('news.readMore')}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <DirectionalArrow isRTL={isRTL} className={`${isRTL ? 'mr-2' : 'ml-2'} h-4 w-4`} />
                 </button>
               </div>
             </div>

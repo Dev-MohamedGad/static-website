@@ -4,6 +4,7 @@ interface LanguageContextType {
   language: 'en' | 'ar';
   setLanguage: (lang: 'en' | 'ar') => void;
   t: (key: string) => string;
+  isRTL: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -15,16 +16,16 @@ const en = {
     'nav.about': 'About Us',
     'nav.expertise': 'Expertise',
     'nav.clients': 'Clients',
-    'nav.career': 'Career',
+    'nav.career': 'Careers',
     'nav.media': 'Media',
     'nav.library': 'Library',
     'nav.faq': 'FAQ',
     'nav.contact': 'Contact Us',
     
     // Hero
-    'hero.title': 'Shehab & El Awamy',
-    'hero.title.primary': 'Shehab',
-    'hero.title.secondary': '& El Awamy',
+    'hero.title': 'Shebab Law Firm',
+    'hero.title.primary': 'Shebab',
+    'hero.title.secondary': 'Law Firm',
     'hero.subtitle': 'Your trusted legal partner',
     'hero.description': 'An Egyptian law firm bringing together highly qualified legal professionals with diverse local and international backgrounds, delivering innovative solutions across multiple sectors.',
     'hero.cta': 'Learn More About Us',
@@ -36,7 +37,7 @@ const en = {
     
     // About Preview
     'about.title': 'About Our Firm',
-    'about.description': 'Shehab & El Awamy is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds, delivering innovative solutions across multiple sectors.',
+    'about.description': 'Shebab Law Firm is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds, delivering innovative solutions across multiple sectors.',
     'about.cta': 'Learn More',
     'about.p1': 'Shehab & El Awamy is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds. Founded to provide both legal services and consultancy, we employ innovative methods to keep pace with the evolving governmental and legal landscape.',
     'about.p2': 'We are fully attuned to the daily challenges faced by corporations and are committed to delivering swift, strategic business solutions. Our lawyers work closely with clients, building trust, commitment, and loyalty by offering innovative solutions that drive success across multiple sectors including Banking, Oil and Gas, Heavy Industries, Healthcare, Information Technology, Communications, and Media.',
@@ -201,7 +202,7 @@ const en = {
     'common.loadingPage': 'Loading page...',
     'common.scrollDown': 'Scroll Down',
     'common.getDirections': 'Get Directions',
-    'common.logoAlt': 'Shehab Law Firm Logo',
+    'common.logoAlt': 'Shebab Law Firm Logo',
     'common.schedule': 'Schedule',
     'common.scheduleOnline': 'Schedule Online',
     'common.scheduleConsultation': 'Schedule Consultation',
@@ -245,6 +246,12 @@ const en = {
 
     // FAQ Page
     'faq.title': 'Frequently Asked Questions',
+    'faq.general.q1': 'What types of legal services does Shebab Law Firm provide?',
+    'faq.general.a1': 'We offer comprehensive legal services including corporate and commercial law, dispute resolution, employment law, real estate law, intellectual property protection, taxation, capital markets and M&A, and arbitration services. Our experienced team handles both complex business matters and individual legal needs.',
+    'faq.general.q2': 'How do I schedule an initial consultation?',
+    'faq.general.a2': 'You can schedule a consultation by calling our office, using our online contact form, or sending an email. We typically offer a 30-minute initial consultation to discuss your legal needs and determine how we can best assist you.',
+    'faq.general.q3': 'Do you offer free consultations?',
+    'faq.general.a3': 'Yes, we provide free initial consultations for most practice areas. This allows us to understand your situation and explain how we can help. Some specialized matters may require a paid consultation, which will be discussed upfront.',
     'faq.categories': 'Categories',
     'faq.noQuestionsFound': 'No questions found',
     'faq.tryAdjusting': 'Try adjusting your search or browse other categories.',
@@ -664,7 +671,7 @@ const en = {
     'form.mapNote': 'Interactive map would be integrated here',
 
     // Footer
-    'footer.companyName': 'Shehab & El Awamy',
+    'footer.companyName': 'Shebab Law Firm',
     'footer.tagline': 'Legal Excellence',
     'footer.description': 'An Egyptian law firm bringing together highly qualified legal professionals with diverse local and international backgrounds, serving clients across multiple sectors.',
     'footer.quickLinks': 'Quick Links',
@@ -680,7 +687,7 @@ const en = {
     'footer.nav.about': 'About Us',
     'footer.nav.expertise': 'Expertise',
     'footer.nav.clients': 'Clients',
-    'footer.nav.career': 'Career',
+    'footer.nav.career': 'Careers',
     'footer.nav.contact': 'Contact',
     
     // Footer practice areas
@@ -706,9 +713,9 @@ const ar = {
     'nav.contact': 'اتصل بنا',
     
     // Hero
-    'hero.title': 'شهاب والعوامي للمحاماة',
+    'hero.title': 'شهاب للمحاماة',
     'hero.title.primary': 'شهاب',
-    'hero.title.secondary': '& العوامي',
+    'hero.title.secondary': '',
     'hero.subtitle': 'شريكك القانوني الموثوق',
     'hero.description': 'مكتب محاماة مصري يجمع بين المتخصصين القانونيين المؤهلين تأهيلاً عالياً ذوي خلفيات محلية ودولية متنوعة، ويقدم حلولاً مبتكرة عبر قطاعات متعددة.',
     'hero.cta': 'تعرف علينا أكثر',
@@ -720,9 +727,9 @@ const ar = {
     
     // About Preview
     'about.title': 'عن مكتبنا',
-    'about.description': 'شهاب والعوامي مكتب محاماة مصري يجمع بين المهنيين القانونيين المؤهلين تأهيلاً عالياً ذوي خلفيات محلية ودولية متنوعة، ويقدم حلولاً مبتكرة عبر قطاعات متعددة.',
+    'about.description': 'شهاب مكتب محاماة مصري يجمع بين المهنيين القانونيين المؤهلين تأهيلاً عالياً ذوي خلفيات محلية ودولية متنوعة، ويقدم حلولاً مبتكرة عبر قطاعات متعددة.',
     'about.cta': 'اعرف المزيد',
-    'about.p1': 'شهاب والعوامي مكتب محاماة مصري يجمع بين خبراء قانونيين ذوي كفاءة عالية وخلفيات محلية ودولية متنوعة. تأسس لتقديم خدمات قانونية واستشارية، ونعتمد أساليب مبتكرة لمواكبة التطورات الحكومية والتشريعية.',
+    'about.p1': 'شهاب مكتب محاماة مصري يجمع بين خبراء قانونيين ذوي كفاءة عالية وخلفيات محلية ودولية متنوعة. تأسس لتقديم خدمات قانونية واستشارية، ونعتمد أساليب مبتكرة لمواكبة التطورات الحكومية والتشريعية.',
     'about.p2': 'ندرك التحديات اليومية التي تواجه الشركات ونسعى لتقديم حلول عملية وسريعة. يعمل محامونا عن قرب مع العملاء لبناء الثقة والالتزام والولاء، وتقديم حلول مبتكرة تدعم النجاح في قطاعات عديدة مثل البنوك، النفط والغاز، الصناعات الثقيلة، الرعاية الصحية، تكنولوجيا المعلومات، الاتصالات، والإعلام.',
     'about.stats.years': 'سنوات',
     'about.stats.cases': 'قضايا',
@@ -808,26 +815,26 @@ const ar = {
     'contact.form.submit': 'إرسال الرسالة',
 
     // الملف التعريفي - نبذة
-    'about.profile.title': 'الملف التعريفي – شهاب والعوامي للمحاماة والاستشارات القانونية',
-    'about.profile.aboutTitle': 'عن شهاب والعوامي للمحاماة والاستشارات القانونية',
-    'about.profile.p1': 'شهاب والعوامي شركة محاماة مصرية تجمع بين خبرات مهنيين قانونيين مؤهلين تأهيلاً عالياً ذوي خلفيات وخبرات محلية ودولية متنوعة.',
-    'about.profile.p2': 'تأسست شهاب والعوامي للمحاماة والاستشارات القانونية بآلية جديدة لمواكبة التطورات في ظل تحديث البيئة التشريعية والقانونية وتعتبر شهاب والعوامي هي الأكثر انسجاماً مع التحديات التي تواجه الشركات، وبالتالي تسعى جاهدة لإيجاد وتقديم حلول استراتيجية وعملية سريعة. وبذلك يعمل محاموها ومستشاروها عن كثب مع العملاء، لكسب ثقتهم والتزامهم بالتميز تجاههم وإيجاد حلول مبتكرة.',
+    'about.profile.title': 'الملف التعريفي – شهاب للمحاماة والاستشارات القانونية',
+    'about.profile.aboutTitle': 'عن شهاب للمحاماة والاستشارات القانونية',
+    'about.profile.p1': 'شهاب شركة محاماة مصرية تجمع بين خبرات مهنيين قانونيين مؤهلين تأهيلاً عالياً ذوي خلفيات وخبرات محلية ودولية متنوعة.',
+    'about.profile.p2': 'تأسست شهاب للمحاماة والاستشارات القانونية بآلية جديدة لمواكبة التطورات في ظل تحديث البيئة التشريعية والقانونية وتعتبر شهاب هي الأكثر انسجاماً مع التحديات التي تواجه الشركات، وبالتالي تسعى جاهدة لإيجاد وتقديم حلول استراتيجية وعملية سريعة. وبذلك يعمل محاموها ومستشاروها عن كثب مع العملاء، لكسب ثقتهم والتزامهم بالتميز تجاههم وإيجاد حلول مبتكرة.',
     'about.profile.p3': 'تعمل الشركة من خلال قطاعات أو أقسام متخصصة تغطي مختلف مجالات ممارسة القانون ، مما يتيح لنا تقديم خدمات قانونية عالية الجودة متسقة بطريقة فعالة. يتعاون فريق العمل لتقديم خدمات قانونية متكاملة إلى العملاء في مختلف القطاعات بما في ذلك، على سبيل المثال لا الحصر، الرياضة، الإنشاءات، المقاولات، النقل و الصناعات الثقيلة، الطاقة، العمليات المصرفية، التمويل، النفط والغاز، الصناعات الثقيلة، المستشفيات، الصناعات الدوائية، تكنولوجيا المعلومات والاتصالات، الإعلام والنقل.',
-    'about.profile.p4': 'تستوعب الشركة احتياجات عملائها من خلال الخدمات المتنوعة لتشمل أيضاً على سبيل المثال وليس الحصر، الاستشارات الضريبية وتسوية المنازعات الضريبية، تقديم خدمة الترجمة المعتمدة، إنهاء كافة أعمال التراخيص بمختلف أنواعها، فهي مؤسسة أكثر من مجرد شركة محاماة، كما أنه يعمل فريق عمل شهاب والعوامي بشكل كامل باللغات العربية والإنجليزية.',
+    'about.profile.p4': 'تستوعب الشركة احتياجات عملائها من خلال الخدمات المتنوعة لتشمل أيضاً على سبيل المثال وليس الحصر، الاستشارات الضريبية وتسوية المنازعات الضريبية، تقديم خدمة الترجمة المعتمدة، إنهاء كافة أعمال التراخيص بمختلف أنواعها، فهي مؤسسة أكثر من مجرد شركة محاماة، كما أن فريق عمل شهاب يعمل بشكل كامل باللغات العربية والإنجليزية.',
     'about.profile.p5': 'إن نجاح الشركة مستمد من خبرة الأعضاء وتفانيهم وخبراتهم المتبادلة مع السلطات القضائية والإدارية والتنظيمية المختصة في مصر.',
 
     // المهمة / الرؤية / القيم
     'about.mission.title': 'مهمتنـــــا',
-    'about.mission.body': 'نلتزم في شهاب والعوامي بتقديم خدمات قانونية عالية الجودة من خلال مجموعة متميزة من مستشاريها ومحاميها ذوي المهارات العالية، بالإضافة إلى مساعدتهم على تحقيق أعظم النتائج لأعمالهم وذلك من خلال خبرتنا الكبيرة ومعرفتنا بمجالات واستراتيجيات القانون. نحن قادرون على تلبية جميع احتياجات ومتطلبات عملائنا، لذلك نطمح للوصول إلى الثقة الدائمة بعلامتنا التجارية من خلال عملائنا الشركات والأفراد سواء محلياً أو دولياً وذلك باعتبارنا متخصصون في الخدمات القانونية المختلفة.',
+    'about.mission.body': 'نلتزم في شهاب بتقديم خدمات قانونية عالية الجودة من خلال مجموعة متميزة من مستشاريها ومحاميها ذوي المهارات العالية، بالإضافة إلى مساعدتهم على تحقيق أعظم النتائج لأعمالهم وذلك من خلال خبرتنا الكبيرة ومعرفتنا بمجالات واستراتيجيات القانون. نحن قادرون على تلبية جميع احتياجات ومتطلبات عملائنا، لذلك نطمح للوصول إلى الثقة الدائمة بعلامتنا التجارية من خلال عملائنا الشركات والأفراد سواء محلياً أو دولياً وذلك باعتبارنا متخصصين في الخدمات القانونية المختلفة.',
     'about.vision.title': 'رؤيتنـــــا',
-    'about.vision.body': 'تعد الرؤية الأساسية لشركة شهاب والعوامي للمحاماة والاستشارات القانونية، هي أن نصبح مستشارين موثوقاً بهم يمكن للعملاء المحليين والدوليين الثقة فيهم والتوجه لإعطاء المشورة القانونية السليمة، بواسطة الوسائل المهنية ومنها حرفية التفاوض وإنهاء المنازعات من خلال التسويات الاتفاقية المقبولة لجميع الأطراف.',
+    'about.vision.body': 'تعد الرؤية الأساسية لشركة شهاب للمحاماة والاستشارات القانونية، هي أن نصبح مستشارين موثوقاً بهم يمكن للعملاء المحليين والدوليين الثقة فيهم والتوجه لإعطاء المشورة القانونية السليمة، بواسطة الوسائل المهنية ومنها حرفية التفاوض وإنهاء المنازعات من خلال التسويات الاتفاقية المقبولة لجميع الأطراف.',
     'about.values.title': 'قيمنـــــا',
-    'about.values.body': 'تتمثل القيم الجوهرية لشهاب والعوامي أننا نتميز بالشفافية تجاه عملائنا من خلال فهمنا المتعمق للقوانين بالإضافة إلى مواكبة التشريعات القانونية الدولية، فإننا نسعى جاهدين لتزويد عملائنا بخدمات قانونية عالية الجودة تتجاوز التوقعات اتكاءً على المصارحة والشفافية والعزم والمصداقية للحفاظ على أعلى مستوى من النزاهة والكفاءة والاستجابة.',
+    'about.values.body': 'تتمثل القيم الجوهرية لشهاب أننا نتميز بالشفافية تجاه عملائنا من خلال فهمنا المتعمق للقوانين بالإضافة إلى مواكبة التشريعات القانونية الدولية، فإننا نسعى جاهدين لتزويد عملائنا بخدمات قانونية عالية الجودة تتجاوز التوقعات اتكاءً على المصارحة والشفافية والعزم والمصداقية للحفاظ على أعلى مستوى من النزاهة والكفاءة والاستجابة.',
 
     // خدماتنا - نظرة عامة
     'about.services.title': 'خدمــاتنـــــا',
-    'about.services.p1': 'يمكننا في شهاب والعوامي مساعدتك في عملية البدء في مشروعك ابتداءً من تقديم الاستشارات حول نوع تأسيس شركتك المناسب لك مروراً بإنهاء كافة الإجراءات المتعلقة بالتأمينات الاجتماعية وكافة التراخيص والهيئة العامة للاستثمار والمناطق الحرة والهيئة العامة للرقابة المالية وانتهاءً بصياغة كافة عقود الشركة وتحديد المخاطر المحتملة وكيفية توقيها وأعمال الفحص النافي للجهالة.',
-    'about.services.p2': 'شهاب والعوامي وهي شركة محاماة متكاملة الخدمات ويقع مكتبها في القاهرة، مصر. يقدم مكتب شهاب والعوامي مجموعة واسعة من الاحتياجات القانونية للشركات الدولية والإقليمية والمحلية وأيضاً الأفراد حيث تمتلك الشركة الخبرة والمعرفة للأعمال التجارية والقانونية والاحتياجات التشغيلية لعملائها. يضمن شهاب والعوامي مستوى متميز للخدمات القانونية عالية الجودة مع توفير طرق إعداد التقارير القابلة للقياس والتي يمكن لعملائنا الاعتماد عليها في أنشطة الأعمال والتخطيط على المدى القصير والمتوسط والطويل.',
+    'about.services.p1': 'يمكننا في شهاب مساعدتك في عملية البدء في مشروعك ابتداءً من تقديم الاستشارات حول نوع تأسيس شركتك المناسب لك مروراً بإنهاء كافة الإجراءات المتعلقة بالتأمينات الاجتماعية وكافة التراخيص والهيئة العامة للاستثمار والمناطق الحرة والهيئة العامة للرقابة المالية وانتهاءً بصياغة كافة عقود الشركة وتحديد المخاطر المحتملة وكيفية توقيها وأعمال الفحص النافي للجهالة.',
+    'about.services.p2': 'شهاب شركة محاماة متكاملة الخدمات ويقع مكتبها في القاهرة، مصر. يقدم مكتب شهاب مجموعة واسعة من الاحتياجات القانونية للشركات الدولية والإقليمية والمحلية وأيضاً الأفراد حيث تمتلك الشركة الخبرة والمعرفة للأعمال التجارية والقانونية والاحتياجات التشغيلية لعملائها. يضمن شهاب مستوى متميزاً للخدمات القانونية عالية الجودة مع توفير طرق إعداد التقارير القابلة للقياس والتي يمكن لعملائنا الاعتماد عليها في أنشطة الأعمال والتخطيط على المدى القصير والمتوسط والطويل.',
 
     // مجالات الممارسة الأساسية
     'about.practices.title': 'المجالات الرئيسية',
@@ -841,7 +848,7 @@ const ar = {
 
     // أقسام تفصيلية
     'about.section.corporate.title': 'الشركـات (القانون التجاري والشركات)',
-    'about.section.corporate.body': 'يقدم شهاب والعوامي خدمات تأسيس سريعة ومخصصة لجميع أنواع الشركات التجارية والمالية داخل مصر وخارجها، مع خدمات الأمانة العامة ونصائح عامة دقيقة ودعم كامل للاحتياجات القانونية لما قبل التأسيس وبعده، وصياغة ومشورة لمختلف الاتفاقيات التجارية والتراخيص والتمويل.',
+    'about.section.corporate.body': 'يقدم شهاب خدمات تأسيس سريعة ومخصصة لجميع أنواع الشركات التجارية والمالية داخل مصر وخارجها، مع خدمات الأمانة العامة ونصائح عامة دقيقة ودعم كامل للاحتياجات القانونية لما قبل التأسيس وبعده، وصياغة ومشورة لمختلف الاتفاقيات التجارية والتراخيص والتمويل.',
 
     'about.section.mna.title': 'سوق المال والدمــج والاستحواذ',
     'about.section.mna.body': 'تخصص في عمليات الدمج والاستحواذ للاستثمارات العامة والخاصة والمشاريع المشتركة والشركات التجارية وإعادة الهيكلة والتكامل بعد الاستحواذ، مع عناية قانونية واجبة متعمقة وتقارير تقييم للمخاطر وصياغة وتفاوض لجميع الوثائق.',
@@ -918,6 +925,12 @@ const ar = {
 
     // صفحة الأسئلة الشائعة
     'faq.title': 'الأسئلة الشائعة',
+    'faq.general.q1': 'ما أنواع الخدمات القانونية التي يقدمها مكتب شهاب للمحاماة؟',
+    'faq.general.a1': 'نقدم خدمات قانونية شاملة تشمل قانون الشركات والتجارة، تسوية المنازعات، قانون العمل، قانون العقارات، حماية الملكية الفكرية، الضرائب، أسواق المال والاندماجات والاستحواذات، وخدمات التحكيم. فريقنا ذو الخبرة يتعامل مع المسائل التجارية المعقدة والاحتياجات القانونية الفردية.',
+    'faq.general.q2': 'كيف يمكنني جدولة استشارة أولية؟',
+    'faq.general.a2': 'يمكنك جدولة استشارة من خلال الاتصال بمكتبنا، أو استخدام نموذج الاتصال عبر الإنترنت، أو إرسال بريد إلكتروني. نحن نقدم عادة استشارة أولية مدتها 30 دقيقة لمناقشة احتياجاتك القانونية وتحديد كيف يمكننا مساعدتك بأفضل شكل.',
+    'faq.general.q3': 'هل تقدمون استشارات مجانية؟',
+    'faq.general.a3': 'نعم، نقدم استشارات أولية مجانية لمعظم مجالات الممارسة. هذا يتيح لنا فهم وضعك وشرح كيف يمكننا المساعدة. بعض المسائل المتخصصة قد تتطلب استشارة مدفوعة، وسيتم مناقشة ذلك مقدماً.',
     'faq.categories': 'التصنيفات',
     'faq.noQuestionsFound': 'لم يتم العثور على أسئلة',
     'faq.tryAdjusting': 'جرب تعديل بحثك أو تصفح التصنيفات الأخرى.',
@@ -1345,7 +1358,7 @@ const ar = {
     'form.mapNote': 'سيتم دمج خريطة تفاعلية هنا',
 
     // التذييل
-    'footer.companyName': 'شهاب والعوامي للمحاماة',
+    'footer.companyName': 'شهاب للمحاماة',
     'footer.tagline': 'التميز القانوني',
     'footer.description': 'مكتب محاماة مصري يجمع بين المتخصصين القانونيين المؤهلين تأهيلاً عالياً ذوي خلفيات محلية ودولية متنوعة، يخدم العملاء عبر قطاعات متعددة.',
     'footer.quickLinks': 'روابط سريعة',
@@ -1381,6 +1394,7 @@ const translations: Record<'en' | 'ar', Record<string, string>> = {
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<'en' | 'ar'>('en');
+  const isRTL = language === 'ar';
 
   const t = (key: string): string => {
     return translations[language][key] || key;
@@ -1392,7 +1406,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   }, [language]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, isRTL }}>
       {children}
     </LanguageContext.Provider>
   );

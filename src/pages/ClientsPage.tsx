@@ -211,70 +211,8 @@ const ClientsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Client Logos */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('clients.trustedPartners.title')}</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('clients.trustedPartners.desc')}
-            </p>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="group flex flex-col items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center group-hover:from-brand-600 group-hover:to-brand-700 transition-all duration-300 mb-3">
-                  <span className="text-white font-bold text-lg">{client.logo}</span>
-                </div>
-                <div className="text-sm text-gray-600 text-center">{client.industry}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Served */}
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 font-serif">{t('clients.industries.title')}</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              {t('clients.industries.desc')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {industries.map((industry, index) => (
-              <div
-                key={index}
-                className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-300"
-              >
-                <span className="text-white font-medium">{industry}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="mt-16 text-center">
-            <h3 className="text-3xl font-bold mb-6 font-serif">{t('clients.cta.title')}</h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              {t('clients.cta.desc')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                {t('common.scheduleConsultation')}
-              </button>
-              <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                {t('clients.cta.learnMore')}
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/** Industries We Serve section removed per request **/}
     </div>
   );
 };
