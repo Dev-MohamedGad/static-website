@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 font-serif">
-                Send us a Message
+                {t('form.message')}
               </h3>
               
               {isSubmitted ? (
@@ -198,7 +198,7 @@ const Contact: React.FC = () => {
             <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-red-800 mb-4">{t('page.emergencyContact')}</h3>
               <p className="text-red-700 text-sm mb-4">
-                For urgent legal matters outside business hours, please call our emergency line.
+                {t('office.emergencyDesc')}
               </p>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-red-600 mr-3" />
@@ -217,14 +217,14 @@ const Contact: React.FC = () => {
         <div className="mt-16">
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center font-serif">
-              Find Our Offices
+              {t('contact.visitOffices')}
             </h3>
             <div className="bg-gray-200 rounded-xl h-80 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-gray-500 mx-auto mb-4" />
                 <p className="text-gray-600">{t('page.interactiveMapNote')}</p>
                 <p className="text-sm text-gray-500 mt-2">
-                  Google Maps or similar mapping service
+                  {t('form.mapNote')}
                 </p>
               </div>
             </div>

@@ -8,30 +8,30 @@ import {
   Calculator, 
   TrendingUp, 
   Scale,
-  ArrowRight,
+  DirectionalArrow,
   CheckCircle
 } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const ExpertisePage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
   const practiceAreas = [
     {
       icon: Gavel,
       title: t('expertise.dispute.title'),
       description: t('expertise.dispute.desc'),
       services: [
-        'Commercial Litigation',
-        'Civil Litigation',
-        'Arbitration Services',
-        'Mediation',
-        'Class Action Defense',
-        'Appeals'
+        t('expertise.dispute.services.1'),
+        t('expertise.dispute.services.2'),
+        t('expertise.dispute.services.3'),
+        t('expertise.dispute.services.4'),
+        t('expertise.dispute.services.5'),
+        t('expertise.dispute.services.6')
       ],
       achievements: [
-        '95% success rate in litigation',
-        '$500M+ in favorable settlements',
-        '200+ cases resolved through ADR'
+        t('expertise.dispute.achievements.1'),
+        t('expertise.dispute.achievements.2'),
+        t('expertise.dispute.achievements.3')
       ]
     },
     {
@@ -39,125 +39,125 @@ const ExpertisePage: React.FC = () => {
       title: t('expertise.corporate.title'),
       description: t('expertise.corporate.desc'),
       services: [
-        'Business Formation',
-        'Corporate Governance',
-        'Contract Negotiation',
-        'Compliance Programs',
-        'Joint Ventures',
-        'Partnership Agreements'
+        t('expertise.corporate.services.1'),
+        t('expertise.corporate.services.2'),
+        t('expertise.corporate.services.3'),
+        t('expertise.corporate.services.4'),
+        t('expertise.corporate.services.5'),
+        t('expertise.corporate.services.6')
       ],
       achievements: [
-        '1000+ companies incorporated',
-        '$2B+ in transactions closed',
-        '50+ Fortune 500 clients'
+        t('expertise.corporate.achievements.1'),
+        t('expertise.corporate.achievements.2'),
+        t('expertise.corporate.achievements.3')
       ]
     },
     {
       icon: Users,
-      title: 'Labor & Employment',
-      description: 'Comprehensive employment law services protecting both employers and employees in workplace matters.',
+      title: t('expertise.employment.title'),
+      description: t('expertise.employment.desc'),
       services: [
-        'Employment Contracts',
-        'Workplace Investigations',
-        'Discrimination Defense',
-        'Wage & Hour Compliance',
-        'Executive Compensation',
-        'Labor Relations'
+        t('expertise.employment.services.1'),
+        t('expertise.employment.services.2'),
+        t('expertise.employment.services.3'),
+        t('expertise.employment.services.4'),
+        t('expertise.employment.services.5'),
+        t('expertise.employment.services.6')
       ],
       achievements: [
-        '300+ workplace disputes resolved',
-        '99% compliance audit success',
-        'Zero EEOC violations for clients'
+        t('expertise.employment.achievements.1'),
+        t('expertise.employment.achievements.2'),
+        t('expertise.employment.achievements.3')
       ]
     },
     {
       icon: Home,
-      title: 'Real Estate',
-      description: 'Complete real estate legal services for residential, commercial, and investment properties.',
+      title: t('expertise.realestate.title'),
+      description: t('expertise.realestate.desc'),
       services: [
-        'Property Transactions',
-        'Lease Negotiations',
-        'Zoning & Land Use',
-        'Real Estate Finance',
-        'Construction Law',
-        'Property Development'
+        t('expertise.realestate.services.1'),
+        t('expertise.realestate.services.2'),
+        t('expertise.realestate.services.3'),
+        t('expertise.realestate.services.4'),
+        t('expertise.realestate.services.5'),
+        t('expertise.realestate.services.6')
       ],
       achievements: [
-        '$3B+ in property transactions',
-        '500+ successful closings',
-        '100+ development projects'
+        t('expertise.realestate.achievements.1'),
+        t('expertise.realestate.achievements.2'),
+        t('expertise.realestate.achievements.3')
       ]
     },
     {
       icon: Lightbulb,
-      title: 'Intellectual Property',
-      description: 'Protecting and enforcing intellectual property rights across all industries and technologies.',
+      title: t('expertise.ip.title'),
+      description: t('expertise.ip.desc'),
       services: [
-        'Patent Applications',
-        'Trademark Registration',
-        'Copyright Protection',
-        'Trade Secrets',
-        'IP Licensing',
-        'Infringement Litigation'
+        t('expertise.ip.services.1'),
+        t('expertise.ip.services.2'),
+        t('expertise.ip.services.3'),
+        t('expertise.ip.services.4'),
+        t('expertise.ip.services.5'),
+        t('expertise.ip.services.6')
       ],
       achievements: [
-        '2000+ patents filed',
-        '1500+ trademarks registered',
-        '98% approval rate'
+        t('expertise.ip.achievements.1'),
+        t('expertise.ip.achievements.2'),
+        t('expertise.ip.achievements.3')
       ]
     },
     {
       icon: Calculator,
-      title: 'Taxation',
-      description: 'Strategic tax planning and compliance services for individuals, businesses, and organizations.',
+      title: t('expertise.tax.title'),
+      description: t('expertise.tax.desc'),
       services: [
-        'Tax Planning',
-        'Tax Controversy',
-        'International Tax',
-        'Estate Tax Planning',
-        'Tax Compliance',
-        'IRS Representation'
+        t('expertise.tax.services.1'),
+        t('expertise.tax.services.2'),
+        t('expertise.tax.services.3'),
+        t('expertise.tax.services.4'),
+        t('expertise.tax.services.5'),
+        t('expertise.tax.services.6')
       ],
       achievements: [
-        '$100M+ in tax savings',
-        '500+ audits successfully resolved',
-        'Zero penalties for compliant clients'
+        t('expertise.tax.achievements.1'),
+        t('expertise.tax.achievements.2'),
+        t('expertise.tax.achievements.3')
       ]
     },
     {
       icon: TrendingUp,
-      title: 'Capital Market & M&A',
-      description: 'Expert guidance in mergers, acquisitions, and capital market transactions of all sizes.',
+      title: t('expertise.mna.title'),
+      description: t('expertise.mna.desc'),
       services: [
-        'Mergers & Acquisitions',
-        'Due Diligence',
-        'Securities Offerings',
-        'Private Equity',
-        'Venture Capital',
-        'IPO Services'
+        t('expertise.mna.services.1'),
+        t('expertise.mna.services.2'),
+        t('expertise.mna.services.3'),
+        t('expertise.mna.services.4'),
+        t('expertise.mna.services.5'),
+        t('expertise.mna.services.6')
       ],
       achievements: [
-        '$5B+ in M&A transactions',
-        '100+ successful deals',
-        '25+ IPOs completed'
+        t('expertise.mna.achievements.1'),
+        t('expertise.mna.achievements.2'),
+        t('expertise.mna.achievements.3')
       ]
     },
     {
       icon: Scale,
-      title: 'Arbitration',
-      description: 'Specialized arbitration services for efficient and effective dispute resolution.',
+      title: t('expertise.arbitration.title'),
+      description: t('expertise.arbitration.desc'),
       services: [
-        'Commercial Arbitration',
-        'International Arbitration',
-        'Construction Arbitration',
-        'Employment Arbitration',
-        'Investment Arbitration',
-        'Award Enforcement'
+        t('expertise.arbitration.services.1'),
+        t('expertise.arbitration.services.2'),
+        t('expertise.arbitration.services.3'),
+        t('expertise.arbitration.services.4'),
+        t('expertise.arbitration.services.5'),
+        t('expertise.arbitration.services.6')
       ],
       achievements: [
-        '150+ arbitrations completed',
-        '90% faster than litigation',
-        '$200M+ in awards enforced'
+        t('expertise.arbitration.achievements.1'),
+        t('expertise.arbitration.achievements.2'),
+        t('expertise.arbitration.achievements.3')
       ]
     }
   ];
@@ -167,22 +167,22 @@ const ExpertisePage: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">Our Expertise</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">{t('expertise.ourExpertise')}</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Comprehensive legal services across multiple practice areas, delivered with excellence and integrity.
+            {t('expertise.subtitle')}
           </p>
           <div className="flex justify-center space-x-8 text-brand-500">
             <div className="text-center">
               <div className="text-2xl font-bold">8</div>
-              <div className="text-sm text-gray-300">Practice Areas</div>
+              <div className="text-sm text-gray-300">{t('expertise.practiceAreas')}</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold">25+</div>
-              <div className="text-sm text-gray-300">Years Experience</div>
+              <div className="text-sm text-gray-300">{t('expertise.yearsExperience')}</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold">1000+</div>
-              <div className="text-sm text-gray-300">Cases Won</div>
+              <div className="text-sm text-gray-300">{t('expertise.casesWon')}</div>
             </div>
           </div>
         </div>
@@ -214,7 +214,7 @@ const ExpertisePage: React.FC = () => {
 
                   {/* Services */}
                   <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Services</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('expertise.ourServices')}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {area.services.map((service, serviceIndex) => (
                         <div key={serviceIndex} className="flex items-center">
@@ -227,7 +227,7 @@ const ExpertisePage: React.FC = () => {
 
                   {/* Achievements */}
                   <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Achievements</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('expertise.keyAchievements')}</h3>
                     <div className="space-y-2">
                       {area.achievements.map((achievement, achievementIndex) => (
                         <div key={achievementIndex} className="flex items-center">
@@ -239,8 +239,8 @@ const ExpertisePage: React.FC = () => {
                   </div>
 
                   <button className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    Learn More
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    {t('expertise.learnMore')}
+                    <DirectionalArrow isRTL={isRTL} className="ml-2 h-5 w-5" />
                   </button>
                 </div>
 
@@ -278,11 +278,10 @@ const ExpertisePage: React.FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">
-            Need Expert Legal Assistance?
+            {t('expertise.cta.title')}
           </h2>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Our experienced legal team is ready to help you navigate complex legal challenges 
-            and achieve the best possible outcomes for your case.
+            {t('expertise.cta.text')}
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -290,7 +289,7 @@ const ExpertisePage: React.FC = () => {
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Consultation</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('expertise.consultation')}</h3>
               <p className="text-gray-600">{t('common.consultationDesc')}</p>
             </div>
             
@@ -298,16 +297,16 @@ const ExpertisePage: React.FC = () => {
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Strategy</h3>
-              <p className="text-gray-600">We develop a tailored legal strategy based on your specific situation</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('expertise.strategy')}</h3>
+              <p className="text-gray-600">{t('expertise.strategyDesc')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Results</h3>
-              <p className="text-gray-600">Execute the strategy and achieve the best possible outcome</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('expertise.results')}</h3>
+              <p className="text-gray-600">{t('expertise.resultsDesc')}</p>
             </div>
           </div>
 
@@ -316,7 +315,7 @@ const ExpertisePage: React.FC = () => {
               {t('common.scheduleConsultation')}
             </button>
             <button className="border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-              Contact Our Team
+              {t('expertise.cta.contact')}
             </button>
           </div>
         </div>

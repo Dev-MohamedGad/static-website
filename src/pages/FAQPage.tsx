@@ -4,22 +4,22 @@ import { useLanguage } from '../context/LanguageContext';
 
 const FAQPage: React.FC = () => {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState('General');
+  const [activeCategory, setActiveCategory] = useState(t('faq.categories.general'));
   const [expandedQuestion, setExpandedQuestion] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   const categories = [
-    'General',
-    'Corporate Law',
-    'Employment Law',
-    'Real Estate',
-    'Intellectual Property',
-    'Litigation',
-    'Fees & Billing'
+    t('faq.categories.general'),
+    t('faq.categories.corporate'),
+    t('faq.categories.employment'),
+    t('faq.categories.realestate'),
+    t('faq.categories.intellectual'),
+    t('faq.categories.litigation'),
+    t('faq.categories.fees')
   ];
 
   const faqData = {
-    'General': [
+    [t('faq.categories.general')]: [
       {
         id: 1,
         question: t('faq.general.q1'),
@@ -37,110 +37,110 @@ const FAQPage: React.FC = () => {
       },
       {
         id: 4,
-        question: 'What should I bring to my first meeting?',
-        answer: 'Please bring any relevant documents related to your legal matter, including contracts, correspondence, court papers, or other materials. Also bring a list of questions you\'d like to discuss and any deadlines you\'re aware of.'
+        question: t('faq.general.q4'),
+        answer: t('faq.general.a4')
       }
     ],
-    'Corporate Law': [
+    [t('faq.categories.corporate')]: [
       {
         id: 5,
-        question: 'What is involved in forming a new business entity?',
-        answer: 'Business formation involves choosing the right entity type (LLC, Corporation, Partnership), filing necessary paperwork with state authorities, obtaining required licenses, creating governing documents, and setting up proper compliance procedures. We guide you through each step and help you choose the structure that best fits your business goals.'
+        question: t('faq.corporate.q1'),
+        answer: t('faq.corporate.a1')
       },
       {
         id: 6,
-        question: 'How can you help with mergers and acquisitions?',
-        answer: 'Our M&A team handles all aspects of transactions including due diligence, valuation, negotiation, drafting purchase agreements, regulatory compliance, and closing coordination. We work to protect your interests whether you\'re buying, selling, or merging with another company.'
+        question: t('faq.corporate.q2'),
+        answer: t('faq.corporate.a2')
       },
       {
         id: 7,
-        question: 'What ongoing legal services do businesses typically need?',
-        answer: 'Ongoing services include contract review and drafting, employment law compliance, corporate governance, intellectual property protection, regulatory compliance, dispute resolution, and general legal counsel on business decisions and strategic planning.'
+        question: t('faq.corporate.q3'),
+        answer: t('faq.corporate.a3')
       }
     ],
-    'Employment Law': [
+    [t('faq.categories.employment')]: [
       {
         id: 8,
-        question: 'Can you help with employee handbook development?',
-        answer: 'Yes, we create comprehensive employee handbooks that comply with federal, state, and local employment laws. This includes policies on hiring, workplace conduct, benefits, leave policies, disciplinary procedures, and termination processes.'
+        question: t('faq.employment.q1'),
+        answer: t('faq.employment.a1')
       },
       {
         id: 9,
-        question: 'What should I do if facing an employment discrimination claim?',
-        answer: 'Contact us immediately for legal representation. We\'ll review the claim, develop a defense strategy, handle communications with regulatory agencies, and represent you throughout the process. Early intervention is crucial in employment matters.'
+        question: t('faq.employment.q2'),
+        answer: t('faq.employment.a2')
       },
       {
         id: 10,
-        question: 'How do you handle workplace investigations?',
-        answer: 'We conduct thorough, impartial workplace investigations for harassment, discrimination, or misconduct allegations. Our process includes interviewing witnesses, reviewing evidence, documenting findings, and providing recommendations for appropriate action while ensuring legal compliance.'
+        question: t('faq.employment.q3'),
+        answer: t('faq.employment.a3')
       }
     ],
-    'Real Estate': [
+    [t('faq.categories.realestate')]: [
       {
         id: 11,
-        question: 'What legal services do you provide for real estate transactions?',
-        answer: 'We handle all aspects of real estate transactions including purchase and sale agreements, title examinations, closing coordination, financing documentation, lease negotiations, zoning issues, and resolving title defects.'
+        question: t('faq.realestate.q1'),
+        answer: t('faq.realestate.a1')
       },
       {
         id: 12,
-        question: 'Do you handle both residential and commercial real estate?',
-        answer: 'Yes, we represent clients in both residential and commercial real estate matters. Our services include single-family homes, condominiums, office buildings, retail spaces, industrial properties, and large-scale development projects.'
+        question: t('faq.realestate.q2'),
+        answer: t('faq.realestate.a2')
       },
       {
         id: 13,
-        question: 'What happens if issues arise during a real estate closing?',
-        answer: 'We work to resolve closing issues quickly, whether they involve title problems, financing delays, or contract disputes. Our experience allows us to anticipate potential problems and develop solutions to keep transactions on track.'
+        question: t('faq.realestate.q3'),
+        answer: t('faq.realestate.a3')
       }
     ],
-    'Intellectual Property': [
+    [t('faq.categories.intellectual')]: [
       {
         id: 14,
-        question: 'What types of intellectual property can you help protect?',
-        answer: 'We help protect patents, trademarks, copyrights, trade secrets, and other proprietary information. Our services include registration, licensing agreements, infringement defense, and enforcement actions.'
+        question: t('faq.intellectual.q1'),
+        answer: t('faq.intellectual.a1')
       },
       {
         id: 15,
-        question: 'How long does the patent application process take?',
-        answer: 'The patent process typically takes 1-3 years, depending on the complexity of the invention and USPTO workload. We guide you through each step including prior art searches, application drafting, responding to office actions, and final approval.'
+        question: t('faq.intellectual.q2'),
+        answer: t('faq.intellectual.a2')
       },
       {
         id: 16,
-        question: 'What should I do if someone is infringing on my trademark?',
-        answer: 'Contact us immediately to discuss enforcement options. We can send cease and desist letters, negotiate licensing agreements, or pursue litigation if necessary. Early action is important to protect your trademark rights.'
+        question: t('faq.intellectual.q3'),
+        answer: t('faq.intellectual.a3')
       }
     ],
-    'Litigation': [
+    [t('faq.categories.litigation')]: [
       {
         id: 17,
-        question: 'What types of disputes do you handle?',
-        answer: 'We handle commercial litigation, contract disputes, employment litigation, real estate disputes, intellectual property litigation, and general business disputes. We also provide arbitration and mediation services as alternatives to court proceedings.'
+        question: t('faq.litigation.q1'),
+        answer: t('faq.litigation.a1')
       },
       {
         id: 18,
-        question: 'How long do litigation cases typically take?',
-        answer: 'Case duration varies significantly based on complexity, court schedules, and whether parties are willing to settle. Simple matters may resolve in months, while complex commercial litigation can take 1-3 years or more. We provide realistic timelines for each case.'
+        question: t('faq.litigation.q2'),
+        answer: t('faq.litigation.a2')
       },
       {
         id: 19,
-        question: 'Do you recommend alternative dispute resolution?',
-        answer: 'Yes, we often recommend mediation or arbitration as they can be faster, less expensive, and more private than traditional litigation. We\'ll analyze your situation to determine the best approach for resolving your dispute.'
+        question: t('faq.litigation.q3'),
+        answer: t('faq.litigation.a3')
       }
     ],
-    'Fees & Billing': [
+    [t('faq.categories.fees')]: [
       {
         id: 20,
-        question: 'How do you structure your legal fees?',
-        answer: 'We offer various fee structures depending on the matter: hourly rates for most services, flat fees for routine matters like business formation, contingency fees for certain litigation, and retainer agreements for ongoing legal services. We discuss fees upfront and provide detailed estimates.'
+        question: t('faq.fees.q1'),
+        answer: t('faq.fees.a1')
       },
       {
         id: 21,
-        question: 'Do you require a retainer?',
-        answer: 'For most matters, we require an initial retainer to begin work. The retainer amount varies based on the complexity and expected duration of your matter. Retainer funds are held in trust and applied against future billings as work is completed.'
+        question: t('faq.fees.q2'),
+        answer: t('faq.fees.a2')
       },
       {
         id: 22,
-        question: 'How often will I receive billing statements?',
-        answer: 'We typically send monthly billing statements that detail all time spent, expenses incurred, and payments received. Statements include descriptions of work performed so you understand exactly what services you\'re paying for.'
+        question: t('faq.fees.q3'),
+        answer: t('faq.fees.a3')
       }
     ]
   };
@@ -160,9 +160,9 @@ const FAQPage: React.FC = () => {
       <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <HelpCircle className="w-16 h-16 text-brand-500 mx-auto mb-6" />
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">Frequently Asked Questions</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">{t('faq.title')}</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Find answers to common questions about our legal services and how we can help you.
+            {t('faq.subtitle')}
           </p>
         </div>
       </section>
@@ -189,7 +189,7 @@ const FAQPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Categories Sidebar */}
             <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 font-serif">Categories</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 font-serif">{t('faq.categories')}</h2>
               <nav className="space-y-2">
                 {categories.map((category) => (
                   <button
@@ -216,8 +216,8 @@ const FAQPage: React.FC = () => {
                 <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">{activeCategory}</h2>
                 <p className="text-lg text-gray-600">
                   {searchQuery 
-                    ? `${filteredFAQs.length} result(s) found for "${searchQuery}"` 
-                    : `Common questions about ${activeCategory.toLowerCase()}`
+                    ? `${filteredFAQs.length} ${t('faq.searchResults')} "${searchQuery}"`
+                    : `${t('faq.categoryDescription')} ${activeCategory}`
                   }
                 </p>
               </div>
@@ -225,13 +225,13 @@ const FAQPage: React.FC = () => {
               {filteredFAQs.length === 0 ? (
                 <div className="text-center py-12 bg-gray-50 rounded-2xl">
                   <HelpCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-600 mb-2">No questions found</h3>
-                  <p className="text-gray-500 mb-6">Try adjusting your search or browse other categories.</p>
+                  <h3 className="text-xl font-semibold text-gray-600 mb-2">{t('faq.noQuestionsFound')}</h3>
+                  <p className="text-gray-500 mb-6">{t('faq.tryAdjusting')}</p>
                   <button
                     onClick={() => setSearchQuery('')}
                     className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
                   >
-                    Clear Search
+                    {t('faq.clearSearch')}
                   </button>
                 </div>
               ) : (
@@ -274,9 +274,9 @@ const FAQPage: React.FC = () => {
       {/* Contact Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Still Have Questions?</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('faq.stillHaveQuestions')}</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Can't find the answer you're looking for? Our legal team is here to help you with personalized assistance.
+            {t('faq.contactDescription')}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -284,8 +284,8 @@ const FAQPage: React.FC = () => {
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Call Us</h3>
-              <p className="text-gray-600 mb-6">Speak directly with our legal experts</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('faq.callUs')}</h3>
+              <p className="text-gray-600 mb-6">{t('faq.callUsDesc')}</p>
               <a
                 href="tel:+1234567890"
                 className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
@@ -298,8 +298,8 @@ const FAQPage: React.FC = () => {
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mail className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Email Us</h3>
-              <p className="text-gray-600 mb-6">Send us your questions anytime</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('faq.emailUs')}</h3>
+              <p className="text-gray-600 mb-6">{t('faq.emailUsDesc')}</p>
               <a
                 href="mailto:info@shehablaw.com"
                 className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
@@ -313,9 +313,9 @@ const FAQPage: React.FC = () => {
                 <MessageCircle className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">{t('common.scheduleConsultation')}</h3>
-              <p className="text-gray-600 mb-6">Book a personalized meeting</p>
+              <p className="text-gray-600 mb-6">{t('faq.bookConsultationDesc')}</p>
               <button className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                Book Meeting
+                {t('faq.bookMeeting')}
               </button>
             </div>
           </div>
@@ -326,42 +326,38 @@ const FAQPage: React.FC = () => {
       <section className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 font-serif">Most Popular Questions</h2>
+            <h2 className="text-4xl font-bold mb-6 font-serif">{t('faq.popularQuestions')}</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Quick answers to the questions we hear most often from our clients.
+              {t('faq.popularDescription')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3">How much do legal services cost?</h3>
+              <h3 className="text-xl font-bold mb-3">{t('faq.howMuchCost')}</h3>
               <p className="text-gray-300">
-                Our fees vary based on the complexity and type of legal matter. We offer transparent pricing 
-                and will provide a detailed estimate during your initial consultation.
+                {t('faq.howMuchCostAnswer')}
               </p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3">Do you handle cases nationwide?</h3>
+              <h3 className="text-xl font-bold mb-3">{t('faq.handleNationwide')}</h3>
               <p className="text-gray-300">
-                We are licensed to practice in multiple states and can handle matters nationwide. We'll 
-                work with local counsel when necessary to ensure proper representation.
+                {t('faq.handleNationwideAnswer')}
               </p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3">How quickly can you respond to urgent matters?</h3>
+              <h3 className="text-xl font-bold mb-3">{t('faq.urgentResponse')}</h3>
               <p className="text-gray-300">
-                We understand legal emergencies require immediate attention. We offer same-day consultations 
-                for urgent matters and have an emergency contact line available 24/7.
+                {t('faq.urgentResponseAnswer')}
               </p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3">What makes your firm different?</h3>
+              <h3 className="text-xl font-bold mb-3">{t('faq.whatMakesDifferent')}</h3>
               <p className="text-gray-300">
-                Our combination of extensive experience, personalized service, and commitment to client 
-                success sets us apart. We focus on building long-term relationships and achieving results.
+                {t('faq.whatMakesDifferentAnswer')}
               </p>
             </div>
           </div>

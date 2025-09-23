@@ -38,9 +38,7 @@ const Hero: React.FC = () => {
               <span className="block bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent font-serif">
                 {t('hero.title.primary')}
               </span>
-              <span className="block text-3xl md:text-4xl lg:text-5xl font-light mt-2 text-gray-100">
-                {t('hero.title.secondary')}
-              </span>
+              
             </h1>
             
             {/* Decorative line */}

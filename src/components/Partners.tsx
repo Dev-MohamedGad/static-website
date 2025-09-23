@@ -1,9 +1,9 @@
 import React from 'react';
-import { Building, Users, ArrowRight } from '../icons';
+import { Building, Users, DirectionalArrow } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const Partners: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
 
   const clients = [
     { name: 'Global Manufacturing', logo: 'GM', industry: 'Manufacturing' },

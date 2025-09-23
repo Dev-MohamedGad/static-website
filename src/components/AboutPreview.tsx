@@ -1,9 +1,9 @@
 import React from 'react';
-import { Users, Award, Scale, ArrowRight } from '../icons';
+import { Users, Award, Scale, DirectionalArrow } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const AboutPreview: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
 
   const features = [
     {
@@ -57,7 +57,7 @@ const AboutPreview: React.FC = () => {
 
             <button className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               {t('about.cta')}
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <DirectionalArrow isRTL={isRTL} className="ml-2 h-5 w-5" />
             </button>
           </div>
 

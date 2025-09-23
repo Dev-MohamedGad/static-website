@@ -24,9 +24,9 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ height = '400px', className = '' 
           <div className="w-16 h-16 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center mx-auto mb-4">
             <MapPin className="w-8 h-8 text-white" />
           </div>
-          <h3 className="text-xl font-semibold text-brand-800 mb-2">Visit Our Office</h3>
-          <p className="text-brand-600 mb-4">Find us at our location</p>
-          <p className="text-sm text-brand-500 mb-4">30°04'09.8"N 31°13'11.4"E<br/>Cairo, Egypt</p>
+          <h3 className="text-xl font-semibold text-brand-800 mb-2">{t('office.visitOffice')}</h3>
+          <p className="text-brand-600 mb-4">{t('office.findUs')}</p>
+          <p className="text-sm text-brand-500 mb-4">{t('office.coordinates')}<br/>{t('office.cityCountry')}</p>
           <button
             onClick={handleGetDirections}
             className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"

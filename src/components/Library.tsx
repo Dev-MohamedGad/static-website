@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Search, Calendar, Clock, Eye, ArrowRight, Users } from '../icons';
+import { Search, Calendar, Clock, Eye, DirectionalArrow, Users } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const Library: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
 
@@ -228,7 +228,7 @@ const Library: React.FC = () => {
                   </div>
                   <button className="inline-flex items-center text-brand-600 hover:text-brand-700 font-medium text-sm group-hover:translate-x-1 transition-all duration-300">
                     {t('library.readMore')}
-                    <ArrowRight className="ml-1 h-4 w-4" />
+                    <DirectionalArrow isRTL={isRTL} className="ml-1 h-4 w-4" />
                   </button>
                 </div>
               </div>

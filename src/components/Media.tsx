@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Calendar, Eye, ArrowRight, ImageIcon, Play, Star, Download, Mail } from '../icons';
+import { Calendar, Eye, DirectionalArrow, ImageIcon, Play, Star, Download, Mail } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const Media: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
   const [activeTab, setActiveTab] = useState('news');
 
   const featuredArticle = {
@@ -159,7 +159,7 @@ const Media: React.FC = () => {
                 
                 <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center">
                   {t('media.article1.button')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <DirectionalArrow isRTL={isRTL} className="ml-2 h-5 w-5" />
                 </button>
               </div>
             </div>
@@ -214,7 +214,7 @@ const Media: React.FC = () => {
 
                     <button className="inline-flex items-center text-brand-600 hover:text-brand-700 font-medium text-sm group-hover:translate-x-1 transition-all duration-300">
                       {article.button}
-                      <ArrowRight className="ml-1 h-4 w-4" />
+                      <DirectionalArrow isRTL={isRTL} className="ml-1 h-4 w-4" />
                     </button>
                   </div>
                 </div>

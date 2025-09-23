@@ -138,16 +138,16 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
       isScrolled ? 'bg-gradient-to-r from-white/95 via-gray-50/95 to-white/95 backdrop-blur-md shadow-lg border-b border-brand-200/50' : 'bg-gradient-to-r from-white/90 via-gray-50/90 to-white/90 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-evenly items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 bg-transparent">
             <button onClick={() => setCurrentPage('home')} className="focus:outline-none">
               <Logo />
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex mx-4 py-4    items-center">
             {navigation.map((item) => (
               <div
                 key={item.key}
@@ -163,7 +163,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                       setCurrentPage(item.href);
                     }
                   }}
-                  className={`flex items-center px-4 py-2 text-sm font-medium transition-all duration-200 rounded-xl backdrop-blur-sm ${
+                  className={`flex items-center px-4  py-2 text-sm font-medium transition-all duration-200 rounded-xl backdrop-blur-sm ${
                     currentPage === item.href
                       ? 'text-brand-700 bg-gradient-to-r from-brand-100/80 via-brand-50/80 to-accent-100/80 shadow-md border border-brand-200/50'
                       : 'text-gray-700 hover:text-brand-600 hover:bg-gradient-to-r hover:from-brand-50/60 hover:to-accent-50/60 hover:shadow-sm hover:border hover:border-brand-200/30'

@@ -8,12 +8,12 @@ import {
   Calculator, 
   TrendingUp, 
   Gavel,
-  ArrowRight 
+  DirectionalArrow 
 } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
 const Expertise: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
 
   const practiceAreas = [
     {
@@ -114,7 +114,7 @@ const Expertise: React.FC = () => {
                 {/* Learn More Link */}
                 <button className="inline-flex items-center text-brand-600 hover:text-brand-700 font-medium text-sm group-hover:translate-x-2 transition-all duration-300">
                   {t('expertise.learnMore')}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <DirectionalArrow isRTL={isRTL} className="ml-2 h-4 w-4" />
                 </button>
               </div>
             </div>

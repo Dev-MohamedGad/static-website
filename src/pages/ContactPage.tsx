@@ -66,7 +66,7 @@ const ContactPage: React.FC = () => {
     { title: t('common.scheduleConsultation'), description: t('common.bookMeeting'), action: t('common.scheduleNow') },
     { title: t('common.emergencyHelp'), description: t('common.emergencyDesc'), action: t('common.callEmergency') },
     { title: t('common.clientPortal'), description: t('common.clientPortalDesc'), action: t('common.loginPortal') },
-    { title: 'Payment Options', description: 'View billing and make payments online', action: 'Manage Billing' }
+    { title: t('contact.paymentOptions'), description: t('contact.paymentDesc'), action: t('contact.manageBilling') }
   ];
 
   return (
@@ -76,7 +76,7 @@ const ContactPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">{t('contact.contactUs')}</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Ready to discuss your legal needs? Our experienced team is here to help you navigate complex legal challenges.
+            {t('contact.subtitle')}
           </p>
           <div className="flex justify-center space-x-8 text-brand-500">
             <div className="text-center">
@@ -119,26 +119,24 @@ const ContactPage: React.FC = () => {
             {/* Contact Form */}
             <div className="bg-white rounded-2xl p-8 shadow-xl">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">Send us a Message</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">{t('form.message')}</h2>
                 <p className="text-gray-600">
-                  Fill out the form below and we'll get back to you within 24 hours. For urgent matters, 
-                  please call our emergency line.
+                  {t('contact.form.instructions')}
                 </p>
               </div>
               
               {isSubmitted ? (
                 <div className="text-center py-12">
                   <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Message Sent Successfully!</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('page.messageSentSuccess')}</h3>
                   <p className="text-gray-600 mb-6">
-                    Thank you for contacting us. A member of our team will review your message and 
-                    respond within 24 hours.
+                    {t('page.messageSentThankYou')}
                   </p>
                   <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
-                    <strong>What's Next?</strong><br />
-                    • We'll review your case details<br />
-                    • Assign the appropriate attorney<br />
-                    • Contact you to schedule a consultation
+                    <strong>{t('page.whatsNext')}</strong><br />
+                    • {t('page.whatsNext.review')}<br />
+                    • {t('page.whatsNext.assign')}<br />
+                    • {t('page.whatsNext.contact')}
                   </div>
                 </div>
               ) : (
@@ -146,7 +144,7 @@ const ContactPage: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                        Full Name *
+                        {t('contact.form.name')} *
                       </label>
                       <input
                         type="text"
@@ -162,7 +160,7 @@ const ContactPage: React.FC = () => {
                     
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
+                        {t('contact.form.email')} *
                       </label>
                       <input
                         type="email"
@@ -180,7 +178,7 @@ const ContactPage: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
+                        {t('contact.form.phone')}
                       </label>
                       <input
                         type="tel"
@@ -195,7 +193,7 @@ const ContactPage: React.FC = () => {
                     
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                        Company/Organization
+                        {t('contact.form.company')}
                       </label>
                       <input
                         type="text"
@@ -211,7 +209,7 @@ const ContactPage: React.FC = () => {
 
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject *
+                      {t('contact.form.subject')} *
                     </label>
                     <input
                       type="text"
@@ -228,7 +226,7 @@ const ContactPage: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="urgency" className="block text-sm font-medium text-gray-700 mb-2">
-                        Urgency Level
+                        {t('contact.form.urgency')}
                       </label>
                       <select
                         id="urgency"
@@ -245,7 +243,7 @@ const ContactPage: React.FC = () => {
                     
                     <div>
                       <label htmlFor="preferredContact" className="block text-sm font-medium text-gray-700 mb-2">
-                        Preferred Contact Method
+                        {t('contact.form.preferredContact')}
                       </label>
                       <select
                         id="preferredContact"
@@ -263,7 +261,7 @@ const ContactPage: React.FC = () => {
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Message *
+                      {t('contact.form.message')} *
                     </label>
                     <textarea
                       id="message"
@@ -278,8 +276,7 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
-                    <strong>Privacy Notice:</strong> All information you provide is confidential and protected by attorney-client privilege. 
-                    We will not share your information with third parties without your consent.
+                    <strong>{t('contact.privacy.title')}</strong> {t('contact.privacy.body')}
                   </div>
 
                   <button
@@ -287,7 +284,7 @@ const ContactPage: React.FC = () => {
                     className="w-full bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                   >
                     <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                    {t('contact.form.submit')}
                   </button>
                 </form>
               )}
@@ -303,7 +300,7 @@ const ContactPage: React.FC = () => {
                     <div className="flex items-start">
                       <MapPin className="w-6 h-6 text-brand-600 mt-1 mr-4 flex-shrink-0" />
                       <div>
-                        <div className="font-medium text-gray-900 mb-1">Address</div>
+                        <div className="font-medium text-gray-900 mb-1">{t('contact.address')}</div>
                         <div className="text-gray-600 text-sm whitespace-pre-line">{office.address}</div>
                         <div className="text-gray-500 text-xs mt-2">
                           {office.parking} • {office.publicTransit}
@@ -314,12 +311,12 @@ const ContactPage: React.FC = () => {
                     <div className="flex items-start">
                       <Phone className="w-6 h-6 text-brand-600 mt-1 mr-4 flex-shrink-0" />
                       <div>
-                        <div className="font-medium text-gray-900 mb-1">Phone & Fax</div>
+                        <div className="font-medium text-gray-900 mb-1">{t('contact.phoneAndFax')}</div>
                         <div className="space-y-1">
                           <a href={`tel:${office.phone}`} className="block text-gray-600 hover:text-brand-600 transition-colors text-sm">
-                            {office.phone} (Main)
+                            {office.phone}
                           </a>
-                          <div className="text-gray-500 text-sm">{office.fax} (Fax)</div>
+                          <div className="text-gray-500 text-sm">{office.fax}</div>
                         </div>
                       </div>
                     </div>
@@ -327,7 +324,7 @@ const ContactPage: React.FC = () => {
                     <div className="flex items-start">
                       <Mail className="w-6 h-6 text-brand-600 mt-1 mr-4 flex-shrink-0" />
                       <div>
-                        <div className="font-medium text-gray-900 mb-1">Email</div>
+                        <div className="font-medium text-gray-900 mb-1">{t('contact.email')}</div>
                         <a href={`mailto:${office.email}`} className="text-gray-600 hover:text-brand-600 transition-colors text-sm">
                           {office.email}
                         </a>
@@ -337,8 +334,8 @@ const ContactPage: React.FC = () => {
                     <div className="flex items-start">
                       <Clock className="w-6 h-6 text-brand-600 mt-1 mr-4 flex-shrink-0" />
                       <div>
-                        <div className="font-medium text-gray-900 mb-1">Business Hours</div>
-                        <div className="text-gray-600 text-sm whitespace-pre-line">Sunday - Thursday: 9:00 AM - 6:00 PM\nFriday: 9:00 AM - 2:00 PM\nSaturday: Closed</div>
+                        <div className="font-medium text-gray-900 mb-1">{t('contact.businessHours')}</div>
+                        <div className="text-gray-600 text-sm whitespace-pre-line">{t('contact.businessHoursValue')}</div>
                       </div>
                     </div>
                   </div>
@@ -349,19 +346,19 @@ const ContactPage: React.FC = () => {
               <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-8">
                 <h3 className="text-xl font-bold text-red-800 mb-4 flex items-center">
                   <Phone className="w-6 h-6 mr-2" />
-                  Emergency Legal Assistance
+                  {t('common.emergencyHelp')}
                 </h3>
                 <p className="text-red-700 mb-4">
-                  For urgent legal matters that require immediate attention outside of business hours.
+                  {t('office.emergencyDesc')}
                 </p>
                 <div className="space-y-2">
                   <a href="tel:+1234567899" className="flex items-center text-red-800 font-semibold hover:text-red-900">
                     <Phone className="w-5 h-5 mr-2" />
-                    +1 (234) 567-8999 (24/7 Emergency Line)
+                    +1 (234) 567-8999 ({t('office.emergency')})
                   </a>
-                <div className="text-gray-600 text-sm whitespace-pre-line">Legal Plaza, Downtown Cairo\nCairo, Egypt\nP.O. Box 12345</div>
-                    Available for existing clients and urgent new matters requiring immediate legal intervention.
-                  Metro accessible • Parking available
+                <div className="text-gray-600 text-sm whitespace-pre-line">{t('office.address.main')}</div>
+                    {t('office.emergencyDesc')}
+                  {t('office.accessibility')}
                 </div>
               </div>
             </div>
@@ -373,18 +370,18 @@ const ContactPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">Visit Our Offices</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('contact.visitOffices')}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Conveniently located in the heart of New York's financial district with easy access to public transportation.
+              {t('page.interactiveMapNote')}
             </p>
           </div>
 
           <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center shadow-lg">
             <div className="text-center">
               <Globe className="w-16 h-16 text-gray-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-700 mb-2">Interactive Map</h3>
+              <h3 className="text-2xl font-semibold text-gray-700 mb-2">{t('contact.interactiveMap')}</h3>
               <p className="text-gray-600 mb-4">
-                Integrated Google Maps showing both office locations
+                {t('page.interactiveMapNote')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
@@ -403,18 +400,18 @@ const ContactPage: React.FC = () => {
       <section className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 font-serif">Additional Resources</h2>
+            <h2 className="text-4xl font-bold mb-6 font-serif">{t('contact.additionalResources')}</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore more ways to connect with our legal team and access helpful resources.
+              {t('contact.additionalResourcesDesc')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
               <Calendar className="w-12 h-12 text-brand-500 mx-auto mb-6" />
-              <h3 className="text-xl font-bold mb-4">Online Scheduling</h3>
+              <h3 className="text-xl font-bold mb-4">{t('contact.onlineScheduling')}</h3>
               <p className="text-gray-300 mb-6">
-                Use our online calendar to schedule consultations at your convenience.
+                {t('common.bookMeeting')}
               </p>
               <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 {t('common.scheduleOnline')}
@@ -423,23 +420,23 @@ const ContactPage: React.FC = () => {
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
               <Mail className="w-12 h-12 text-brand-500 mx-auto mb-6" />
-              <h3 className="text-xl font-bold mb-4">Newsletter</h3>
+              <h3 className="text-xl font-bold mb-4">{t('contact.newsletter')}</h3>
               <p className="text-gray-300 mb-6">
-                Stay informed with legal updates and insights delivered to your inbox.
+                {t('news.newsletter.disclaimer')}
               </p>
               <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                Subscribe Now
+                {t('news.newsletter.subscribe')}
               </button>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
               <Globe className="w-12 h-12 text-brand-500 mx-auto mb-6" />
-              <h3 className="text-xl font-bold mb-4">Client Portal</h3>
+              <h3 className="text-xl font-bold mb-4">{t('common.clientPortal')}</h3>
               <p className="text-gray-300 mb-6">
-                Access case updates, documents, and billing information securely online.
+                {t('common.clientPortalDesc')}
               </p>
               <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                Access Portal
+                {t('common.loginPortal')}
               </button>
             </div>
           </div>
