@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import AboutPreview from '../components/AboutPreview';
 import Expertise from '../components/Expertise';
 import Statistics from '../components/Statistics';
 import Clients from '../components/Clients';
