@@ -13,21 +13,24 @@ const LibraryPage = lazy(() => import('./pages/LibraryPage'));
 const FAQPage = lazy(() => import('./pages/FAQPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 
-// Loading spinner component (without translations for initial load)
-const LoadingSpinner = () => (
-  <div className="min-h-screen bg-gradient-to-br from-brand-50 to-white flex items-center justify-center">
-    <div className="text-center">
-      <div className="relative">
-        <div className="w-16 h-16 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto mb-6"></div>
-        <div className="w-12 h-12 border-4 border-accent-200 border-t-accent-500 rounded-full animate-spin absolute top-2 left-1/2 transform -translate-x-1/2"></div>
-      </div>
-      <div className="space-y-2">
-        <p className="text-brand-800 text-lg font-medium">Loading...</p>
-        <p className="text-brand-600 text-sm">Preparing your experience</p>
+// Loading spinner component
+const LoadingSpinner = () => {
+  const { t } = useLanguage();
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-brand-50 to-white flex items-center justify-center">
+      <div className="text-center">
+        <div className="relative">
+          <div className="w-16 h-16 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto mb-6"></div>
+          <div className="w-12 h-12 border-4 border-accent-200 border-t-accent-500 rounded-full animate-spin absolute top-2 left-1/2 transform -translate-x-1/2"></div>
+        </div>
+        <div className="space-y-2">
+          <p className="text-brand-800 text-lg font-medium">{t('common.loading')}</p>
+          <p className="text-brand-600 text-sm">{t('common.loadingExperience')}</p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 // Page transition loading
 const PageLoading = () => {
