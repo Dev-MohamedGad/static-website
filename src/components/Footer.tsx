@@ -1,6 +1,5 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from '../icons';
-import Logo from './Logo';
 import { useLanguage } from '../context/LanguageContext';
 
 interface FooterProps {
@@ -36,8 +35,17 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 text-white relative overflow-hidden">
+      {/* Logo Background - Center */}
+      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        <img 
+          src="/logo-law.png" 
+          alt="Shehab Law Firm Logo Background" 
+          className="w-full h-full object-contain filter blur-none"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
@@ -48,10 +56,10 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 </div>
               </div>
               <div>
-                <div className="text-lg font-bold bg-gradient-to-r from-brand-300 to-accent-300 bg-clip-text text-transparent">
+                <div className="text-lg font-bold bg-gradient-to-r mx-2 from-brand-300 to-accent-300 bg-clip-text text-transparent">
                   {t('footer.companyName')}
                 </div>
-                <div className="text-sm text-gray-300">{t('footer.tagline')}</div>
+                <div className="text-sm mx-2 text-gray-300">{t('footer.tagline')}</div>
               </div>
             </div>
             
@@ -140,13 +148,13 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400">
+            <div className="text-sm mx-2 text-gray-400">
               {t('footer.copyright')}
             </div>
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-brand-400 transition-colors">{t('footer.privacy')}</a>
-              <a href="#" className="hover:text-brand-400 transition-colors">{t('footer.terms')}</a>
-              <a href="#" className="hover:text-brand-400 transition-colors">{t('footer.legal')}</a>
+            <div className="flex space-x-6 mx-2 text-sm text-gray-400">
+              <a href="#" className="hover:text-brand-400 mx-2 transition-colors">{t('footer.privacy')}</a>
+              <a href="#" className="hover:text-brand-400 mx-2 transition-colors">{t('footer.terms')}</a>
+              <a href="#" className="hover:text-brand-400 mx-2 transition-colors">{t('footer.legal')}</a>
             </div>
           </div>
         </div>

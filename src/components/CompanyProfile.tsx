@@ -13,8 +13,17 @@ const CompanyProfile: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-white to-brand-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-white to-brand-50 relative overflow-hidden">
+      {/* Logo Background - Off Center Right */}
+      <div className="absolute top-1/2 left-3/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        <img 
+          src="/logo-law.png" 
+          alt="Shehab Law Firm Logo Background" 
+          className="w-full h-full object-contain filter blur-none"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="mb-12 sm:mb-16 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold font-serif mb-4">
             <span className="bg-gradient-to-r from-brand-800 to-brand-700 bg-clip-text text-transparent">

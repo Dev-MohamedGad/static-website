@@ -8,6 +8,13 @@ import {
   Calculator, 
   TrendingUp, 
   Gavel,
+  Shield,
+  Briefcase,
+  Smartphone,
+  PieChart,
+  BarChart,
+  Settings,
+  Merge,
   DirectionalArrow 
 } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
@@ -17,58 +24,61 @@ const Expertise: React.FC = () => {
 
   const practiceAreas = [
     {
-      icon: Gavel,
+      icon: Shield,
       title: t('expertise.dispute.title'),
       description: t('expertise.dispute.desc'),
-      features: [t('expertise.dispute.f1'), t('expertise.dispute.f2'), t('expertise.dispute.f3')]
+      features: [t('expertise.dispute.f1'), t('expertise.dispute.f2'), t('expertise.dispute.f3'), t('expertise.dispute.f4'), t('expertise.dispute.f5'), t('expertise.dispute.f6')]
     },
     {
       icon: Building,
       title: t('expertise.corporate.title'),
       description: t('expertise.corporate.desc'),
-      features: [t('expertise.corporate.f1'), t('expertise.corporate.f2'), t('expertise.corporate.f3')]
+      features: [t('expertise.corporate.f1'), t('expertise.corporate.f2'), t('expertise.corporate.f3'), t('expertise.corporate.f4'), t('expertise.corporate.f5'), t('expertise.corporate.f6')]
     },
     {
       icon: Users,
       title: t('expertise.employment.title'),
       description: t('expertise.employment.desc'),
-      features: [t('expertise.employment.f1'), t('expertise.employment.f2'), t('expertise.employment.f3')]
+      features: [t('expertise.employment.f1'), t('expertise.employment.f2'), t('expertise.employment.f3'), t('expertise.employment.f4'), t('expertise.employment.f5'), t('expertise.employment.f6')]
     },
     {
-      icon: Home,
-      title: t('expertise.realestate.title'),
-      description: t('expertise.realestate.desc'),
-      features: [t('expertise.realestate.f1'), t('expertise.realestate.f2'), t('expertise.realestate.f3')]
-    },
-    {
-      icon: Lightbulb,
+      icon: Smartphone,
       title: t('expertise.tmt.title'),
       description: t('expertise.tmt.desc'),
-      features: [t('expertise.tmt.f1'), t('expertise.tmt.f2'), t('expertise.tmt.f3')]
+      features: [t('expertise.tmt.f1'), t('expertise.tmt.f2'), t('expertise.tmt.f3'), t('expertise.tmt.f4'), t('expertise.tmt.f5'), t('expertise.tmt.f6')]
     },
     {
       icon: Calculator,
       title: t('expertise.tax.title'),
       description: t('expertise.tax.desc'),
-      features: [t('expertise.tax.f1'), t('expertise.tax.f2'), t('expertise.tax.f3')]
+      features: [t('expertise.tax.f1'), t('expertise.tax.f2'), t('expertise.tax.f3'), t('expertise.tax.f4'), t('expertise.tax.f5'), t('expertise.tax.f6')]
     },
     {
-      icon: TrendingUp,
+      icon: Merge,
       title: t('expertise.mna.title'),
       description: t('expertise.mna.desc'),
-      features: [t('expertise.mna.f1'), t('expertise.mna.f2'), t('expertise.mna.f3')]
+      features: [t('expertise.mna.f1'), t('expertise.mna.f2'), t('expertise.mna.f3'), t('expertise.mna.f4'), t('expertise.mna.f5'), t('expertise.mna.f6')]
     },
     {
-      icon: Scale,
+      icon: Settings,
       title: t('expertise.additional.title'),
       description: t('expertise.additional.desc'),
-      features: [t('expertise.additional.f1'), t('expertise.additional.f2'), t('expertise.additional.f3')]
+      features: [t('expertise.additional.f1'), t('expertise.additional.f2'), t('expertise.additional.f3'), t('expertise.additional.f4'), t('expertise.additional.f5'), t('expertise.additional.f6')]
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-white relative overflow-hidden">
+      {/* Logo Background - Off Center Right */}
+      <div className="absolute top-1/2 left-3/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        <img 
+          src="/logo-law.png" 
+          alt="Shehab Law Firm Logo Background" 
+          className="w-full h-full object-contain filter blur-none"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">

@@ -83,10 +83,29 @@ const Statistics: React.FC = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900"></div>
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
+      
+      {/* Logo Background - Center */}
+      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        <img 
+          src="/logo-law.png" 
+          alt="Shehab Law Firm Logo Background" 
+          className="w-full h-full object-contain filter blur-none"
+        />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <div className="w-24 h-24 bg-white/10 backdrop-blur-sm rounded-full shadow-2xl flex items-center justify-center border-2 border-white/20">
+              <img
+                src="/logo-law.png"
+                alt="Shehab Law Firm Logo"
+                className="w-16 h-16 object-contain"
+              />
+            </div>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
             {t('track.title')}
           </h2>

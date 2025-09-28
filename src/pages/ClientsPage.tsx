@@ -107,8 +107,17 @@ const ClientsPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
+        {/* Logo Background - Center */}
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+          <img 
+            src="/logo-law.png" 
+            alt="Shehab Law Firm Logo Background" 
+            className="w-full h-full object-contain filter blur-none"
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">{t('clients.title')}</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
             {t('clients.subtitle')}

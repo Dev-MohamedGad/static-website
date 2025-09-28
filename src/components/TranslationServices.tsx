@@ -14,8 +14,17 @@ const TranslationServices: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
+      {/* Logo Background - Off Center Right */}
+      <div className="absolute top-1/2 left-3/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        <img 
+          src="/logo-law.png" 
+          alt="Shehab Law Firm Logo Background" 
+          className="w-full h-full object-contain filter blur-none"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10 sm:mb-12">
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 font-serif">{t('about.transpedia.title')}</h3>
         </div>

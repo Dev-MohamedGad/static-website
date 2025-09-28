@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
+import GoogleMap from './GoogleMap';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -45,10 +46,29 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Logo Background - Off Center Left */}
+      <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        <img 
+          src="/logo-law.png" 
+          alt="Shehab Law Firm Logo Background" 
+          className="w-full h-full object-contain filter blur-none"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-brand-200">
+              <img
+                src="/logo-law.png"
+                alt="Shehab Law Firm Logo"
+                className="w-12 h-12 object-contain"
+              />
+            </div>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">
             {t('contact.title')}
           </h2>
@@ -153,7 +173,17 @@ const Contact: React.FC = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             {officeLocations.map((office, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg">
+              <div key={index} className={`bg-white rounded-2xl p-6 shadow-lg relative overflow-hidden ${office.name === t('office.main') ? 'bg-gradient-to-br from-brand-50 to-white' : ''}`}>
+                {/* Logo Background for Main Office */}
+                {office.name === t('office.main') && (
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-20 h-20 opacity-15">
+                    <img 
+                      src="/logo-law.png" 
+                      alt="Shehab Law Firm Logo" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                )}
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{office.name}</h3>
                 
                 <div className="space-y-4">
@@ -219,15 +249,7 @@ const Contact: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center font-serif">
               {t('contact.visitOffices')}
             </h3>
-            <div className="bg-gray-200 rounded-xl h-80 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-gray-500 mx-auto mb-4" />
-                <p className="text-gray-600">{t('page.interactiveMapNote')}</p>
-                <p className="text-sm text-gray-500 mt-2">
-                  {t('form.mapNote')}
-                </p>
-              </div>
-            </div>
+            <GoogleMap height="500px" className="w-full" />
           </div>
         </div>
       </div>

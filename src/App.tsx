@@ -89,23 +89,23 @@ function App() {
     }
   };
 
-  if (isInitialLoading) {
-    return <LoadingSpinner />;
-  }
-
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-gradient-to-br from-brand-50 via-white to-brand-50">
-        <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        <main className="pt-20">
-          <Suspense fallback={<PageLoading />}>
-            <div className={`transition-opacity duration-300 ${isPageTransitioning ? 'opacity-50' : 'opacity-100'}`}>
-              {renderPage()}
-            </div>
-          </Suspense>
-        </main>
-        <Footer setCurrentPage={setCurrentPage} />
-      </div>
+      {isInitialLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <div className="min-h-screen bg-gradient-to-br from-brand-50 via-white to-brand-50">
+          <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <main className="pt-20">
+            <Suspense fallback={<PageLoading />}>
+              <div className={`transition-opacity duration-300 ${isPageTransitioning ? 'opacity-50' : 'opacity-100'}`}>
+                {renderPage()}
+              </div>
+            </Suspense>
+          </main>
+          <Footer setCurrentPage={setCurrentPage} />
+        </div>
+      )}
     </LanguageProvider>
   );
 }

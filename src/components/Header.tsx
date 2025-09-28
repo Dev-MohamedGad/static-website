@@ -12,7 +12,6 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const { language, setLanguage, t } = useLanguage();
 
@@ -55,9 +54,6 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
     setActiveDropdown(activeDropdown === key ? null : key);
   };
 
-  const handleMobileDropdownClick = (key: string) => {
-    setMobileActiveDropdown(mobileActiveDropdown === key ? null : key);
-  };
 
   const handleMouseEnter = (key: string) => {
     if (hoverTimeout) {
@@ -107,24 +103,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
     },
     { key: 'clients', label: t('nav.clients'), href: 'clients' },
     { key: 'career', label: t('nav.career'), href: 'career' },
-    {
-      key: 'media',
-      label: t('nav.media'),
-      href: 'media',
-      dropdown: [
-        { label: t('nav.dropdown.media.newsHighlights'), href: 'media' },
-        { label: t('nav.dropdown.media.photosVideos'), href: 'media' }
-      ]
-    },
-    {
-      key: 'library',
-      label: t('nav.library'),
-      href: 'library',
-      dropdown: [
-        { label: t('nav.dropdown.library.blog'), href: 'library' },
-        { label: t('nav.dropdown.library.publications'), href: 'library' }
-      ]
-    },
+    { key: 'media', label: t('nav.media'), href: 'media' },
+    { key: 'library', label: t('nav.library'), href: 'library' },
     { key: 'faq', label: t('nav.faq'), href: 'faq' },
     { key: 'contact', label: t('nav.contact'), href: 'contact' }
   ];
@@ -163,9 +143,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                       setCurrentPage(item.href);
                     }
                   }}
-                  className={`flex items-center px-4  py-2 text-sm font-medium transition-all duration-200 rounded-xl backdrop-blur-sm ${
+                  className={`flex items-center px-4 mx-2 py-2 text-sm font-medium transition-all duration-200 rounded-xl backdrop-blur-sm ${
                     currentPage === item.href
-                      ? 'text-brand-700 bg-gradient-to-r from-brand-100/80 via-brand-50/80 to-accent-100/80 shadow-md border border-brand-200/50'
+                      ? 'text-brand-700  shadow-md border '
                       : 'text-gray-700 hover:text-brand-600 hover:bg-gradient-to-r hover:from-brand-50/60 hover:to-accent-50/60 hover:shadow-sm hover:border hover:border-brand-200/30'
                   }`}
                 >
@@ -198,7 +178,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                     
                     {/* Dropdown Items */}
                     <div className="py-1">
-                      {item.dropdown.map((subItem, index) => (
+                      {item.dropdown.map((subItem) => (
                         <button
                           key={subItem.label}
                           onClick={() => {
@@ -250,12 +230,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                 <div key={item.key} className="space-y-1">
                   <button
                     onClick={() => {
-                      if (item.dropdown) {
-                        handleMobileDropdownClick(item.key);
-                      } else {
-                        setCurrentPage(item.href);
-                        setIsMobileMenuOpen(false);
-                      }
+                      setCurrentPage(item.href);
+                      setIsMobileMenuOpen(false);
                     }}
                     className={`flex items-center justify-between w-full text-left px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
                       currentPage === item.href
@@ -264,33 +240,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                     }`}
                   >
                     <span>{item.label}</span>
-                    {item.dropdown && (
-                      <ChevronDown 
-                        className={`h-4 w-4 transition-transform duration-200 ${
-                          mobileActiveDropdown === item.key ? 'rotate-180' : ''
-                        }`} 
-                      />
-                    )}
                   </button>
-                  
-                  {/* Mobile Dropdown Items */}
-                  {item.dropdown && mobileActiveDropdown === item.key && (
-                    <div className="ml-4 mt-2 space-y-1 border-l-2 border-brand-200 pl-4">
-                      {item.dropdown.map((subItem) => (
-                        <button
-                          key={subItem.label}
-                          onClick={() => {
-                            setCurrentPage(subItem.href);
-                            setIsMobileMenuOpen(false);
-                            setMobileActiveDropdown(null);
-                          }}
-                          className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors duration-150"
-                        >
-                          {subItem.label}
-                        </button>
-                      ))}
-                    </div>
-                  )}
                 </div>
               ))}
               

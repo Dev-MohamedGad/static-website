@@ -1,11 +1,11 @@
 import React from 'react';
 import { Users, Award, Scale } from '../icons';
-import CompanyProfile from '../components/CompanyProfile';
 import MissionVision from '../components/MissionVision';
 import ServicesOverview from '../components/ServicesOverview';
 import PracticeAreas from '../components/PracticeAreas';
 import { useLanguage } from '../context/LanguageContext';
 import TranslationServices from '../components/TranslationServices';
+import AboutSection from '../components/AboutSection';
 
 const AboutPage: React.FC = () => {
   const { t } = useLanguage();
@@ -74,8 +74,8 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Company Profile (long content) */}
-      <CompanyProfile />
+      {/* About Section */}
+      <AboutSection />
 
       {/* Mission & Vision */}
       <MissionVision />

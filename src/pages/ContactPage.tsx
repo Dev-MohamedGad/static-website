@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Globe, Calendar } from '../icons';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Globe, Calendar, ArrowRight } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
+import GoogleMap from '../components/GoogleMap';
 
 const ContactPage: React.FC = () => {
   const { t } = useLanguage();
@@ -72,8 +73,17 @@ const ContactPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
+        {/* Logo Background - Center */}
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+          <img 
+            src="/logo-law.png" 
+            alt="Shehab Law Firm Logo Background" 
+            className="w-full h-full object-contain filter blur-none"
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">{t('contact.contactUs')}</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
             {t('contact.subtitle')}
@@ -96,16 +106,37 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Quick Actions */}
-      <section className="py-12 bg-white border-b border-gray-200">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">{t('contact.quickActions')}</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {t('contact.quickActionsDesc')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {quickLinks.map((link, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{link.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{link.description}</p>
-                <button className="text-brand-600 hover:text-brand-700 font-semibold text-sm">
-                  {link.action} →
-                </button>
+              <div key={index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col">
+                {/* Icon and Content */}
+                <div className="text-center mb-6 flex-1">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {index === 0 && <Calendar className="w-8 h-8 text-white" />}
+                    {index === 1 && <Phone className="w-8 h-8 text-white" />}
+                    {index === 2 && <Globe className="w-8 h-8 text-white" />}
+                    {index === 3 && <Mail className="w-8 h-8 text-white" />}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{link.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{link.description}</p>
+                </div>
+                
+                {/* Action Button - Bottom Right */}
+                <div className="flex justify-end mt-auto mx-2">
+                  <button className="inline-flex items-center text-brand-600 hover:text-brand-700 font-semibold text-sm group-hover:translate-x-1 transition-all duration-300">
+                    {link.action}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -113,7 +144,15 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        {/* Logo Background - Off Center Right */}
+        <div className="absolute top-1/2 left-3/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+          <img 
+            src="/logo-law.png" 
+            alt="Shehab Law Firm Logo Background" 
+            className="w-full h-full object-contain filter blur-none"
+          />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
@@ -367,8 +406,17 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Logo Background - Off Center Left */}
+        <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+          <img 
+            src="/logo-law.png" 
+            alt="Shehab Law Firm Logo Background" 
+            className="w-full h-full object-contain filter blur-none"
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('contact.visitOffices')}</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -376,22 +424,20 @@ const ContactPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center shadow-lg">
-            <div className="text-center">
-              <Globe className="w-16 h-16 text-gray-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-700 mb-2">{t('contact.interactiveMap')}</h3>
-              <p className="text-gray-600 mb-4">
-                {t('page.interactiveMapNote')}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                  {t('office.directions.main')}
-                </button>
-                <button className="border border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                  {t('office.directions.downtown')}
-                </button>
-              </div>
-            </div>
+          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <GoogleMap height="500px" className="w-full" />
+          </div>
+          
+          {/* Map Actions */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center">
+              <MapPin className="w-5 h-5 mr-2" />
+              {t('office.directions.main')}
+            </button>
+            <button className="border border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center">
+              <MapPin className="w-5 h-5 mr-2" />
+              {t('office.directions.downtown')}
+            </button>
           </div>
         </div>
       </section>

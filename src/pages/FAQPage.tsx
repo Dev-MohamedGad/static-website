@@ -157,8 +157,17 @@ const FAQPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
+        {/* Logo Background - Center */}
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+          <img 
+            src="/logo-law.png" 
+            alt="Shehab Law Firm Logo Background" 
+            className="w-full h-full object-contain filter blur-none"
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <HelpCircle className="w-16 h-16 text-brand-500 mx-auto mb-6" />
           <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif">{t('faq.title')}</h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
@@ -184,8 +193,17 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Logo Background - Off Center Right */}
+        <div className="absolute top-1/2 left-3/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+          <img 
+            src="/logo-law.png" 
+            alt="Shehab Law Firm Logo Background" 
+            className="w-full h-full object-contain filter blur-none"
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Categories Sidebar */}
             <div className="lg:col-span-1">
@@ -272,8 +290,17 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        {/* Logo Background - Off Center Left */}
+        <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+          <img 
+            src="/logo-law.png" 
+            alt="Shehab Law Firm Logo Background" 
+            className="w-full h-full object-contain filter blur-none"
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">{t('faq.stillHaveQuestions')}</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
             {t('faq.contactDescription')}
@@ -323,8 +350,17 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* Popular Questions */}
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
+        {/* Logo Background - Center */}
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+          <img 
+            src="/logo-law.png" 
+            alt="Shehab Law Firm Logo Background" 
+            className="w-full h-full object-contain filter blur-none"
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 font-serif">{t('faq.popularQuestions')}</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">

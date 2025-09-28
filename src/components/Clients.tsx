@@ -40,12 +40,31 @@ const Clients: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Logo Background - Off Center Left */}
+      <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        <img 
+          src="/logo-law.png" 
+          alt="Shehab Law Firm Logo Background" 
+          className="w-full h-full object-contain filter blur-none"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Testimonials */}
         <div className="space-y-8">
           <div className="text-center mb-12">
+            {/* Logo Section */}
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center border-2 border-brand-200">
+                <img
+                  src="/logo-law.png"
+                  alt="Shehab Law Firm Logo"
+                  className="w-10 h-10 object-contain"
+                />
+              </div>
+            </div>
             <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif">
               {t('testimonials.title')}
             </h3>

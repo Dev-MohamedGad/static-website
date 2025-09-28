@@ -5,8 +5,17 @@ const MissionVision: React.FC = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section className="py-16 sm:py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 bg-gray-50 relative overflow-hidden">
+      {/* Logo Background - Off Center Left */}
+      <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        <img 
+          src="/logo-law.png" 
+          alt="Shehab Law Firm Logo Background" 
+          className="w-full h-full object-contain filter blur-none"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
           <div className="bg-white rounded-2xl p-8 shadow-sm">
             <h3 className="text-2xl font-bold text-gray-900 mb-4 font-serif">{t('about.mission.title')}</h3>
