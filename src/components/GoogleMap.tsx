@@ -37,19 +37,30 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ height = '400px', className = '' 
         title="Shehab Law Firm Location"
       />
       
-      {/* Overlay with location info */}
-      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-xs">
-        <div className="flex items-center mb-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center mr-3">
-            <MapPin className="w-4 h-4 text-white" />
-          </div>
-          <h3 className="text-lg font-semibold text-brand-800">{t('office.visitOffice')}</h3>
-        </div>
-        <p className="text-sm text-brand-600 mb-2">{t('office.findUs')}</p>
-        <p className="text-xs text-brand-500 mb-3">{t('office.coordinates')}<br/>{t('office.cityCountry')}</p>
+      {/* Mobile: Simple button */}
+      <div className="absolute top-2 left-2 sm:hidden">
         <button
           onClick={handleGetDirections}
-          className="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-sm"
+          className="bg-brand-600 hover:bg-brand-700 text-white px-3 py-2 rounded-lg font-medium transition-colors duration-200 text-xs shadow-lg flex items-center"
+        >
+          <MapPin className="w-3 h-3 mr-1" />
+          {t('common.getDirections')}
+        </button>
+      </div>
+
+      {/* Desktop: Full card */}
+      <div className="hidden sm:block absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg max-w-56">
+        <div className="flex items-center mb-1">
+          <div className="w-6 h-6 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center mr-2">
+            <MapPin className="w-3 h-3 text-white" />
+          </div>
+          <h3 className="text-sm font-semibold text-brand-800">{t('office.visitOffice')}</h3>
+        </div>
+        <p className="text-xs text-brand-600 mb-1">{t('office.findUs')}</p>
+        <p className="text-xs text-brand-500 mb-2">{t('office.coordinates')}<br/>{t('office.cityCountry')}</p>
+        <button
+          onClick={handleGetDirections}
+          className="bg-brand-600 hover:bg-brand-700 text-white px-3 py-1.5 rounded-lg font-medium transition-colors duration-200 text-xs w-auto"
         >
           {t('common.getDirections')}
         </button>

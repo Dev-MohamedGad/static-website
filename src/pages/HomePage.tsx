@@ -17,8 +17,8 @@ const HomePage: React.FC = () => {
       
       {/* Company Profile Section */}
       <section className="py-20 bg-white relative overflow-hidden">
-        {/* Logo Background - Off Center Right */}
-        <div className="absolute top-1/2 left-3/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        {/* Logo Background - Center */}
+        <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
           <img 
             src="/logo-law.png" 
             alt="Shehab Law Firm Logo Background" 
@@ -127,8 +127,8 @@ const HomePage: React.FC = () => {
       </section>
 
       <div className="py-20 bg-gray-50 relative overflow-hidden">
-        {/* Logo Background - Off Center Left */}
-        <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        {/* Logo Background - Center */}
+        <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
           <img 
             src="/logo-law.png" 
             alt="Shehab Law Firm Logo Background" 
