@@ -92,7 +92,11 @@ const HomePage: React.FC = () => {
             >
               <div 
                 className="flex transition-all duration-1000 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                style={{ 
+                  transform: language === 'ar' 
+                    ? `translateX(${currentSlide * 100}%)` 
+                    : `translateX(-${currentSlide * 100}%)` 
+                }}
               >
                 {/* Innovation & Evolution Card */}
                 <div className="w-full flex-shrink-0 px-4">
@@ -111,10 +115,10 @@ const HomePage: React.FC = () => {
                       </div>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      Innovation & Evolution
+                      {t('slider.innovation.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      Founded to provide both legal services and consultancy, we employ innovative methods to keep pace with the evolving governmental and legal landscape.
+                      {t('slider.innovation.desc')}
                     </p>
                   </div>
                 </div>
@@ -136,10 +140,10 @@ const HomePage: React.FC = () => {
                       </div>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      Strategic Solutions
+                      {t('slider.solutions.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      We are fully attuned to daily challenges faced by corporations and committed to delivering swift, strategic business solutions that drive success.
+                      {t('slider.solutions.desc')}
                     </p>
                   </div>
                 </div>
@@ -161,10 +165,10 @@ const HomePage: React.FC = () => {
                       </div>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      Client Partnership
+                      {t('slider.partnership.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      Our lawyers work closely with clients, building trust, commitment, and loyalty by offering innovative solutions that drive success.
+                      {t('slider.partnership.desc')}
                     </p>
                   </div>
                 </div>
@@ -186,10 +190,10 @@ const HomePage: React.FC = () => {
                       </div>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      Specialized Teams
+                      {t('slider.teams.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      Our firm operates through specialized teams covering various areas of legal practice, allowing us to deliver high-quality, reliable, and efficient legal services.
+                      {t('slider.teams.desc')}
                     </p>
                   </div>
                 </div>
@@ -211,59 +215,59 @@ const HomePage: React.FC = () => {
                       </div>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      Client Sectors
+                      {t('slider.sectors.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed mb-4 text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      We serve clients across multiple sectors including:
+                      {t('slider.sectors.desc')}
                     </p>
                     <div className={`grid grid-cols-2 gap-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Sports</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.sports')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Construction</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.construction')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Energy</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.energy')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Banking</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.banking')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Oil & Gas</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.oilgas')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Heavy Industries</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.heavy')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Hospitals</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.hospitals')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">IT</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.it')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Communications</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.communications')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Pharmaceuticals</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.pharmaceuticals')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Media</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.media')}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                        <span className="text-sm text-gray-600">Transportation</span>
+                        <span className="text-sm text-gray-600">{t('slider.sectors.transportation')}</span>
                       </div>
                     </div>
                   </div>
@@ -275,18 +279,26 @@ const HomePage: React.FC = () => {
             {/* Navigation Arrows - Enhanced with animations */}
             <button
               onClick={() => setCurrentSlide((prev) => (prev - 1 + 5) % 5)}
-              className="absolute -left-5 lg:-left-5 top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse"
+              className={`absolute top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse ${
+                language === 'ar' ? '-right-5 lg:-right-5' : '-left-5 lg:-left-5'
+              }`}
             >
-              <svg className="w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 group-hover:-translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+              <svg className={`w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 transition-all duration-300 ${
+                language === 'ar' ? 'group-hover:translate-x-1' : 'group-hover:-translate-x-1'
+              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={language === 'ar' ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
               </svg>
             </button>
             <button
               onClick={() => setCurrentSlide((prev) => (prev + 1) % 5)}
-              className="absolute -right-5 lg:-right-5 top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse"
+              className={`absolute top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse ${
+                language === 'ar' ? '-left-5 lg:-left-5' : '-right-5 lg:-right-5'
+              }`}
             >
-              <svg className="w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              <svg className={`w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 transition-all duration-300 ${
+                language === 'ar' ? 'group-hover:-translate-x-1' : 'group-hover:translate-x-1'
+              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={language === 'ar' ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
               </svg>
             </button>
 

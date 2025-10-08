@@ -160,7 +160,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden  rounded-xl p-2  lg:flex  items-center ">
+          <nav className="hidden  rounded-xl px-2 mx-auto  lg:flex  items-center ">
             {navigation.map((item) => (
               <div
                 key={item.key}
