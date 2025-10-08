@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DirectionalArrow, ChevronDown } from '../icons';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 
 const Hero: React.FC = () => {
@@ -10,117 +10,225 @@ const Hero: React.FC = () => {
     setIsVisible(true);
   }, []);
 
-  const scrollToContent = () => {
-    const element = document.getElementById('about-preview');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+ 
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 overflow-hidden">
-      {/* Modern Background Pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-600/10 via-transparent to-accent-600/10"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
-        
-        {/* Logo Background - Center */}
-        <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
-          <img 
-            src="/logo-law.png" 
-            alt="Shehab Law Firm Logo Background" 
-            className="w-full h-full object-contain filter blur-none"
-          />
-        </div>
-        
-        {/* Floating geometric shapes */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-brand-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-accent-500/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <section className="min-h-screen">
+      {/* Animated Background Image with Logo */}
+      <div className="absolute inset-0 overflow-hidden w-full h-full">
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/finalCairo.4e840ba2.jpg)',
+            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+            animation: 'kenBurns 20s ease-in-out infinite alternate'
+          }}
+        />
+      
+        {/* Dark brown overlay to match logo background */}
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(101, 67, 33, 0.8)' }}></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Content - Perfect Center */}
+      <div className="relative z-10 w-full h-screen flex items-center justify-center">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {/* Main Title */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
-              <span className="block bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent font-serif">
-                {t('hero.title.primary')}
-              </span>
-              
-            </h1>
-            
-            {/* Decorative line */}
-            <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full"></div>
-          </div>
+          {/* Logo Mark - Classical Architectural Design */}
+          <motion.div 
+            className="mb-8"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ 
+              duration: 1.5, 
+              ease: "easeOut"
+            }}
+          >
+            {/* S and F with Classical Columns - Always LTR */}
+            <div className="flex items-center justify-center space-x-4 mb-6" style={{ direction: 'ltr' }}>
+              {/* Letter S with Column */}
+              <motion.div 
+                className="relative"
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                <div 
+                  className="text-9xl md:text-[12rem] lg:text-[14rem] font-bold"
+                  style={{
+                    fontFamily: '"Playfair Display"',
+                    color: '#898A35',
+                    textShadow: '0 8px 16px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4)'
+                  }}
+                >
+                  S
+                </div>
+                {/* Column decoration */}
+                <div 
+                  className="absolute -right-2 top-2 w-1 h-16 rounded-sm"
+                  style={{ 
+                    backgroundColor: '#2D2D2D',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.1)'
+                  }}
+                ></div>
+              </motion.div>
 
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-3xl mx-auto font-light">
+              {/* Central Columns */}
+              <motion.div 
+                className="flex flex-col space-y-3"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                <div 
+                  className="w-4 h-20 rounded-lg"
+                  style={{ 
+                    backgroundColor: '#1A1A1A',
+                    boxShadow: `
+                      0 8px 16px rgba(0,0,0,0.8),
+                      0 4px 8px rgba(0,0,0,0.6),
+                      inset 0 2px 4px rgba(255,255,255,0.15),
+                      inset 0 -1px 2px rgba(0,0,0,0.8)
+                    `,
+                    border: '1px solid rgba(255,255,255,0.1)'
+                  }}
+                ></div>
+                <div 
+                  className="w-4 h-20 rounded-lg"
+                  style={{ 
+                    backgroundColor: '#1A1A1A',
+                    boxShadow: `
+                      0 8px 16px rgba(0,0,0,0.8),
+                      0 4px 8px rgba(0,0,0,0.6),
+                      inset 0 2px 4px rgba(255,255,255,0.15),
+                      inset 0 -1px 2px rgba(0,0,0,0.8)
+                    `,
+                    border: '1px solid rgba(255,255,255,0.1)'
+                  }}
+                ></div>
+              </motion.div>
+
+              {/* Letter F with Column */}
+              <motion.div 
+                className="relative"
+                initial={{ x: 50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 1 }}
+              >
+                <div 
+                  className="text-9xl md:text-[12rem] lg:text-[14rem] font-bold"
+                  style={{
+                    fontFamily: '"Playfair Display"',
+                    color: '#898A35',
+                    textShadow: '0 8px 16px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4)'
+                  }}
+                >
+                  F
+                </div>
+                {/* Column decoration */}
+                <div 
+                  className="absolute -left-2 top-2 w-1 h-16 rounded-sm"
+                  style={{ 
+                    backgroundColor: '#2D2D2D',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.1)'
+                  }}
+                ></div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Main Title - RTL Support */}
+          <motion.h1 
+            className={`text-2xl md:text-3xl lg:text-4xl font-bold text-center ${isRTL ? 'tracking-normal' : 'tracking-widest uppercase'}`}
+            style={{
+              fontFamily: isRTL ? '"Amiri", "Times New Roman", serif' : '"Cinzel", "Times New Roman", serif',
+              color: '#898A35',
+              letterSpacing: isRTL ? '0.05em' : '0.2em',
+              textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+              fontWeight: '600',
+              direction: isRTL ? 'rtl' : 'ltr'
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.5 }}
+          >
+            {t('hero.title.primary')}
+          </motion.h1>
+          
+          {/* Subtitle - RTL Support */}
+          <motion.p 
+            className={`text-black text-lg md:text-xl lg:text-2xl font-medium text-center mt-6 ${isRTL ? 'tracking-normal' : 'tracking-wide'}`}
+            style={{
+              fontFamily: isRTL ? '"Amiri", "Times New Roman", serif' : '"Cinzel Decorative", "Cinzel", "Times New Roman", serif',
+              letterSpacing: isRTL ? '0.05em' : '0.15em',
+              textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6)',
+              fontWeight: '400',
+              fontStyle: isRTL ? 'normal' : 'italic',
+              direction: isRTL ? 'rtl' : 'ltr'
+            }}
+            initial={{ opacity: 0, y: 30, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ 
+              duration: 1.2, 
+              delay: 2,
+              ease: "easeOut"
+            }}
+            whileHover={{
+              scale: 1.05,
+              transition: { duration: 0.3 }
+            }}
+          >
             {t('hero.subtitle')}
-          </p>
-
-          {/* Description */}
-          <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            {t('hero.description')}
-          </p>
-
-          {/* Modern CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button 
-              onClick={scrollToContent}
-              className="group relative overflow-hidden bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-700 hover:to-accent-700 text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-brand-500/25 flex items-center"
-            >
-              <span className="relative z-10">{t('hero.cta')}</span>
-              <DirectionalArrow 
-                isRTL={isRTL} 
-                className={`${isRTL ? 'mr-3' : 'ml-3'} h-5 w-5 group-hover:${isRTL ? '-translate-x-1' : 'translate-x-1'} transition-transform relative z-10`} 
-              />
-              
-              {/* Animated background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-            
-            <button className="group relative text-white border-2 border-white/20 hover:border-brand-400 backdrop-blur-sm bg-white/5 hover:bg-white/10 px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105">
-              {t('hero.cta.secondary')}
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-600/10 to-accent-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-            </button>
-          </div>
-
-          {/* Enhanced Trust Indicators */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {[
-              { number: '25+', label: t('hero.stats.years'), color: 'from-brand-400 to-brand-600' },
-              { number: '500+', label: t('hero.stats.cases'), color: 'from-accent-400 to-accent-600' },
-              { number: '1000+', label: t('hero.stats.clients'), color: 'from-success-400 to-success-600' },
-              { number: '98%', label: t('hero.stats.success'), color: 'from-warning-400 to-warning-600' }
-            ].map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className={`text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300`}>
-                  {stat.number}
-                </div>
-                <div className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
+          </motion.p>
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
-      <button 
-        onClick={scrollToContent}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group"
+      {/* Scroll Down Indicator - Framer Motion */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 3 }}
       >
-        <div className="relative flex flex-col items-center">
-          <div className="text-xs text-gray-300 mb-2 opacity-75 group-hover:opacity-100 transition-opacity">
-            {t('common.scrollDown')}
-          </div>
-          <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-brand-400 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
-      </button>
+        <motion.div 
+          className="flex flex-col items-center space-y-3"
+          animate={{ y: [0, -5, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <motion.span 
+            className="text-white text-xs font-light tracking-widest uppercase opacity-70"
+            animate={{ opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            Scroll Down
+          </motion.span>
+          <motion.div className="relative">
+            <motion.div 
+              className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+              animate={{ 
+                borderColor: ["rgba(255,255,255,0.5)", "rgba(255,255,255,0.8)", "rgba(255,255,255,0.5)"],
+                boxShadow: ["0 0 0 0 rgba(255,255,255,0.3)", "0 0 20px 5px rgba(255,255,255,0.2)", "0 0 0 0 rgba(255,255,255,0.3)"]
+              }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <motion.div 
+                className="w-1 h-3 bg-white rounded-full mt-2"
+                animate={{ y: [0, 8, 0], opacity: [1, 0.7, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              ></motion.div>
+            </motion.div>
+            <motion.div 
+              className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"
+              animate={{ 
+                scale: [0, 1, 2], 
+                opacity: [1, 0.5, 0] 
+              }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            ></motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
     </section>
   );
 };

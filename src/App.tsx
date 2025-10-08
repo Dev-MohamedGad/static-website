@@ -61,7 +61,12 @@ function App() {
     setIsPageTransitioning(true);
     const timer = setTimeout(() => {
       setIsPageTransitioning(false);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Enhanced smooth scrolling
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth',
+        left: 0
+      });
     }, 200);
     return () => clearTimeout(timer);
   }, [currentPage]);
@@ -94,7 +99,7 @@ function App() {
       {isInitialLoading ? (
         <LoadingSpinner />
       ) : (
-        <div className="min-h-screen bg-gradient-to-br from-brand-50 via-white to-brand-50">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50">
           <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
           <main className="pt-20">
             <Suspense fallback={<PageLoading />}>

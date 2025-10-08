@@ -23,10 +23,9 @@ const en = {
     'nav.contact': 'Contact Us',
     
     // Hero
-    'hero.title': 'Shehab Law Firm',
-    'hero.title.primary': 'Shehab Law Firm',
+    'hero.title': 'ShehabLawFirm',
+    'hero.title.primary': 'Shehab  Law  Firm',
     'hero.subtitle': 'Your trusted legal partner',
-    'hero.description': 'An Egyptian law firm bringing together highly qualified legal professionals with diverse local and international backgrounds, delivering innovative solutions across multiple sectors.',
     'hero.cta': 'Learn More About Us',
     'hero.cta.secondary': 'Schedule Consultation',
     'hero.stats.years': 'Years Experience',
@@ -923,7 +922,6 @@ const ar = {
     'hero.title': 'شهاب للمحاماة',
     'hero.title.primary': 'شهاب للمحاماة',
     'hero.subtitle': 'شريكك القانوني الموثوق',
-    'hero.description': 'مكتب محاماة مصري يجمع بين المتخصصين القانونيين المؤهلين تأهيلاً عالياً ذوي خلفيات محلية ودولية متنوعة، ويقدم حلولاً مبتكرة عبر قطاعات متعددة.',
     'hero.cta': 'تعرف علينا أكثر',
     'hero.cta.secondary': 'جدولة استشارة',
     'hero.stats.years': 'سنوات خبرة',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Hero from '../components/Hero';
 import Expertise from '../components/Expertise';
 import Statistics from '../components/Statistics';
@@ -11,69 +11,299 @@ import { useLanguage } from '../context/LanguageContext';
 const HomePage: React.FC = () => {
   const { t, language } = useLanguage();
   
+  // Slider state
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % 5); // 5 cards total
+    }, 4000); // Change slide every 4 seconds
+    
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+  
+  // Scroll animation logic
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeInUp');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections with animation classes
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      animatedElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Hero />
       
       {/* Company Profile Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Logo Background - Center */}
-        <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+      <section className="py-20 relative overflow-hidden animate-on-scroll">
+        {/* Background Image */}
+        <div className="absolute inset-0">
           <img 
-            src="/logo-law.png" 
-            alt="Shehab Law Firm Logo Background" 
-            className="w-full h-full object-contain filter blur-none"
+            src="/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" 
+            alt="Legal Office Background" 
+            className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/85 to-white/75"></div>
+        </div>
+        
+        {/* Subtle background pattern overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-brand-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-accent-500 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-on-scroll">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">
               {t('about.profile.aboutTitle')}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full mb-8"></div>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              <div className="bg-gradient-to-br from-brand-50 to-accent-50 rounded-2xl p-8">
-                <h3 className={`text-2xl font-bold text-gray-900 mb-6 font-serif ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  {t('about.profile.title')}
-                </h3>
-                <div className={`space-y-6 text-gray-700 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  <p>{t('about.profile.p1')}</p>
-                  <p>{t('about.profile.p2')}</p>
-                  <p>{t('about.profile.p3')}</p>
+          {/* Company Profile Slider */}
+          <div className="relative mb-16 flex justify-center">
+            {/* Slider Container */}
+            <div 
+              ref={sliderRef}
+              className="relative overflow-hidden rounded-3xl max-w-4xl w-full"
+              onMouseEnter={() => setIsAutoPlaying(false)}
+              onMouseLeave={() => setIsAutoPlaying(true)}
+            >
+              <div 
+                className="flex transition-all duration-1000 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {/* Innovation & Evolution Card */}
+                <div className="w-full flex-shrink-0 px-4">
+                  <div className="group bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-blue-100">
+                    <div className="relative overflow-hidden rounded-2xl mb-6">
+                      <img 
+                        src="/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" 
+                        alt="Innovation & Legal Evolution" 
+                        className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
+                      <div className="absolute top-4 right-4 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                        <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
+                      Innovation & Evolution
+                    </h3>
+                    <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                      Founded to provide both legal services and consultancy, we employ innovative methods to keep pace with the evolving governmental and legal landscape.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Strategic Solutions Card */}
+                <div className="w-full flex-shrink-0 px-4">
+                  <div className="group bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-green-100">
+                    <div className="relative overflow-hidden rounded-2xl mb-6">
+                      <img 
+                        src="/writer.webp" 
+                        alt="Strategic Business Solutions" 
+                        className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-green-600/20 to-transparent"></div>
+                      <div className="absolute top-4 right-4 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                        <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
+                      Strategic Solutions
+                    </h3>
+                    <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                      We are fully attuned to daily challenges faced by corporations and committed to delivering swift, strategic business solutions that drive success.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Client Partnership Card */}
+                <div className="w-full flex-shrink-0 px-4">
+                  <div className="group bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-purple-100">
+                    <div className="relative overflow-hidden rounded-2xl mb-6">
+                      <img 
+                        src="/group.webp" 
+                        alt="Client Partnership & Trust" 
+                        className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent"></div>
+                      <div className="absolute top-4 right-4 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                        <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
+                      Client Partnership
+                    </h3>
+                    <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                      Our lawyers work closely with clients, building trust, commitment, and loyalty by offering innovative solutions that drive success.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Specialized Teams Card */}
+                <div className="w-full flex-shrink-0 px-4">
+                  <div className="group bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-orange-100">
+                    <div className="relative overflow-hidden rounded-2xl mb-6">
+                      <img 
+                        src="/finalCairo.4e840ba2.jpg" 
+                        alt="Specialized Legal Teams" 
+                        className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent"></div>
+                      <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
+                      Specialized Teams
+                    </h3>
+                    <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                      Our firm operates through specialized teams covering various areas of legal practice, allowing us to deliver high-quality, reliable, and efficient legal services.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Client Sectors Card */}
+                <div className="w-full flex-shrink-0 px-4">
+                  <div className="group bg-gradient-to-br from-teal-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-teal-100">
+                    <div className="relative overflow-hidden rounded-2xl mb-6">
+                      <img 
+                        src="/original.jpeg" 
+                        alt="Client Sectors" 
+                        className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-teal-600/20 to-transparent"></div>
+                      <div className="absolute top-4 right-4 w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
+                      Client Sectors
+                    </h3>
+                    <p className={`text-gray-700 leading-relaxed mb-4 text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                      We serve clients across multiple sectors including:
+                    </p>
+                    <div className={`grid grid-cols-2 gap-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Sports</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Construction</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Energy</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Banking</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Oil & Gas</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Heavy Industries</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Hospitals</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">IT</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Communications</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Pharmaceuticals</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Media</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                        <span className="text-sm text-gray-600">Transportation</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div className="bg-white border border-gray-200 rounded-2xl p-8">
-                <h4 className={`text-xl font-bold text-gray-900 mb-4 font-serif ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  {t('about.mission.title')}
-                </h4>
-                <p className={`text-gray-700 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  {t('about.mission.body')}
-                </p>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-2xl p-8">
-                <h4 className={`text-xl font-bold text-gray-900 mb-4 font-serif ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  {t('about.vision.title')}
-                </h4>
-                <p className={`text-gray-700 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  {t('about.vision.body')}
-                </p>
-              </div>
             </div>
+
+
+            {/* Navigation Arrows - Enhanced with animations */}
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + 5) % 5)}
+              className="absolute -left-5 lg:-left-5 top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse"
+            >
+              <svg className="w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 group-hover:-translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % 5)}
+              className="absolute -right-5 lg:-right-5 top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse"
+            >
+              <svg className="w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
           </div>
 
           {/* Services Overview */}
-          <div className="mt-16">
+          <div className="animate-on-scroll">
             <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center font-serif">
               {t('about.services.title')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
                 <h4 className={`text-lg font-bold text-gray-900 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t('about.services.corporate.title')}
                 </h4>
@@ -81,7 +311,12 @@ const HomePage: React.FC = () => {
                   {t('about.services.corporate.desc')}
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
                 <h4 className={`text-lg font-bold text-gray-900 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t('about.services.mna.title')}
                 </h4>
@@ -89,7 +324,12 @@ const HomePage: React.FC = () => {
                   {t('about.services.mna.desc')}
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
                 <h4 className={`text-lg font-bold text-gray-900 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t('about.services.litigation.title')}
                 </h4>
@@ -97,7 +337,12 @@ const HomePage: React.FC = () => {
                   {t('about.services.litigation.desc')}
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
                 <h4 className={`text-lg font-bold text-gray-900 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t('about.services.ip.title')}
                 </h4>
@@ -105,7 +350,12 @@ const HomePage: React.FC = () => {
                   {t('about.services.ip.desc')}
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
                 <h4 className={`text-lg font-bold text-gray-900 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t('about.services.employment.title')}
                 </h4>
@@ -113,7 +363,12 @@ const HomePage: React.FC = () => {
                   {t('about.services.employment.desc')}
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
                 <h4 className={`text-lg font-bold text-gray-900 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t('about.services.realestate.title')}
                 </h4>
@@ -126,7 +381,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <div className="py-20 bg-gray-50 relative overflow-hidden">
+      <div className="py-20 bg-gray-100 relative overflow-hidden animate-on-scroll">
         {/* Logo Background - Center */}
         <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
           <img 
@@ -137,7 +392,7 @@ const HomePage: React.FC = () => {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-on-scroll">
             {/* Logo Section */}
             <div className="flex justify-center mb-8">
               <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-brand-200">
@@ -155,14 +410,26 @@ const HomePage: React.FC = () => {
               {t('contact.visitOffices')}
             </p>
           </div>
-          <GoogleMap height="400px" className="max-w-4xl mx-auto" />
+          <div className="animate-on-scroll">
+            <GoogleMap height="400px" className="max-w-4xl mx-auto" />
+          </div>
         </div>
       </div>
-      <Expertise />
-      <Statistics />
-      <Clients />
-      <News />
-      <Contact />
+      <div className="animate-on-scroll">
+        <Expertise />
+      </div>
+      <div className="animate-on-scroll">
+        <Statistics />
+      </div>
+      <div className="animate-on-scroll">
+        <Clients />
+      </div>
+      <div className="animate-on-scroll">
+        <News />
+      </div>
+      <div className="animate-on-scroll">
+        <Contact />
+      </div>
     </div>
   );
 };

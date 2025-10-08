@@ -2,6 +2,153 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #898A35;
+  border-radius: 10px;
+  border: 2px solid #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7a7b2e;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #898A35 #f8f9fa;
+}
+
+/* Nearly White Background */
+body {
+  background-color: #fafbfc;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced smooth scrolling for all elements */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Ensure smooth scrolling works on all browsers */
+body {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+}
+
+/* Force smooth scrolling for older browsers */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Additional smooth scrolling support */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Scroll-triggered animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animate-fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll.animate-fadeInLeft {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-on-scroll.animate-fadeInRight {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-on-scroll.animate-scaleIn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.animate-on-scroll.animate-slideInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Global font setup */
 :root {
   --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -9,5 +156,248 @@
 }
 
 html {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
+}
+
+/* Hero Animations */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translateX(0) translateY(0);
+  }
+  100% {
+    transform: scale(1.1) translateX(-2%) translateY(-2%);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineExpand {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 6rem;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Advanced Letter Animations */
+@keyframes letterEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) translateX(-30px) rotateX(-90deg) scale(0.5);
+    filter: blur(5px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-10px) translateX(5px) rotateX(-45deg) scale(1.1);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) rotateX(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes letterFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes letterGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255,255,255,0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.4);
+  }
+}
+
+@keyframes letterBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Header Navigation Animations */
+@keyframes navItemSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes navItemGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255,255,255,0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255,255,255,0.8), 0 0 25px rgba(255,255,255,0.4);
+  }
+}
+
+@keyframes navItemFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes navItemPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(139, 155, 59, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(139, 155, 59, 0.6), 0 0 40px rgba(59, 187, 116, 0.4);
+  }
+}
+
+@keyframes letterEntrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(50px) scale(0.2) rotateZ(-45deg);
+    filter: brightness(0) saturate(0);
+  }
+  25% {
+    opacity: 0.4;
+    transform: translateX(-50px) translateY(25px) scale(0.6) rotateZ(-20deg);
+    filter: brightness(0.5) saturate(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(20px) translateY(-10px) scale(1.2) rotateZ(10deg);
+    filter: brightness(1.2) saturate(1.5);
+  }
+  75% {
+    opacity: 0.9;
+    transform: translateX(-5px) translateY(5px) scale(0.9) rotateZ(-2deg);
+    filter: brightness(1) saturate(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1) rotateZ(0deg);
+    filter: brightness(1) saturate(1);
+  }
+}
+
+/* Scroll Indicator Animations */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: translateX(-50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-50%) scale(2);
+    opacity: 0;
+  }
 }
