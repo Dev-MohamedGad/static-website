@@ -32,6 +32,7 @@ const en = {
     'hero.stats.cases': 'Cases Won',
     'hero.stats.clients': 'Clients Served',
     'hero.stats.success': 'Success Rate',
+    'hero.scrollDown': 'Scroll Down',
     
     // About Preview
     'about.title': 'About Our Firm',
@@ -952,6 +953,7 @@ const ar = {
     'hero.stats.cases': 'قضايا مكسوبة',
     'hero.stats.clients': 'عملاء مخدومون',
     'hero.stats.success': 'معدل النجاح',
+    'hero.scrollDown': 'مرر للأسفل',
     
     // About Preview
     'about.title': 'عن مكتبنا',

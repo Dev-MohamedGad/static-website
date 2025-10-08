@@ -185,7 +185,7 @@ const Hero: React.FC = () => {
 
       {/* Scroll Down Indicator - Framer Motion */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-3 left-1/2 transform -translate-x-1/2 z-20"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 3 }}
@@ -196,11 +196,11 @@ const Hero: React.FC = () => {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
           <motion.span 
-            className="text-white text-xs font-light tracking-widest uppercase opacity-70"
+            className="text-white text-xs   font-light tracking-widest uppercase opacity-70"
             animate={{ opacity: [0.3, 1, 0.3] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            Scroll Down
+            {t('hero.scrollDown')}
           </motion.span>
           <motion.div className="relative">
             <motion.div 
