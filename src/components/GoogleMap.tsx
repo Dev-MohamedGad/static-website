@@ -54,7 +54,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ height = '400px', className = '' 
           <div className="w-6 h-6 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center mr-2">
             <MapPin className="w-3 h-3 text-white" />
           </div>
-          <h3 className="text-sm font-semibold text-brand-800">{t('office.visitOffice')}</h3>
+          <h3 className="text-sm font-semibold mx-2 text-brand-800">{t('office.visitOffice')}</h3>
         </div>
         <p className="text-xs text-brand-600 mb-1">{t('office.findUs')}</p>
         <p className="text-xs text-brand-500 mb-2">{t('office.coordinates')}<br/>{t('office.cityCountry')}</p>

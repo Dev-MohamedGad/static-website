@@ -94,9 +94,7 @@ const ContactPage: React.FC = () => {
 
   const quickLinks = [
     { title: t('common.scheduleConsultation'), description: t('common.bookMeeting'), action: t('common.scheduleNow') },
-    { title: t('common.emergencyHelp'), description: t('common.emergencyDesc'), action: t('common.callEmergency') },
-    { title: t('common.clientPortal'), description: t('common.clientPortalDesc'), action: t('common.loginPortal') },
-    { title: t('contact.paymentOptions'), description: t('contact.paymentDesc'), action: t('contact.manageBilling') }
+    { title: t('common.emergencyHelp'), description: t('common.emergencyDesc'), action: t('common.callEmergency') }
   ];
 
   return (
@@ -144,7 +142,7 @@ const ContactPage: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {quickLinks.map((link, index) => (
               <div key={index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col">
                 {/* Icon and Content */}
@@ -152,19 +150,9 @@ const ContactPage: React.FC = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     {index === 0 && <Calendar className="w-8 h-8 text-white" />}
                     {index === 1 && <Phone className="w-8 h-8 text-white" />}
-                    {index === 2 && <Globe className="w-8 h-8 text-white" />}
-                    {index === 3 && <Mail className="w-8 h-8 text-white" />}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{link.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{link.description}</p>
-                </div>
-                
-                {/* Action Button - Bottom Right */}
-                <div className="flex justify-end mt-auto mx-2">
-                  <button className="inline-flex items-center text-brand-600 hover:text-brand-700 font-semibold text-sm group-hover:translate-x-1 transition-all duration-300">
-                    {link.action}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </button>
                 </div>
               </div>
             ))}
@@ -474,52 +462,6 @@ const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Additional Resources */}
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 font-serif">{t('contact.additionalResources')}</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              {t('contact.additionalResourcesDesc')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
-              <Calendar className="w-12 h-12 text-brand-500 mx-auto mb-6" />
-              <h3 className="text-xl font-bold mb-4">{t('contact.onlineScheduling')}</h3>
-              <p className="text-gray-300 mb-6">
-                {t('common.bookMeeting')}
-              </p>
-              <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                {t('common.scheduleOnline')}
-              </button>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
-              <Mail className="w-12 h-12 text-brand-500 mx-auto mb-6" />
-              <h3 className="text-xl font-bold mb-4">{t('contact.newsletter')}</h3>
-              <p className="text-gray-300 mb-6">
-                {t('news.newsletter.disclaimer')}
-              </p>
-              <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                {t('news.newsletter.subscribe')}
-              </button>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
-              <Globe className="w-12 h-12 text-brand-500 mx-auto mb-6" />
-              <h3 className="text-xl font-bold mb-4">{t('common.clientPortal')}</h3>
-              <p className="text-gray-300 mb-6">
-                {t('common.clientPortalDesc')}
-              </p>
-              <button className="border border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                {t('common.loginPortal')}
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
