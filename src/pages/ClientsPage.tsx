@@ -123,15 +123,15 @@ const ClientsPage: React.FC = () => {
             {t('clients.subtitle')}
           </p>
           <div className="flex justify-center space-x-8 text-brand-500">
-            <div className="text-center">
+            <div className="text-center mx-6">
               <div className="text-3xl font-bold">750+</div>
               <div className="text-sm text-gray-300">{t('clients.stats.activeClients')}</div>
             </div>
-            <div className="text-center">
+            <div className="text-center mx-6">
               <div className="text-3xl font-bold">16</div>
               <div className="text-sm text-gray-300">{t('clients.stats.industriesServed')}</div>
             </div>
-            <div className="text-center">
+            <div className="text-center mx-6">
               <div className="text-3xl font-bold">98%</div>
               <div className="text-sm text-gray-300">{t('clients.stats.satisfaction')}</div>
             </div>
@@ -155,7 +155,7 @@ const ClientsPage: React.FC = () => {
                 key={index}
                 className="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-brand-600 to-brand-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br m  from-brand-600 to-brand-700 rounded-2xl flex items-center justify-center  mb-6">
                   <category.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-brand-600 mb-2">{category.count}</div>
@@ -181,36 +181,36 @@ const ClientsPage: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-[400px] flex flex-col"
               >
-                {/* Rating */}
+                {/* Client Info - Top */}
                 <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                    {testimonial.avatar}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="font-semibold text-gray-900 text-lg truncate">{testimonial.author}</div>
+                    <div className="text-gray-600 text-sm truncate">{testimonial.position}</div>
+                    <div className="text-gray-500 text-sm truncate">{testimonial.company}</div>
+                  </div>
+                </div>
+
+                {/* Rating */}
+                <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-brand-500 fill-current" />
                   ))}
                 </div>
 
                 {/* Quote */}
-                <div className="mb-6">
+                <div className="mb-6 flex-grow">
                   <Quote className="w-8 h-8 text-brand-600 mb-4" />
-                  <p className="text-gray-700 leading-relaxed italic">"{testimonial.quote}"</p>
-                </div>
-
-                {/* Author Info */}
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                    <div className="text-gray-600 text-sm">{testimonial.position}</div>
-                    <div className="text-gray-500 text-sm">{testimonial.company}</div>
-                  </div>
+                  <p className="text-gray-700 leading-relaxed italic text-sm line-clamp-4">"{testimonial.quote}"</p>
                 </div>
 
                 {/* Industry Tag */}
-                <div className="mt-4">
-                  <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                <div className="mt-auto">
+                  <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">
                     {testimonial.industry}
                   </span>
                 </div>

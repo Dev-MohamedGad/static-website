@@ -7,7 +7,6 @@ import { LanguageProvider, useLanguage } from './context/LanguageContext';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const ExpertisePage = lazy(() => import('./pages/ExpertisePage'));
 const ClientsPage = lazy(() => import('./pages/ClientsPage'));
-const CareerPage = lazy(() => import('./pages/CareerPage'));
 const MediaPage = lazy(() => import('./pages/MediaPage'));
 const LibraryPage = lazy(() => import('./pages/LibraryPage'));
 const FAQPage = lazy(() => import('./pages/FAQPage'));
@@ -76,17 +75,15 @@ function App() {
       case 'home':
         return <HomePage />;
       case 'expertise':
-        return <ExpertisePage />;
+        return <ExpertisePage setCurrentPage={setCurrentPage} />;
       case 'clients':
         return <ClientsPage />;
-      case 'career':
-        return <CareerPage />;
       case 'media':
-        return <MediaPage />;
+        return <MediaPage setCurrentPage={setCurrentPage} />;
       case 'library':
         return <LibraryPage />;
       case 'faq':
-        return <FAQPage />;
+        return <FAQPage setCurrentPage={setCurrentPage} />;
       case 'contact':
         return <ContactPage />;
       default:

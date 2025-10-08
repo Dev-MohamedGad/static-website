@@ -2,11 +2,29 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Search, HelpCircle, Phone, Mail, MessageCircle } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
-const FAQPage: React.FC = () => {
+interface FAQPageProps {
+  setCurrentPage?: (page: string) => void;
+}
+
+const FAQPage: React.FC<FAQPageProps> = ({ setCurrentPage }) => {
   const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState(t('faq.categories.general'));
   const [expandedQuestion, setExpandedQuestion] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const handleBookMeeting = () => {
+    if (setCurrentPage) {
+      setCurrentPage('contact');
+    } else {
+      // Fallback: scroll to contact section or show alert
+      const contactSection = document.getElementById('contact-section');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Please contact us to schedule a consultation.');
+      }
+    }
+  };
 
   const categories = [
     t('faq.categories.general'),
@@ -341,7 +359,10 @@ const FAQPage: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">{t('common.scheduleConsultation')}</h3>
               <p className="text-gray-600 mb-6">{t('faq.bookConsultationDesc')}</p>
-              <button className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={handleBookMeeting}
+                className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+              >
                 {t('faq.bookMeeting')}
               </button>
             </div>

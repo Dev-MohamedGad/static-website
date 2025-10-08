@@ -14,7 +14,6 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
     { label: t('footer.nav.about'), href: 'about' },
     { label: t('footer.nav.expertise'), href: 'expertise' },
     { label: t('footer.nav.clients'), href: 'clients' },
-    { label: t('footer.nav.career'), href: 'career' },
     { label: t('footer.nav.contact'), href: 'contact' }
   ];
 
@@ -29,7 +28,6 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
 
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Instagram, href: '#', label: 'Instagram' }
   ];
@@ -67,12 +65,12 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
               {t('footer.description')}
             </p>
             
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 ">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-600 transition-colors duration-300"
+                  className="w-10 h-10 mx-2 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-600 transition-colors duration-300"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />

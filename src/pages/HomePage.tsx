@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Hero from '../components/Hero';
-import Expertise from '../components/Expertise';
 import Statistics from '../components/Statistics';
-import Clients from '../components/Clients';
-import News from '../components/News';
 import Contact from '../components/Contact';
 import GoogleMap from '../components/GoogleMap';
 import { useLanguage } from '../context/LanguageContext';
@@ -86,7 +83,7 @@ const HomePage: React.FC = () => {
             {/* Slider Container */}
             <div 
               ref={sliderRef}
-              className="relative overflow-hidden rounded-3xl max-w-4xl w-full"
+              className="relative overflow-hidden rounded-3xl max-w-4xl w-full h-[600px]"
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
@@ -100,7 +97,7 @@ const HomePage: React.FC = () => {
               >
                 {/* Innovation & Evolution Card */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-blue-100">
+                  <div className="group bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-blue-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" 
@@ -108,11 +105,7 @@ const HomePage: React.FC = () => {
                         className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
-                      <div className="absolute top-4 right-4 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                        <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
+                    
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
                       {t('slider.innovation.title')}
@@ -125,7 +118,7 @@ const HomePage: React.FC = () => {
 
                 {/* Strategic Solutions Card */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-green-100">
+                  <div className="group bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-green-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/writer.webp" 
@@ -133,11 +126,6 @@ const HomePage: React.FC = () => {
                         className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-green-600/20 to-transparent"></div>
-                      <div className="absolute top-4 right-4 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                        <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
                       {t('slider.solutions.title')}
@@ -150,7 +138,7 @@ const HomePage: React.FC = () => {
 
                 {/* Client Partnership Card */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-purple-100">
+                  <div className="group bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-purple-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/group.webp" 
@@ -158,11 +146,7 @@ const HomePage: React.FC = () => {
                         className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent"></div>
-                      <div className="absolute top-4 right-4 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                        <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                      </div>
+                     
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
                       {t('slider.partnership.title')}
@@ -175,19 +159,14 @@ const HomePage: React.FC = () => {
 
                 {/* Specialized Teams Card */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-orange-100">
+                  <div className="group bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-orange-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/finalCairo.4e840ba2.jpg" 
                         alt="Specialized Legal Teams" 
                         className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent"></div>
-                      <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                      </div>
+                      
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
                       {t('slider.teams.title')}
@@ -200,7 +179,7 @@ const HomePage: React.FC = () => {
 
                 {/* Client Sectors Card */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-teal-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-teal-100">
+                  <div className="group bg-gradient-to-br from-teal-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-teal-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/original.jpeg" 
@@ -208,11 +187,7 @@ const HomePage: React.FC = () => {
                         className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-teal-600/20 to-transparent"></div>
-                      <div className="absolute top-4 right-4 w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                      </div>
+                   
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
                       {t('slider.sectors.title')}
@@ -221,51 +196,51 @@ const HomePage: React.FC = () => {
                       {t('slider.sectors.desc')}
                     </p>
                     <div className={`grid grid-cols-2 gap-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.sports')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.construction')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.energy')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.banking')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.oilgas')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.heavy')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.hospitals')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.it')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.communications')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.pharmaceuticals')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.media')}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
+                      <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
                         <span className="text-sm text-gray-600">{t('slider.sectors.transportation')}</span>
                       </div>
@@ -311,8 +286,8 @@ const HomePage: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
-                <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-300 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
@@ -324,8 +299,8 @@ const HomePage: React.FC = () => {
                 </p>
               </div>
               <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
-                <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-300 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -337,8 +312,8 @@ const HomePage: React.FC = () => {
                 </p>
               </div>
               <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
-                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-300 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -350,8 +325,8 @@ const HomePage: React.FC = () => {
                 </p>
               </div>
               <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-300 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
@@ -363,8 +338,8 @@ const HomePage: React.FC = () => {
                 </p>
               </div>
               <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-300 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
@@ -376,8 +351,8 @@ const HomePage: React.FC = () => {
                 </p>
               </div>
               <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-300 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
@@ -386,6 +361,19 @@ const HomePage: React.FC = () => {
                 </h4>
                 <p className={`text-gray-600 text-sm ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t('about.services.realestate.desc')}
+                </p>
+              </div>
+              <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 animate-on-scroll transition-all duration-300 transform hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gray-300 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                  </svg>
+                </div>
+                <h4 className={`text-lg font-bold text-gray-900 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                  {t('about.services.trademarks.title')}
+                </h4>
+                <p className={`text-gray-600 text-sm ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                  {t('about.services.trademarks.desc')}
                 </p>
               </div>
             </div>
@@ -428,16 +416,7 @@ const HomePage: React.FC = () => {
         </div>
       </div>
       <div className="animate-on-scroll">
-        <Expertise />
-      </div>
-      <div className="animate-on-scroll">
         <Statistics />
-      </div>
-      <div className="animate-on-scroll">
-        <Clients />
-      </div>
-      <div className="animate-on-scroll">
-        <News />
       </div>
       <div className="animate-on-scroll">
         <Contact />

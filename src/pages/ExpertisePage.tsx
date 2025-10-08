@@ -13,8 +13,26 @@ import {
 } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 
-const ExpertisePage: React.FC = () => {
+interface ExpertisePageProps {
+  setCurrentPage?: (page: string) => void;
+}
+
+const ExpertisePage: React.FC<ExpertisePageProps> = ({ setCurrentPage }) => {
   const { t, isRTL } = useLanguage();
+
+  const handleLearnMore = () => {
+    // Scroll to the CTA section
+    const ctaSection = document.getElementById('expertise-cta');
+    if (ctaSection) {
+      ctaSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleContact = () => {
+    if (setCurrentPage) {
+      setCurrentPage('contact');
+    }
+  };
   const practiceAreas = [
     {
       icon: Gavel,
@@ -181,15 +199,15 @@ const ExpertisePage: React.FC = () => {
             {t('expertise.subtitle')}
           </p>
           <div className="flex justify-center space-x-8 text-brand-500">
-            <div className="text-center">
+            <div className="text-center mx-6">
               <div className="text-2xl font-bold">8</div>
               <div className="text-sm text-gray-300">{t('expertise.practiceAreas')}</div>
             </div>
-            <div className="text-center">
+            <div className="text-center mx-6">
               <div className="text-2xl font-bold">25+</div>
               <div className="text-sm text-gray-300">{t('expertise.yearsExperience')}</div>
             </div>
-            <div className="text-center">
+            <div className="text-center mx-6">
               <div className="text-2xl font-bold">1000+</div>
               <div className="text-sm text-gray-300">{t('expertise.casesWon')}</div>
             </div>
@@ -214,7 +232,7 @@ const ExpertisePage: React.FC = () => {
                     <div className="w-16 h-16 bg-gradient-to-br from-brand-600 to-brand-700 rounded-2xl flex items-center justify-center mr-6">
                       <area.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold text-gray-900 font-serif">{area.title}</h2>
+                    <h2 className="text-3xl font-bold mx-6 text-gray-900 font-serif">{area.title}</h2>
                   </div>
                   
                   <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -247,7 +265,10 @@ const ExpertisePage: React.FC = () => {
                     </div>
                   </div>
 
-                  <button className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                  <button 
+                    onClick={handleLearnMore}
+                    className="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                  >
                     {t('expertise.learnMore')}
                     <DirectionalArrow isRTL={isRTL} className="ml-2 h-5 w-5" />
                   </button>
@@ -284,7 +305,7 @@ const ExpertisePage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="expertise-cta" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">
             {t('expertise.cta.title')}
@@ -319,11 +340,11 @@ const ExpertisePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              {t('common.scheduleConsultation')}
-            </button>
-            <button className="border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+          <div className="flex justify-center">
+            <button 
+              onClick={handleContact}
+              className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            >
               {t('expertise.cta.contact')}
             </button>
           </div>

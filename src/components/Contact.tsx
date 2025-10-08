@@ -35,13 +35,6 @@ const Contact: React.FC = () => {
       phone: '+1 (234) 567-8900',
       email: 'info@shehablaw.com',
       hours: 'Mon-Fri: 9:00 AM - 6:00 PM\nSat: 10:00 AM - 4:00 PM'
-    },
-    {
-      name: t('office.downtown'),
-      address: '456 Corporate Center\nTower B, Floor 15\nCity, State 12346',
-      phone: '+1 (234) 567-8901',
-      email: 'downtown@shehablaw.com',
-      hours: 'Mon-Fri: 8:30 AM - 5:30 PM'
     }
   ];
 
@@ -224,22 +217,6 @@ const Contact: React.FC = () => {
               </div>
             ))}
 
-            {/* Emergency Contact */}
-            <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-red-800 mb-4">{t('page.emergencyContact')}</h3>
-              <p className="text-red-700 text-sm mb-4">
-                {t('office.emergencyDesc')}
-              </p>
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 text-red-600 mr-3" />
-                <a 
-                  href="tel:+1234567899"
-                  className="text-red-800 font-semibold hover:text-red-900"
-                >
-                  +1 (234) 567-8999
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 

@@ -13,30 +13,27 @@ const Hero: React.FC = () => {
  
 
   return (
-    <section className="min-h-screen">
+    <section className="h-2/3  ">
       {/* Animated Background Image with Logo */}
-      <div className="absolute inset-0 overflow-hidden w-full h-full">
+      <div className="absolute inset-0 w-full h-3/4 overflow-hidden">
         <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 w-full  bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(/finalCairo.4e840ba2.jpg)',
-            backgroundAttachment: 'fixed',
             backgroundPosition: 'center center',
             backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
             animation: 'kenBurns 20s ease-in-out infinite alternate'
           }}
         />
-      
-        {/* Dark brown overlay to match logo background */}
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(101, 67, 33, 0.8)' }}></div>
       </div>
 
       {/* Content - Perfect Center */}
-      <div className="relative z-10 w-full h-screen flex items-center justify-center">
+      <div className="relative z-10 w-full h-full flex items-center justify-center">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {/* Logo Mark - Classical Architectural Design */}
+          {/* Logo - Center */}
           <motion.div 
-            className="mb-8"
+            className="mb-1 flex justify-center"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ 
@@ -44,97 +41,14 @@ const Hero: React.FC = () => {
               ease: "easeOut"
             }}
           >
-            {/* S and F with Classical Columns - Always LTR */}
-            <div className="flex items-center justify-center space-x-4 mb-6" style={{ direction: 'ltr' }}>
-              {/* Letter S with Column */}
-              <motion.div 
-                className="relative"
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-              >
-                <div 
-                  className="text-9xl md:text-[12rem] lg:text-[14rem] font-bold"
-                  style={{
-                    fontFamily: '"Playfair Display"',
-                    color: '#898A35',
-                    textShadow: '0 8px 16px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4)'
-                  }}
-                >
-                  S
-                </div>
-                {/* Column decoration */}
-                <div 
-                  className="absolute -right-2 top-2 w-1 h-16 rounded-sm"
-                  style={{ 
-                    backgroundColor: '#2D2D2D',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.1)'
-                  }}
-                ></div>
-              </motion.div>
-
-              {/* Central Columns */}
-              <motion.div 
-                className="flex flex-col space-y-3"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.8 }}
-              >
-                <div 
-                  className="w-4 h-20 rounded-lg"
-                  style={{ 
-                    backgroundColor: '#1A1A1A',
-                    boxShadow: `
-                      0 8px 16px rgba(0,0,0,0.8),
-                      0 4px 8px rgba(0,0,0,0.6),
-                      inset 0 2px 4px rgba(255,255,255,0.15),
-                      inset 0 -1px 2px rgba(0,0,0,0.8)
-                    `,
-                    border: '1px solid rgba(255,255,255,0.1)'
-                  }}
-                ></div>
-                <div 
-                  className="w-4 h-20 rounded-lg"
-                  style={{ 
-                    backgroundColor: '#1A1A1A',
-                    boxShadow: `
-                      0 8px 16px rgba(0,0,0,0.8),
-                      0 4px 8px rgba(0,0,0,0.6),
-                      inset 0 2px 4px rgba(255,255,255,0.15),
-                      inset 0 -1px 2px rgba(0,0,0,0.8)
-                    `,
-                    border: '1px solid rgba(255,255,255,0.1)'
-                  }}
-                ></div>
-              </motion.div>
-
-              {/* Letter F with Column */}
-              <motion.div 
-                className="relative"
-                initial={{ x: 50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
-              >
-                <div 
-                  className="text-9xl md:text-[12rem] lg:text-[14rem] font-bold"
-                  style={{
-                    fontFamily: '"Playfair Display"',
-                    color: '#898A35',
-                    textShadow: '0 8px 16px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4)'
-                  }}
-                >
-                  F
-                </div>
-                {/* Column decoration */}
-                <div 
-                  className="absolute -left-2 top-2 w-1 h-16 rounded-sm"
-                  style={{ 
-                    backgroundColor: '#2D2D2D',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.1)'
-                  }}
-                ></div>
-              </motion.div>
-            </div>
+            <img
+              src="/logo-law.png"
+              alt="Shehab Law Firm Logo"
+              className="w-48 h-48 md:w-48 md:h-48 lg:w-64 lg:h-64 object-contain"
+              style={{
+                filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.8)) drop-shadow(0 4px 8px rgba(0,0,0,0.6))'
+              }}
+            />
           </motion.div>
 
           {/* Main Title - RTL Support */}
@@ -157,15 +71,15 @@ const Hero: React.FC = () => {
           
           {/* Subtitle - RTL Support */}
           <motion.p 
-            className={`text-black text-lg md:text-xl lg:text-2xl font-medium text-center mt-6 ${isRTL ? 'tracking-normal' : 'tracking-wide'}`}
-            style={{
-              fontFamily: isRTL ? '"Amiri", "Times New Roman", serif' : '"Cinzel Decorative", "Cinzel", "Times New Roman", serif',
-              letterSpacing: isRTL ? '0.05em' : '0.15em',
-              textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6)',
-              fontWeight: '400',
-              fontStyle: isRTL ? 'normal' : 'italic',
-              direction: isRTL ? 'rtl' : 'ltr'
-            }}
+            className={`text-white text-lg md:text-xl lg:text-2xl font-medium text-center m-6 ${isRTL ? 'tracking-normal' : 'tracking-wide'}`}
+             style={{
+               fontFamily: isRTL ? '"Amiri", "Times New Roman", serif' : '"Cinzel Decorative", "Cinzel", "Times New Roman", serif',
+               letterSpacing: isRTL ? '0.05em' : '0.15em',
+               textShadow: '0 2px 4px rgba(255,255,255,0.8), 0 1px 2px rgba(255,255,255,0.6), 0 4px 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6)',
+               fontWeight: '400',
+               fontStyle: isRTL ? 'normal' : 'italic',
+               direction: isRTL ? 'rtl' : 'ltr'
+             }}
             initial={{ opacity: 0, y: 30, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ 
@@ -185,7 +99,7 @@ const Hero: React.FC = () => {
 
       {/* Scroll Down Indicator - Framer Motion */}
       <motion.div 
-        className="absolute bottom-3 left-1/2 transform -translate-x-1/2 z-20"
+        className="abolute  left-1/2 transform -translate-x-1/2 z-20"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 3 }}

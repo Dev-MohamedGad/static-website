@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Globe, Calendar, ArrowRight } from '../icons';
 import { useLanguage } from '../context/LanguageContext';
 import GoogleMap from '../components/GoogleMap';
+import emailjs from '../utils/emailjs';
+import { EMAILJS_CONFIG } from '../config/emailjs';
 
 const ContactPage: React.FC = () => {
   const { t } = useLanguage();
@@ -16,17 +18,43 @@ const ContactPage: React.FC = () => {
     preferredContact: 'Email'
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
+    setIsLoading(true);
+    setSubmitError('');
+
+    try {
+      // Prepare template parameters
+      const templateParams = {
+        ...EMAILJS_CONFIG.TEMPLATE_PARAMS,
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        subject: formData.subject,
+        message: formData.message,
+        urgency: formData.urgency,
+        preferred_contact: formData.preferredContact,
+        reply_to: formData.email
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+      
+      setIsSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -37,7 +65,18 @@ const ContactPage: React.FC = () => {
         urgency: 'Normal',
         preferredContact: 'Email'
       });
-    }, 3000);
+
+      // Reset form after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
+
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setSubmitError('Failed to send message. Please try again or contact us directly.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const offices = [
@@ -50,16 +89,6 @@ const ContactPage: React.FC = () => {
       hours: 'Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM\nSunday: Closed',
       parking: 'Garage parking available',
       publicTransit: 'Subway: 4, 5, 6 to Wall St'
-    },
-    {
-      name: t('office.downtown'),
-      address: '456 Corporate Center\nTower B, Floor 15\nNew York, NY 10006',
-      phone: '+1 (234) 567-8901',
-      fax: '+1 (234) 567-8902',
-      email: 'downtown@shehablaw.com',
-      hours: 'Monday - Friday: 8:30 AM - 5:30 PM\nSaturday: By appointment\nSunday: Closed',
-      parking: 'Valet parking available',
-      publicTransit: 'Subway: R, W to Cortlandt St'
     }
   ];
 
@@ -75,7 +104,7 @@ const ContactPage: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
         {/* Logo Background - Center */}
-        <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute top-1/2  left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
           <img 
             src="/logo-law.png" 
             alt="Shehab Law Firm Logo Background" 
@@ -89,11 +118,11 @@ const ContactPage: React.FC = () => {
             {t('contact.subtitle')}
           </p>
           <div className="flex justify-center space-x-8 text-brand-500">
-            <div className="text-center">
+            <div className="text-center mx-4">
               <div className="text-2xl font-bold">24/7</div>
               <div className="text-sm text-gray-300">{t('contact.emergencySupport')}</div>
             </div>
-            <div className="text-center">
+            <div className="text-center mx-6">
               <div className="text-2xl font-bold">{t('contact.free')}</div>
               <div className="text-sm text-gray-300">{t('contact.initialConsultation')}</div>
             </div>
@@ -146,13 +175,7 @@ const ContactPage: React.FC = () => {
       {/* Main Contact Section */}
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         {/* Logo Background - Center */}
-        <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-25 transform -translate-x-1/2 -translate-y-1/2">
-          <img 
-            src="/logo-law.png" 
-            alt="Shehab Law Firm Logo Background" 
-            className="w-full h-full object-contain filter blur-none"
-          />
-        </div>
+      
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
@@ -318,12 +341,32 @@ const ContactPage: React.FC = () => {
                     <strong>{t('contact.privacy.title')}</strong> {t('contact.privacy.body')}
                   </div>
 
+                  {submitError && (
+                    <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-600 text-sm">{submitError}</p>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                    disabled={isLoading}
+                    className={`w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-white ${
+                      isLoading 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-slate-900 hover:bg-slate-800 transform hover:scale-105'
+                    }`}
                   >
-                    <Send className="w-5 h-5 mr-2" />
-                    {t('contact.form.submit')}
+                    {isLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
+                        {t('contact.form.submit')}
+                      </>
+                    )}
                   </button>
                 </form>
               )}
@@ -428,17 +471,6 @@ const ContactPage: React.FC = () => {
             <GoogleMap height="500px" className="w-full" />
           </div>
           
-          {/* Map Actions */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center">
-              <MapPin className="w-5 h-5 mr-2" />
-              {t('office.directions.main')}
-            </button>
-            <button className="border border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center">
-              <MapPin className="w-5 h-5 mr-2" />
-              {t('office.directions.downtown')}
-            </button>
-          </div>
         </div>
       </section>
 

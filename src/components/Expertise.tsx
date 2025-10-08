@@ -81,7 +81,7 @@ const Expertise: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 m-6 font-serif">
             {t('expertise.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -97,7 +97,7 @@ const Expertise: React.FC = () => {
               className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-brand-600/30 transition-all duration-300 hover:-translate-y-2"
             >
               {/* Icon */}
-              <div className="w-16 h-16 bg-gradient-to-br from-brand-600 to-brand-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 mx-3 h-16 bg-gradient-to-br from-brand-600 to-brand-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <area.icon className="w-8 h-8 text-white" />
               </div>
 

@@ -228,47 +228,17 @@ const Library: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <Users className="w-4 h-4 mr-2 text-gray-400" />
-                    <span className="text-sm text-gray-600">
-                      {t('library.by')} {article.author}
-                    </span>
-                  </div>
-                  <button className="inline-flex items-center text-brand-600 hover:text-brand-700 font-medium text-sm group-hover:translate-x-1 transition-all duration-300">
-                    {t('library.readMore')}
-                    <DirectionalArrow isRTL={isRTL} className="ml-1 h-4 w-4" />
-                  </button>
+                <div className="flex items-center">
+                  <Users className="w-4 h-4 mr-2 text-gray-400" />
+                  <span className="text-sm text-gray-600">
+                    {t('library.by')} {article.author}
+                  </span>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white">
-          <h3 className="text-3xl font-bold mb-4 font-serif">
-            {t('library.subscribe.title')}
-          </h3>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            {t('library.subscribe.subtitle')}
-          </p>
-          
-          <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-            <input
-              type="email"
-              placeholder={t('library.subscribe.placeholder')}
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500"
-            />
-            <button className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              {t('library.subscribe.button')}
-            </button>
-          </div>
-          
-          <p className="text-sm text-gray-400 mt-4">
-            {t('library.subscribe.disclaimer')}
-          </p>
-        </div>
       </div>
     </section>
   );

@@ -133,7 +133,6 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
       dropdown: null
     },
     { key: 'clients', label: t('nav.clients'), href: 'clients', dropdown: null },
-    { key: 'career', label: t('nav.career'), href: 'career', dropdown: null },
     { key: 'media', label: t('nav.media'), href: 'media', dropdown: null },
     { key: 'library', label: t('nav.library'), href: 'library', dropdown: null },
     { key: 'faq', label: t('nav.faq'), href: 'faq', dropdown: null },
