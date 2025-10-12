@@ -35,12 +35,58 @@ const en = {
     
     // About Preview
     'about.title': 'About Our Firm',
-    'about.description': 'Shehab Law Firm is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds, delivering innovative solutions across multiple sectors.',
+    'about.description': 'Shehab & El Awamy is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds, delivering innovative solutions across multiple sectors.',
     'about.cta': 'Learn More',
-    'about.p1': 'Shehab Law Firm is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds. Founded to provide both legal services and consultancy, we employ innovative methods to keep pace with the evolving governmental and legal landscape.',
+    'about.p1': 'Shehab & El Awamy is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds. Founded to provide both legal services and consultancy, we employ innovative methods to keep pace with the evolving governmental and legal landscape.',
     'about.p2': 'We are fully attuned to the daily challenges faced by corporations and are committed to delivering swift, strategic business solutions. Our lawyers work closely with clients, building trust, commitment, and loyalty by offering innovative solutions that drive success across multiple sectors including Banking, Oil and Gas, Heavy Industries, Healthcare, Information Technology, Communications, and Media.',
+    
+    // Detailed Company Profile
+    'about.profile.aboutTitle': 'About Shehab & El Awamy Law Firm',
+    'about.profile.title': 'About Shehab & El Awamy Law Firm',
+    'about.profile.p1': 'Shehab & El Awamy is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds. Founded to provide both legal services and consultancy, we employ innovative methods to keep pace with the evolving governmental and legal landscape.',
+    'about.profile.p2': 'We are fully attuned to the daily challenges faced by corporations and are committed to delivering swift, strategic business solutions. Our lawyers work closely with clients, building trust, commitment, and loyalty by offering innovative solutions that drive success.',
+    'about.profile.p3': 'Our firm operates through specialized teams covering various areas of legal practice, allowing us to deliver high-quality, reliable, and efficient legal services. We serve clients across multiple sectors, including Sports, Construction, Energy, Banking, Oil and Gas, Heavy Industries, Hospitals, Information Technology, Communications, Pharmaceuticals, Media, and Transportation.',
+    
+    // Mission, Vision, Values
+    'about.mission.title': 'Our Mission',
+    'about.mission.body': 'At Shehab & El Awamy, we are committed to delivering high-quality legal services through our team of skilled lawyers. Our mission is to help clients achieve exceptional business outcomes by leveraging our extensive legal expertise. We strive to meet all our clients\' needs, whether locally or internationally, and aim to be recognized as Egypt\'s premier law services provider.',
+    
+    'about.vision.title': 'Our Vision',
+    'about.vision.body': 'Our vision at Shehab & El Awamy is to become trusted advisors to both local and international clients. We aim to be their go-to source for authentic legal advice, offering professional negotiation techniques and achieving amicable settlements that satisfy all parties involved.',
+    
+    'about.values.title': 'Our Values',
+    'about.values.body': 'We are deeply committed to our clients, driven by a thorough understanding of both local and international laws. Our goal is to exceed client expectations by providing transparent, determined, and credible legal services. We prioritize integrity, efficiency, and responsiveness in all our dealings.',
     'about.stats.years': 'Years',
     'about.stats.cases': 'Cases',
+    
+    // Detailed Services
+    'services.title': 'Our Services',
+    'services.corporate.title': 'Corporate & Commercial',
+    'services.corporate.desc': 'We offer fast and customized incorporation services for all types of commercial companies in Egypt and assist with the establishment of companies abroad. We provide corporate secretarial services, general corporate advice, and support for all legal needs related to establishment, licensing, and post-establishment activities.',
+    
+    'services.mergers.title': 'Mergers & Acquisitions',
+    'services.mergers.desc': 'Our expertise includes public and private mergers, acquisitions, divestitures, joint ventures, spin-offs, restructuring, and post-acquisition integration. We offer in-depth legal due diligence, risk assessment, and comprehensive support for all transaction documentation and negotiations.',
+    
+    'services.litigation.title': 'Litigation',
+    'services.litigation.desc': 'Our litigation team handles a wide range of cases, including those involving banking and finance, commercial transactions, mergers and acquisitions, construction, corporate matters, investment issues, and telecommunications.',
+    
+    'services.intellectual.title': 'Intellectual Property',
+    'services.intellectual.desc': 'We provide comprehensive legal services and consultations related to intellectual property, including copyright, trademarks, patents, industrial designs, trade names, and licensing agreements.',
+    
+    'services.employment.title': 'Employment',
+    'services.employment.desc': 'We advise clients on employment laws and regulations, draft employment contracts, ensure regulatory compliance, and assist with the development and implementation of labour policies.',
+    
+    'services.technology.title': 'Technology, Media & Telecommunications',
+    'services.technology.desc': 'We have a dedicated department providing services in the fields of technology, media, and telecommunications. Our TMT practice group offers licensing, regulatory compliance, intellectual property services, and advice on entrepreneurial innovation and e-commerce.',
+    
+    'services.realestate.title': 'Real Estate & Real Estate Finance',
+    'services.realestate.desc': 'We offer real estate registration services, draft sale and purchase agreements, and provide legal advice to contractors and developers on licensing and regulations for commercial, residential, retail, and touristic projects.',
+    
+    'services.tax.title': 'Tax & Accounting Consultations',
+    'services.tax.desc': 'We provide tax dispute resolution, certified translation services, and obtaining all types of licenses, in line with our strategic mission.',
+    
+    'services.translation.title': 'Transpedia Translation Services',
+    'services.translation.desc': 'Transpedia is a limited liability company registered with several foreign embassies, specializing in all general, legal, financial, medical, and technical translation services.',
     
     // Expertise
     'expertise.title': 'Areas of Practice',
@@ -888,12 +934,58 @@ const ar = {
     
     // About Preview
     'about.title': 'عن مكتبنا',
-    'about.description': 'شهاب مكتب محاماة مصري يجمع بين المهنيين القانونيين المؤهلين تأهيلاً عالياً ذوي خلفيات محلية ودولية متنوعة، ويقدم حلولاً مبتكرة عبر قطاعات متعددة.',
+    'about.description': 'شهاب و العوامي شركة محاماة مصرية تجمع بين خبرات مهنيين قانونيين مؤهلين تأهيلاً عالياً ذو خلفيات وخبرات محلية ودولية متنوعة.',
     'about.cta': 'اعرف المزيد',
-    'about.p1': 'شهاب مكتب محاماة مصري يجمع بين خبراء قانونيين ذوي كفاءة عالية وخلفيات محلية ودولية متنوعة. تأسس لتقديم خدمات قانونية واستشارية، ونعتمد أساليب مبتكرة لمواكبة التطورات الحكومية والتشريعية.',
-    'about.p2': 'ندرك التحديات اليومية التي تواجه الشركات ونسعى لتقديم حلول عملية وسريعة. يعمل محامونا عن قرب مع العملاء لبناء الثقة والالتزام والولاء، وتقديم حلول مبتكرة تدعم النجاح في قطاعات عديدة مثل البنوك، النفط والغاز، الصناعات الثقيلة، الرعاية الصحية، تكنولوجيا المعلومات، الاتصالات، والإعلام.',
+    'about.p1': 'شهاب و العوامي شركة محاماة مصرية تجمع بين خبرات مهنيين قانونيين مؤهلين تأهيلاً عالياً ذو خلفيات وخبرات محلية ودولية متنوعة. تأسست شهاب و العوامي للمحاماة والاستشارات القانونية بـ آلية جديدة لمواكبة التطورات في ظل تحديث البيئة التشريعية والقانونية.',
+    'about.p2': 'تعتبر شهاب و العوامي هي الأكثر انسجاماً مع التحديات التي تواجه الشركات، وبالتالي تسعى جاهدة لإيجاد وتقديم حلول استراتيجية وعملية سريعة. وبذلك يعمل محاموها ومستشاروها عن كثب مع العملاء ، لكسب ثقتهم و التزامهم بالتميز تجاههم وإيجاد حلول مبتكرة.',
+    
+    // Detailed Company Profile
+    'about.profile.aboutTitle': 'عن شهاب و العوامي للمحاماه و الاستشارات القانونية',
+    'about.profile.title': 'عن شهاب و العوامي للمحاماه و الاستشارات القانونية',
+    'about.profile.p1': 'شهاب و العوامي شركة محاماة مصرية تجمع بين خبرات مهنيين قانونيين مؤهلين تأهيلاً عالياً ذو خلفيات وخبرات محلية ودولية متنوعة. تأسست شهاب و العوامي للمحاماة والاستشارات القانونية بـ آلية جديدة لمواكبة التطورات في ظل تحديث البيئة التشريعية والقانونية.',
+    'about.profile.p2': 'تعتبر شهاب و العوامي هي الأكثر انسجاماً مع التحديات التي تواجه الشركات، وبالتالي تسعى جاهدة لإيجاد وتقديم حلول استراتيجية وعملية سريعة. وبذلك يعمل محاموها ومستشاروها عن كثب مع العملاء ، لكسب ثقتهم و التزامهم بالتميز تجاههم وإيجاد حلول مبتكرة.',
+    'about.profile.p3': 'تعمل الشركة من خلال قطاعات أو أقسام متخصصة تغطي مختلف مجالات ممارسة القانون ، مما يتيح لنا تقديم خدمات قانونية عالية الجودة متسقة بطريقة فعالة. يتعاون فريق العمل لتقديم خدمات قانونية متكاملة إلى العملاء في مختلف القطاعات بما في ذلك، على سبيل المثال لا الحصر، الرياضة، الإنشاءات، المقاولات، النقل و الصناعات الثقيلة، الطاقة، العمليات المصرفية، التمويل، النفط والغاز، الصناعات الثقيلة، المستشفيات، الصناعات الدوائية، تكنولوجيا المعلومات والاتصالات، الإعلام والنقل.',
+    
+    // Mission, Vision, Values
+    'about.mission.title': 'مهمتنـــــا',
+    'about.mission.body': 'نلتزم في شهاب و العوامي بتقديم خدمات قانونية عالية الجودة من خلال مجموعة متميزة من مستشاريها ومحاميها ذوي المهارات العالية، بالإضافة الى مساعدتهم على تحقيق أعظم النتائج لأعمالهم وذلك من خلال خبرتنا الكبيرة ومعرفتنا بمجالات وإستراتيجيات القانون. نحن قادرون على تلبية جميع احتياجات ومتطلبات عملائنا، لذلك نطمح للوصول إلى الثقة الدائمة بعلامتنا التجارية من خلال عملائنا الشركات والأفراد سواء محليًا أو دوليًا وذلك بإعتبارنا متخصصون في الخدمات القانونية المختلفة.',
+    
+    'about.vision.title': 'رؤيتنـــــا',
+    'about.vision.body': 'تعد الرؤية الأساسية لشركة شهاب و العوامي للمحاماة والاستشارات القانونية ، هي أن نصبح مستشارين موثوقاً بهم يمكن للعملاء المحليين والدوليين الثقة فيهم والتوجه لإعطاء المشورة القانونية السليمة، بواسطة الوسائل المهنية ومنها حرفية التفاوض وإنهاء المنازعات من خلال التسويات الإتفاقيــة المقبولة لجميع الأطراف',
+    
+    'about.values.title': 'قيمنـــــا',
+    'about.values.body': 'تتمثل القيم الجوهرية لشهاب و العوامي أننـا نتميز بالشفافيــة تجاه عملائنا من خلال فهمنا المتعمق للقوانين بالإضافة إلى مواكبة التشريعات القانونية الدولية ، فإننا نسعى جاهدين لتزويد عملائنا بخدمات قانونية عالية الجودة تتجاوز التوقعات اتكاءاً على المصارحة والشفافية والعزم والمصداقية للحفاظ على أعلى مستوى من النزاهة والكفاءة والاستجابة.',
     'about.stats.years': 'سنوات',
     'about.stats.cases': 'قضايا',
+    
+    // Detailed Services
+    'services.title': 'خدمــاتنـــــا',
+    'services.corporate.title': 'الشركـات',
+    'services.corporate.desc': 'يقدم شهاب و العوامي خدمات تأسيس سريعة ومخصصة لجميع أنواع الشركات التجارية والمالية في مصرو كئلك خدمات سريعة ونصائح عامة دقيقة للشركات، ونساعد عملائنا في جميع اعمال التأسيس والترخيص والاحتياجات القانونية لما بعد التأسيس.',
+    
+    'services.mergers.title': 'سوق المال والدمــج والاستحواذ',
+    'services.mergers.desc': 'تخصص شهاب و العوامي في عمليات الدمج والاستحواذ للإستثمارات العامة والخاصة والمشاريع المشتركة والشركات التجارية والشركات التي تعمل في الأوراق المالية الخاضعة لقانون سوق رأس المال المنبثقة والهيكلة وإعادة الهيكلة والتكامل بعد الاستحواذ.',
+    
+    'services.litigation.title': 'القضــايـا',
+    'services.litigation.desc': 'يتخصص فريق التقاضي في شهاب و العوامي في التعامل مع أنواع مختلفة من الدعاوى القضائية والتي منها علي سبيل المثال وليس الحصر؛ الدعاوي المدنية، الدعاوي التجارية، الدعاوي الجنائية بالإضافة إلى قضايا الاحوال الشخصية للمسلمين ولغير المسلمين والقضايا الايجارية.',
+    
+    'services.intellectual.title': 'الملكيـــة الفكريـــة',
+    'services.intellectual.desc': 'يتخصص فريق شهاب و العوامي في تقديم كافة الخدمات والاستشارات القانونية الخاصة بالملكيـة الفكرية. المشورة حول طرق التسجيل والحماية للملكية الفكرية من تأليف ونشر، والعلامات التجارية، وبراءات الاختراع، والنماذج الصناعية، والأسماء التجارية، وحقوق التأليف والنشر.',
+    
+    'services.employment.title': 'العمـــل',
+    'services.employment.desc': 'نقدم في شهاب و العوامي الإستشارات القانونية اللازمة لعملائنا بشأن قوانين ولوائح العمل، بما في ذلك صياغة عقود العمل، ضمان الامتثال للوائح التوظيف، مساعدة عملائنا في وضع وتنفيذ السياسات المتعلقة بالعمل والموظفين.',
+    
+    'services.technology.title': 'الاتصالات وتكنولوجيا المعلومات والإعلام',
+    'services.technology.desc': 'يتوفر لدى شهاب و العوامي قسم متخصص في تقديم خدمات واستشارات قوانين الإعلام والاتصال. نوفر لعملائنا عن طريق مجموعة ممارسة قوانين الإعلام والاتصال مستويات واسعة من خدمات الترخيص والتنظيم والامتثال والخدمات القانونية في مجالات الإعلام، التكنولوجيا والابتكار الريادي.',
+    
+    'services.realestate.title': 'العقــارات والتمويــل العقــاري',
+    'services.realestate.desc': 'نقدم في شهاب و العوامي خدمات التسجيل العقاري وصياغة اتفاقيات البيع والشراء واتفاقيات البناء، كما نقدم جميع الإستشارات القانونية اللازمة للمقاولين والمطورين الكبار بشأن الجوانب القانونية وتراخيص المشروعات والتطورات التجارية والسكنية والسياحية.',
+    
+    'services.tax.title': 'الأعمــال الضريبية والإستشــارات المحاسبيــة',
+    'services.tax.desc': 'تقديــم الإقـرارات الضريبيــة وتسويـة النزاعــات المتعلقـة. تسويــة النـزاعــات الضريبيـــة.',
+    
+    'services.translation.title': 'ترانسبيديــا لأعمال وخدمات الترجمة المعتمدة',
+    'services.translation.desc': 'تعتبر ترانسبيديا شركة ذات مسئولية محدودة مسجلة لدى عديد من السفارات الأجنبية، تتخصص في جميع أعمال وخدمات الترجمة العامة والقانونية والمالية والطبية والتقنية وغيرها.',
     
     // Expertise
     'expertise.title': 'مجالات الممارسة',

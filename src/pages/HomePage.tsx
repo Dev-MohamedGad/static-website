@@ -95,105 +95,105 @@ const HomePage: React.FC = () => {
                     : `translateX(-${currentSlide * 100}%)` 
                 }}
               >
-                {/* Innovation & Evolution Card */}
+                {/* Mission Card */}
                 <div className="w-full flex-shrink-0 px-4">
                   <div className="group bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-blue-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" 
-                        alt="Innovation & Legal Evolution" 
+                        alt="Our Mission" 
                         className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
                     
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      {t('slider.innovation.title')}
+                      {t('about.mission.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      {t('slider.innovation.desc')}
+                      {t('about.mission.body')}
                     </p>
                   </div>
                 </div>
 
-                {/* Strategic Solutions Card */}
+                {/* Vision Card */}
                 <div className="w-full flex-shrink-0 px-4">
                   <div className="group bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-green-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/writer.webp" 
-                        alt="Strategic Business Solutions" 
+                        alt="Our Vision" 
                         className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-green-600/20 to-transparent"></div>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      {t('slider.solutions.title')}
+                      {t('about.vision.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      {t('slider.solutions.desc')}
+                      {t('about.vision.body')}
                     </p>
                   </div>
                 </div>
 
-                {/* Client Partnership Card */}
+                {/* Values Card */}
                 <div className="w-full flex-shrink-0 px-4">
                   <div className="group bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-purple-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/group.webp" 
-                        alt="Client Partnership & Trust" 
+                        alt="Our Values" 
                         className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent"></div>
                      
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      {t('slider.partnership.title')}
+                      {t('about.values.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      {t('slider.partnership.desc')}
+                      {t('about.values.body')}
                     </p>
                   </div>
                 </div>
 
-                {/* Specialized Teams Card */}
+                {/* Services Card */}
                 <div className="w-full flex-shrink-0 px-4">
                   <div className="group bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-orange-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/finalCairo.4e840ba2.jpg" 
-                        alt="Specialized Legal Teams" 
+                        alt="Our Services" 
                         className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      {t('slider.teams.title')}
+                      {t('services.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      {t('slider.teams.desc')}
+                      {t('about.profile.p3')}
                     </p>
                   </div>
                 </div>
 
-                {/* Client Sectors Card */}
+                {/* Company Profile Card */}
                 <div className="w-full flex-shrink-0 px-4">
                   <div className="group bg-gradient-to-br from-teal-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-teal-100 h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/original.jpeg" 
-                        alt="Client Sectors" 
+                        alt="Company Profile" 
                         className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-teal-600/20 to-transparent"></div>
                    
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
-                      {t('slider.sectors.title')}
+                      {t('about.profile.title')}
                     </h3>
                     <p className={`text-gray-700 leading-relaxed mb-4 text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      {t('slider.sectors.desc')}
+                      {t('about.profile.p1')}
                     </p>
                     <div className={`grid grid-cols-2 gap-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                       <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
