@@ -37,15 +37,15 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
       // Show header when at top
       if (currentScrollY < 10) {
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Hide header when scrolling down (after 100px)
+      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Hide header when scrolling down (after 50px) - reduced threshold for mobile
         const timeout = setTimeout(() => {
           setIsVisible(false);
-        }, 150); // Small delay to prevent flickering
+        }, 100); // Reduced delay for better mobile responsiveness
         setScrollTimeout(timeout);
-      } else if (currentScrollY < lastScrollY) {
-        // Show header when scrolling up
-        setIsVisible(true);
+      } else if (currentScrollY < lastScrollY && currentScrollY > 50) {
+        // Keep header hidden when scrolling up (after 50px)
+        setIsVisible(false);
       }
       
       setIsScrolled(currentScrollY > 50);
@@ -53,8 +53,11 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchmove', handleScroll);
       if (scrollTimeout) {
         clearTimeout(scrollTimeout);
       }
@@ -177,8 +180,12 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                   }}
                   className={`flex items-center px-4 py-2  font-extrabold transition-all duration-300 ease-out rounded-xl backdrop-blur-sm transform hover:scale-105 ${
                     currentPage === item.href
-                      ? 'text-gray-800 bg-white/20 shadow-lg border border-white/30 backdrop-blur-md'
-                      : 'text-gray-700 hover:text-gray-900 hover:bg-white/10 hover:shadow-lg hover:border hover:border-white/20'
+                      ? currentPage === 'home' 
+                        ? 'text-white bg-white/20 shadow-lg border border-white/30 backdrop-blur-md'
+                        : 'text-gray-800 bg-white/20 shadow-lg border border-white/30 backdrop-blur-md'
+                      : currentPage === 'home'
+                        ? 'text-white/80 hover:text-white hover:bg-white/10 hover:shadow-lg hover:border hover:border-white/20'
+                        : 'text-gray-700 hover:text-gray-900 hover:bg-white/10 hover:shadow-lg hover:border hover:border-white/20'
                   }`}
                   style={{
                     animation: `navItemSlide 0.6s ease-out ${0.2 + (navigation.indexOf(item) * 0.1)}s both`
@@ -233,7 +240,11 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
             {/* Language Switcher */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 transition-all duration-300 ease-out rounded-xl backdrop-blur-sm hover:bg-white/10 hover:shadow-lg hover:border hover:border-white/20 transform hover:scale-105"
+              className={`flex items-center px-4 py-2 text-sm font-semibold transition-all duration-300 ease-out rounded-xl backdrop-blur-sm hover:bg-white/10 hover:shadow-lg hover:border hover:border-white/20 transform hover:scale-105 ${
+                currentPage === 'home' 
+                  ? 'text-white/80 hover:text-white' 
+                  : 'text-gray-700 hover:text-gray-900'
+              }`}
             >
               <Globe className="h-4 w-4 mr-2 transition-transform duration-300 hover:rotate-12" />
               <span className="font-semibold">{language === 'en' ? 'العربية' : 'English'}</span>
@@ -244,7 +255,11 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-4 rounded-xl text-gray-700 hover:text-gray-900 hover:bg-gray-100/20 transition-all duration-300 ease-out transform hover:scale-110 focus:outline-none backdrop-blur-sm border border-gray-200/30"
+              className={`inline-flex items-center justify-center p-4 rounded-xl hover:bg-gray-100/20 transition-all duration-300 ease-out transform hover:scale-110 focus:outline-none backdrop-blur-sm border border-gray-200/30 ${
+                currentPage === 'home' 
+                  ? 'text-white/80 hover:text-white' 
+                  : 'text-gray-700 hover:text-gray-900'
+              }`}
             >
               <div className="relative">
                 {isMobileMenuOpen ? (

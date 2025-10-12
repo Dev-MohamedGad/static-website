@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
         <div 
           className="absolute inset-0 w-full  bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/finalCairo.4e840ba2.jpg)',
+            backgroundImage: 'url(/law022.jpg)',
             backgroundPosition: 'center center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
