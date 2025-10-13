@@ -291,21 +291,8 @@ const en = {
     
 
     // Company Profile (About page long content)
-    'about.profile.title': 'Company Profile – Shehab Law Firm',
-    'about.profile.aboutTitle': 'About Shehab Law Firm',
-    'about.profile.p1': 'Shehab Law Firm is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds. Our expertise spans a wide range of legal disciplines, ensuring that we meet the needs of our clients with precision and skill.',
-    'about.profile.p2': 'Founded to provide both legal services and consultancy, Shehab Law Firm employs innovative methods to keep pace with the evolving governmental and legal landscape. We are fully attuned to the daily challenges faced by corporations and are committed to delivering swift, strategic business solutions. Our lawyers work closely with clients, building trust, commitment, and loyalty by offering innovative solutions that drive success.',
-    'about.profile.p3': 'Our firm operates through specialized teams covering various areas of legal practice, allowing us to deliver high-quality, reliable, and efficient legal services. We serve clients across multiple sectors, including Sports, Construction, Energy, Banking, Oil and Gas, Heavy Industries, Hospitals, Information Technology, Communications, Pharmaceuticals, Media, and Transportation.',
-    'about.profile.p4': 'Shehab Law Firm addresses our clients\' needs through a comprehensive range of services, including budget approval and issuance, tax dispute resolution, certified translation services, and obtaining all types of licenses, in line with our strategic mission.',
-    'about.profile.p5': 'The success of Shehab Law Firm is driven by the experience, dedication, and strong relationships of our team members with key judicial, administrative, and organizational authorities in Egypt.',
 
     // Mission / Vision / Values
-    'about.mission.title': 'Our Mission',
-    'about.mission.body': 'At Shehab Law Firm, we are committed to delivering high-quality legal services through our team of skilled lawyers. Our mission is to help clients achieve exceptional business outcomes by leveraging our extensive legal expertise. We strive to meet all our clients\' needs, whether locally or internationally, and aim to be recognized as Egypt\'s premier law services provider.',
-    'about.vision.title': 'Our Vision',
-    'about.vision.body': 'Our vision at Shehab Law Firm is to become trusted advisors to both local and international clients. We aim to be their go-to source for authentic legal advice, offering professional negotiation techniques and achieving amicable settlements that satisfy all parties involved.',
-    'about.values.title': 'Our Values',
-    'about.values.body': 'We are deeply committed to our clients, driven by a thorough understanding of both local and international laws. Our goal is to exceed client expectations by providing transparent, determined, and credible legal services. We prioritize integrity, efficiency, and responsiveness in all our dealings.',
 
     // Services Overview
     'about.services.title': 'Our Services',
@@ -944,21 +931,8 @@ const ar = {
     'about.p2': 'تعتبر شهاب و العوامي هي الأكثر انسجاماً مع التحديات التي تواجه الشركات، وبالتالي تسعى جاهدة لإيجاد وتقديم حلول استراتيجية وعملية سريعة. وبذلك يعمل محاموها ومستشاروها عن كثب مع العملاء ، لكسب ثقتهم و التزامهم بالتميز تجاههم وإيجاد حلول مبتكرة.',
     
     // Detailed Company Profile
-    'about.profile.aboutTitle': 'عن شهاب و العوامي للمحاماه و الاستشارات القانونية',
-    'about.profile.title': 'عن شهاب و العوامي للمحاماه و الاستشارات القانونية',
-    'about.profile.p1': 'شهاب و العوامي شركة محاماة مصرية تجمع بين خبرات مهنيين قانونيين مؤهلين تأهيلاً عالياً ذو خلفيات وخبرات محلية ودولية متنوعة. تأسست شهاب و العوامي للمحاماة والاستشارات القانونية بـ آلية جديدة لمواكبة التطورات في ظل تحديث البيئة التشريعية والقانونية.',
-    'about.profile.p2': 'تعتبر شهاب و العوامي هي الأكثر انسجاماً مع التحديات التي تواجه الشركات، وبالتالي تسعى جاهدة لإيجاد وتقديم حلول استراتيجية وعملية سريعة. وبذلك يعمل محاموها ومستشاروها عن كثب مع العملاء ، لكسب ثقتهم و التزامهم بالتميز تجاههم وإيجاد حلول مبتكرة.',
-    'about.profile.p3': 'تعمل الشركة من خلال قطاعات أو أقسام متخصصة تغطي مختلف مجالات ممارسة القانون ،مما يتيح لنا تقديم خدمات قانونية عالية الجودة متسقة بطريقة فعالة. يتعاون فريق العمل لتقديم خدمات قانونية متكاملة إلى العملاء في مختلف القطاعات بما في ذلك، على سبيل المثال لا الحصر، الرياضة، الإنشاءات، المقاولات، النقل و الصناعات الثقيلة، الطاقة، العمليات المصرفية، التمويل، النفط والغاز، الصناعات الثقيلة، المستشفيات، الصناعات الدوائية، تكنولوجيا المعلومات والاتصالات، الإعلام والنقل.',
     
     // Mission, Vision, Values
-    'about.mission.title': 'مهمتنـــــا',
-    'about.mission.body': 'نلتزم في شهاب و العوامي بتقديم خدمات قانونية عالية الجودة من خلال مجموعة متميزة من مستشاريها ومحاميها ذوي المهارات العالية، بالإضافة الى مساعدتهم على تحقيق أعظم النتائج لأعمالهم وذلك من خلال خبرتنا الكبيرة ومعرفتنا بمجالات وإستراتيجيات القانون. نحن قادرون على تلبية جميع احتياجات ومتطلبات عملائنا، لذلك نطمح للوصول إلى الثقة الدائمة بعلامتنا التجارية من خلال عملائنا الشركات والأفراد سواء محليًا أو دوليًا وذلك بإعتبارنا متخصصون في الخدمات القانونية المختلفة.',
-    
-    'about.vision.title': 'رؤيتنـــــا',
-    'about.vision.body': 'تعد الرؤية الأساسية لشركة شهاب و العوامي للمحاماة والاستشارات القانونية ، هي أن نصبح مستشارين موثوقاً بهم يمكن للعملاء المحليين والدوليين الثقة فيهم والتوجه لإعطاء المشورة القانونية السليمة، بواسطة الوسائل المهنية ومنها حرفية التفاوض وإنهاء المنازعات من خلال التسويات الإتفاقيــة المقبولة لجميع الأطراف',
-    
-    'about.values.title': 'قيمنـــــا',
-    'about.values.body': 'تتمثل القيم الجوهرية لشهاب و العوامي أننـا نتميز بالشفافيــة تجاه عملائنا من خلال فهمنا المتعمق للقوانين بالإضافة إلى مواكبة التشريعات القانونية الدولية ، فإننا نسعى جاهدين لتزويد عملائنا بخدمات قانونية عالية الجودة تتجاوز التوقعات اتكاءاً على المصارحة والشفافية والعزم والمصداقية للحفاظ على أعلى مستوى من النزاهة والكفاءة والاستجابة.',
     'about.stats.years': 'سنوات',
     'about.stats.cases': 'قضايا',
     

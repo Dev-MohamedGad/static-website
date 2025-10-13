@@ -9,7 +9,7 @@ const Logo: React.FC = () => {
         <img
           src="/logo-law.png"
           alt={t('common.logoAlt')}
-          className="w-40 h-20 object-cover transition-all duration-300 hover:scale-105"
+          className="w-40 h-20 object-contain transition-all duration-300 hover:scale-105"
         />
       </div>
   );
