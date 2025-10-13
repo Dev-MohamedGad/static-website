@@ -35,24 +35,28 @@ const en = {
     
     // About Preview
     'about.title': 'About Our Firm',
-    'about.description': 'Shehab & El Awamy is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds, delivering innovative solutions across multiple sectors.',
+    'about.description': 'Shehab Law Firm is a leading Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds, delivering innovative solutions across multiple sectors.',
     'about.cta': 'Learn More',
-    'about.p1': 'Shehab & El Awamy is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds. Founded to provide both legal services and consultancy, we employ innovative methods to keep pace with the evolving governmental and legal landscape.',
+    'about.p1': 'Shehab Law Firm is a leading Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds. Founded to provide both legal services and consultancy, we employ innovative methods to keep pace with the evolving governmental and legal landscape.',
     'about.p2': 'We are fully attuned to the daily challenges faced by corporations and are committed to delivering swift, strategic business solutions. Our lawyers work closely with clients, building trust, commitment, and loyalty by offering innovative solutions that drive success across multiple sectors including Banking, Oil and Gas, Heavy Industries, Healthcare, Information Technology, Communications, and Media.',
     
     // Detailed Company Profile
-    'about.profile.aboutTitle': 'About Shehab & El Awamy Law Firm',
-    'about.profile.title': 'About Shehab & El Awamy Law Firm',
-    'about.profile.p1': 'Shehab & El Awamy is an Egyptian law firm that brings together highly qualified legal professionals with diverse local and international backgrounds. Founded to provide both legal services and consultancy, we employ innovative methods to keep pace with the evolving governmental and legal landscape.',
-    'about.profile.p2': 'We are fully attuned to the daily challenges faced by corporations and are committed to delivering swift, strategic business solutions. Our lawyers work closely with clients, building trust, commitment, and loyalty by offering innovative solutions that drive success.',
-    'about.profile.p3': 'Our firm operates through specialized teams covering various areas of legal practice, allowing us to deliver high-quality, reliable, and efficient legal services. We serve clients across multiple sectors, including Sports, Construction, Energy, Banking, Oil and Gas, Heavy Industries, Hospitals, Information Technology, Communications, Pharmaceuticals, Media, and Transportation.',
+    'about.profile.aboutTitle': 'About Shehab Law Firm',
+    'about.profile.title': 'About Shehab Law Firm',
+    'about.profile.p1': 'Shehab Law firm is a leading Egyptian law firm founded over a decade ago under the name Core Law Firm. Over the years, we have grown into a full-service practice that combines deep local insight with international expertise to deliver strategic, practical, and results-oriented legal solutions.',
+    'about.profile.p2': 'Our firm brings together highly qualified legal professionals with diverse local and international backgrounds. This diversity enables us to provide comprehensive legal and consultancy services across a wide range of disciplines, ensuring that we meet our clients\' needs with precision, skill, and professionalism.',
+    'about.profile.p3': 'Established to provide both legal services and consultancy, Shehab law firm employs innovative methods to keep pace with Egypt\'s evolving governmental and legal landscape. We are fully attuned to the daily challenges faced by corporations and are committed to delivering swift, strategic, and business-focused solutions.',
+    'about.profile.p4': 'Our lawyers work closely with clients, building trust, commitment, and loyalty through innovative approaches that drive sustainable success. The firm operates through specialized teams covering various areas of practice, allowing us to deliver high-quality, reliable, and efficient services across multiple sectors—including Sports, Construction, Energy, Banking, Oil and Gas, Heavy Industries, Healthcare, Information Technology, Communications, Pharmaceuticals, Media, and Transportation.',
+    'about.profile.p5': 'In addition to our core legal practice, we support our clients through a comprehensive range of services such as budget approval and issuance, tax dispute resolution, certified translation, and the procurement of licenses—all in alignment with our strategic mission to provide holistic business and legal support.',
+    'about.profile.p6': 'The continued success of Shehab Law Firm is driven by the experience, dedication, and strong professional relationships of our team with key judicial, administrative, and organizational authorities across Egypt.',
+    'about.commitment.title': 'Our Commitment to Excellence',
     
     // Mission, Vision, Values
     'about.mission.title': 'Our Mission',
-    'about.mission.body': 'At Shehab & El Awamy, we are committed to delivering high-quality legal services through our team of skilled lawyers. Our mission is to help clients achieve exceptional business outcomes by leveraging our extensive legal expertise. We strive to meet all our clients\' needs, whether locally or internationally, and aim to be recognized as Egypt\'s premier law services provider.',
+    'about.mission.body': 'At Shehab Law Firm, we are committed to delivering high-quality legal services through our team of skilled lawyers. Our mission is to help clients achieve exceptional business outcomes by leveraging our extensive legal expertise. We strive to meet all our clients\' needs, whether locally or internationally, and aim to be recognized as Egypt\'s premier law services provider.',
     
     'about.vision.title': 'Our Vision',
-    'about.vision.body': 'Our vision at Shehab & El Awamy is to become trusted advisors to both local and international clients. We aim to be their go-to source for authentic legal advice, offering professional negotiation techniques and achieving amicable settlements that satisfy all parties involved.',
+    'about.vision.body': 'Our vision at Shehab Law Firm is to become trusted advisors to both local and international clients. We aim to be their go-to source for authentic legal advice, offering professional negotiation techniques and achieving amicable settlements that satisfy all parties involved.',
     
     'about.values.title': 'Our Values',
     'about.values.body': 'We are deeply committed to our clients, driven by a thorough understanding of both local and international laws. Our goal is to exceed client expectations by providing transparent, determined, and credible legal services. We prioritize integrity, efficiency, and responsiveness in all our dealings.',
@@ -944,7 +948,7 @@ const ar = {
     'about.profile.title': 'عن شهاب و العوامي للمحاماه و الاستشارات القانونية',
     'about.profile.p1': 'شهاب و العوامي شركة محاماة مصرية تجمع بين خبرات مهنيين قانونيين مؤهلين تأهيلاً عالياً ذو خلفيات وخبرات محلية ودولية متنوعة. تأسست شهاب و العوامي للمحاماة والاستشارات القانونية بـ آلية جديدة لمواكبة التطورات في ظل تحديث البيئة التشريعية والقانونية.',
     'about.profile.p2': 'تعتبر شهاب و العوامي هي الأكثر انسجاماً مع التحديات التي تواجه الشركات، وبالتالي تسعى جاهدة لإيجاد وتقديم حلول استراتيجية وعملية سريعة. وبذلك يعمل محاموها ومستشاروها عن كثب مع العملاء ، لكسب ثقتهم و التزامهم بالتميز تجاههم وإيجاد حلول مبتكرة.',
-    'about.profile.p3': 'تعمل الشركة من خلال قطاعات أو أقسام متخصصة تغطي مختلف مجالات ممارسة القانون ، مما يتيح لنا تقديم خدمات قانونية عالية الجودة متسقة بطريقة فعالة. يتعاون فريق العمل لتقديم خدمات قانونية متكاملة إلى العملاء في مختلف القطاعات بما في ذلك، على سبيل المثال لا الحصر، الرياضة، الإنشاءات، المقاولات، النقل و الصناعات الثقيلة، الطاقة، العمليات المصرفية، التمويل، النفط والغاز، الصناعات الثقيلة، المستشفيات، الصناعات الدوائية، تكنولوجيا المعلومات والاتصالات، الإعلام والنقل.',
+    'about.profile.p3': 'تعمل الشركة من خلال قطاعات أو أقسام متخصصة تغطي مختلف مجالات ممارسة القانون ،مما يتيح لنا تقديم خدمات قانونية عالية الجودة متسقة بطريقة فعالة. يتعاون فريق العمل لتقديم خدمات قانونية متكاملة إلى العملاء في مختلف القطاعات بما في ذلك، على سبيل المثال لا الحصر، الرياضة، الإنشاءات، المقاولات، النقل و الصناعات الثقيلة، الطاقة، العمليات المصرفية، التمويل، النفط والغاز، الصناعات الثقيلة، المستشفيات، الصناعات الدوائية، تكنولوجيا المعلومات والاتصالات، الإعلام والنقل.',
     
     // Mission, Vision, Values
     'about.mission.title': 'مهمتنـــــا',
@@ -1177,9 +1181,10 @@ const ar = {
     // الملف التعريفي - نبذة
     'about.profile.title': 'الملف التعريفي – شهاب للمحاماة والاستشارات القانونية',
     'about.profile.aboutTitle': 'عن شهاب للمحاماة والاستشارات القانونية',
+    'about.commitment.title': 'التزامنا بالتميز',
     'about.profile.p1': 'شهاب شركة محاماة مصرية تجمع بين خبرات مهنيين قانونيين مؤهلين تأهيلاً عالياً ذوي خلفيات وخبرات محلية ودولية متنوعة.',
     'about.profile.p2': 'تأسست شهاب للمحاماة والاستشارات القانونية بآلية جديدة لمواكبة التطورات في ظل تحديث البيئة التشريعية والقانونية وتعتبر شهاب هي الأكثر انسجاماً مع التحديات التي تواجه الشركات، وبالتالي تسعى جاهدة لإيجاد وتقديم حلول استراتيجية وعملية سريعة. وبذلك يعمل محاموها ومستشاروها عن كثب مع العملاء، لكسب ثقتهم والتزامهم بالتميز تجاههم وإيجاد حلول مبتكرة.',
-    'about.profile.p3': 'تعمل الشركة من خلال قطاعات أو أقسام متخصصة تغطي مختلف مجالات ممارسة القانون ، مما يتيح لنا تقديم خدمات قانونية عالية الجودة متسقة بطريقة فعالة. يتعاون فريق العمل لتقديم خدمات قانونية متكاملة إلى العملاء في مختلف القطاعات بما في ذلك، على سبيل المثال لا الحصر، الرياضة، الإنشاءات، المقاولات، النقل و الصناعات الثقيلة، الطاقة، العمليات المصرفية، التمويل، النفط والغاز، الصناعات الثقيلة، المستشفيات، الصناعات الدوائية، تكنولوجيا المعلومات والاتصالات، الإعلام والنقل.',
+    'about.profile.p3': 'تعمل الشركة من خلال قطاعات أو أقسام متخصصة تغطي مختلف مجالات ممارسة القانون مما يتيح لنا تقديم خدمات قانونية عالية الجودة متسقة بطريقة فعالة. يتعاون فريق العمل لتقديم خدمات قانونية متكاملة إلى العملاء في مختلف القطاعات بما في ذلك، على سبيل المثال لا الحصر، الرياضة، الإنشاءات، المقاولات، النقل و الصناعات الثقيلة، الطاقة، العمليات المصرفية، التمويل، النفط والغاز، الصناعات الثقيلة، المستشفيات، الصناعات الدوائية، تكنولوجيا المعلومات والاتصالات، الإعلام والنقل.',
     'about.profile.p4': 'تستوعب الشركة احتياجات عملائها من خلال الخدمات المتنوعة لتشمل أيضاً على سبيل المثال وليس الحصر، الاستشارات الضريبية وتسوية المنازعات الضريبية، تقديم خدمة الترجمة المعتمدة، إنهاء كافة أعمال التراخيص بمختلف أنواعها، فهي مؤسسة أكثر من مجرد شركة محاماة، كما أن فريق عمل شهاب يعمل بشكل كامل باللغات العربية والإنجليزية.',
     'about.profile.p5': 'إن نجاح الشركة مستمد من خبرة الأعضاء وتفانيهم وخبراتهم المتبادلة مع السلطات القضائية والإدارية والتنظيمية المختصة في مصر.',
 

@@ -251,8 +251,21 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
             </button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          {/* Mobile Menu Button and Language Switcher */}
+          <div className="lg:hidden flex items-center space-x-2">
+            {/* Mobile Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              className={`inline-flex items-center justify-center p-3 rounded-xl hover:bg-gray-100/20 transition-all duration-300 ease-out transform hover:scale-110 focus:outline-none backdrop-blur-sm border border-gray-200/30 ${
+                currentPage === 'home' 
+                  ? 'text-white/80 hover:text-white' 
+                  : 'text-gray-700 hover:text-gray-900'
+              }`}
+            >
+              <Globe className="h-5 w-5 transition-transform duration-300 hover:rotate-12" />
+            </button>
+            
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`inline-flex items-center justify-center p-4 rounded-xl hover:bg-gray-100/20 transition-all duration-300 ease-out transform hover:scale-110 focus:outline-none backdrop-blur-sm border border-gray-200/30 ${
@@ -297,17 +310,6 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                   </button>
                 </div>
               ))}
-              
-              {/* Mobile Language Switcher */}
-              <div className="pt-6 border-t border-gray-300/50">
-                <button
-                  onClick={toggleLanguage}
-                  className="flex items-center w-full text-left px-6 py-5 text-lg font-bold text-gray-800 hover:text-white hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-500 rounded-2xl transition-all duration-300 ease-out transform hover:scale-105 border border-gray-200 hover:shadow-lg"
-                >
-                  <Globe className="h-5 w-5 mr-3 transition-transform duration-300 hover:rotate-12" />
-                  <span className="font-semibold">{language === 'en' ? 'العربية' : 'English'}</span>
-                </button>
-              </div>
             </div>
           </div>
         )}

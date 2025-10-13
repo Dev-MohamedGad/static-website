@@ -76,6 +76,12 @@ const HomePage: React.FC = () => {
               {t('about.profile.aboutTitle')}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full mb-8"></div>
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100 max-w-5xl mx-auto">
+              <div className="text-lg text-gray-700 leading-relaxed space-y-6">
+                <p className="text-center font-medium text-gray-800">{t('about.profile.p1')}</p>
+                <p className="text-center">{t('about.profile.p2')}</p>
+              </div>
+            </div>
           </div>
 
           {/* Company Profile Slider */}
@@ -83,7 +89,7 @@ const HomePage: React.FC = () => {
             {/* Slider Container */}
             <div 
               ref={sliderRef}
-              className="relative overflow-hidden rounded-3xl max-w-4xl w-full h-[600px]"
+              className="relative overflow-hidden rounded-3xl max-w-4xl w-full min-h-[600px] lg:h-[600px]"
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
@@ -97,7 +103,7 @@ const HomePage: React.FC = () => {
               >
                 {/* Mission Card */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-blue-100 h-[600px] flex flex-col">
+                  <div className="group bg-gradient-to-br from-blue-50 to-white rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-blue-100 min-h-[500px] lg:h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg" 
@@ -110,7 +116,7 @@ const HomePage: React.FC = () => {
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
                       {t('about.mission.title')}
                     </h3>
-                    <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                    <p className={`text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                       {t('about.mission.body')}
                     </p>
                   </div>
@@ -118,7 +124,7 @@ const HomePage: React.FC = () => {
 
                 {/* Vision Card */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-green-100 h-[600px] flex flex-col">
+                  <div className="group bg-gradient-to-br from-green-50 to-white rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-green-100 min-h-[500px] lg:h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/writer.webp" 
@@ -130,7 +136,7 @@ const HomePage: React.FC = () => {
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
                       {t('about.vision.title')}
                     </h3>
-                    <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                    <p className={`text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                       {t('about.vision.body')}
                     </p>
                   </div>
@@ -138,7 +144,7 @@ const HomePage: React.FC = () => {
 
                 {/* Values Card */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-purple-100 h-[600px] flex flex-col">
+                  <div className="group bg-gradient-to-br from-purple-50 to-white rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 animate-on-scroll border border-purple-100 min-h-[500px] lg:h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/group.webp" 
@@ -151,7 +157,7 @@ const HomePage: React.FC = () => {
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
                       {t('about.values.title')}
                     </h3>
-                    <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                    <p className={`text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                       {t('about.values.body')}
                     </p>
                   </div>
@@ -159,7 +165,7 @@ const HomePage: React.FC = () => {
 
                 {/* Services Card */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-orange-100 h-[600px] flex flex-col">
+                  <div className="group bg-gradient-to-br from-orange-50 to-white rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-orange-100 min-h-[500px] lg:h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
                         src="/finalCairo.4e840ba2.jpg" 
@@ -171,30 +177,89 @@ const HomePage: React.FC = () => {
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
                       {t('services.title')}
                     </h3>
-                    <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      {t('about.profile.p3')}
+                    <p className={`text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                      {t('about.profile.p5')}
                     </p>
                   </div>
                 </div>
 
-                {/* Company Profile Card */}
+
+                {/* Commitment Card with Image */}
                 <div className="w-full flex-shrink-0 px-4">
-                  <div className="group bg-gradient-to-br from-teal-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-teal-100 h-[600px] flex flex-col">
+                  <div className="group bg-gradient-to-br from-indigo-50 to-white rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-on-scroll border border-indigo-100 min-h-[500px] lg:h-[600px] flex flex-col">
                     <div className="relative overflow-hidden rounded-2xl mb-6">
                       <img 
-                        src="/original.jpeg" 
-                        alt="Company Profile" 
+                        src="/law022.jpg" 
+                        alt="Our Commitment to Excellence" 
                         className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-teal-600/20 to-transparent"></div>
-                   
+                      <div className="absolute inset-0 bg-gradient-to-t from-indigo-600/20 to-transparent"></div>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4 font-serif text-center">
+                      {t('about.commitment.title')}
+                    </h3>
+                    <p className={`text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                      {t('about.profile.p3')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            {/* Navigation Arrows - Enhanced with animations */}
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + 5) % 5)}
+              className={`absolute top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse ${
+                language === 'ar' ? '-right-5 lg:-right-5' : '-left-5 lg:-left-5'
+              }`}
+            >
+              <svg className={`w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 transition-all duration-300 ${
+                language === 'ar' ? 'group-hover:translate-x-1' : 'group-hover:-translate-x-1'
+              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={language === 'ar' ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
+              </svg>
+            </button>
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % 5)}
+              className={`absolute top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse ${
+                language === 'ar' ? '-left-5 lg:-left-5' : '-right-5 lg:-right-5'
+              }`}
+            >
+              <svg className={`w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 transition-all duration-300 ${
+                language === 'ar' ? 'group-hover:-translate-x-1' : 'group-hover:translate-x-1'
+              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={language === 'ar' ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
+              </svg>
+            </button>
+
+          </div>
+
+          {/* Company Profile Card - Separate Section */}
+          <div className="mb-16 animate-on-scroll">
+            <div className="max-w-6xl mx-auto">
+              <div className="bg-gradient-to-br from-teal-50 to-white rounded-3xl p-6 lg:p-8 shadow-xl border border-teal-100 overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  {/* Image Section */}
+                  <div className="relative h-80 lg:h-auto">
+                    <img 
+                      src="/original.jpeg" 
+                      alt="Company Profile" 
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-teal-600/20 to-transparent rounded-2xl"></div>
+                  </div>
+                  
+                  {/* Content Section */}
+                  <div className="space-y-6">
+                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 font-serif">
                       {t('about.profile.title')}
                     </h3>
-                    <p className={`text-gray-700 leading-relaxed mb-4 text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                      {t('about.profile.p1')}
+                    <p className={`text-gray-700 leading-relaxed text-lg ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                      {t('about.profile.p4')}
                     </p>
+                    
+                    {/* Sectors Grid */}
                     <div className={`grid grid-cols-2 gap-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                       <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-2' : 'space-x-2'} mb-2`}>
                         <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
@@ -249,34 +314,6 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
             </div>
-
-
-            {/* Navigation Arrows - Enhanced with animations */}
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev - 1 + 5) % 5)}
-              className={`absolute top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse ${
-                language === 'ar' ? '-right-5 lg:-right-5' : '-left-5 lg:-left-5'
-              }`}
-            >
-              <svg className={`w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 transition-all duration-300 ${
-                language === 'ar' ? 'group-hover:translate-x-1' : 'group-hover:-translate-x-1'
-              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={language === 'ar' ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
-              </svg>
-            </button>
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev + 1) % 5)}
-              className={`absolute top-1/2 transform -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-brand-500 to-brand-600 rounded-full shadow-xl flex items-center justify-center hover:from-brand-600 hover:to-brand-700 hover:scale-110 hover:shadow-2xl transition-all duration-500 z-10 group animate-pulse ${
-                language === 'ar' ? '-left-5 lg:-left-5' : '-right-5 lg:-right-5'
-              }`}
-            >
-              <svg className={`w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:scale-125 transition-all duration-300 ${
-                language === 'ar' ? 'group-hover:-translate-x-1' : 'group-hover:translate-x-1'
-              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={language === 'ar' ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
-              </svg>
-            </button>
-
           </div>
 
           {/* Services Overview */}
